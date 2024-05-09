@@ -3,11 +3,11 @@
   "version": "1.0.1",
   "private": true,
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "a",
+    "email": "",
+    "url": ""
   },
-  "description": "Sanidhya is a full-stack developer with 4 years of experience.",
+  "description": ".",
   "keywords": [
     "reactjs",
     "nextjs",
@@ -32,12 +32,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/portfolio.git"
+    "url": ""
   },
-  "homepage": "https://github.com/sanidhyy/portfolio#readme",
+  "homepage": "",
   "bugs": {
-    "url": "https://github.com/sanidhyy/portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "",
+    "email": ""
   },
   "scripts": {
     "dev": "next dev",
@@ -74,12 +74,12 @@
   },
   "funding": [
     {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
+      "type": "",
+      "url": ""
     },
     {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
+      "type": "",
+      "url": ""
     }
   ]
 }
