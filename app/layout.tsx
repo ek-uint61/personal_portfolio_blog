@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import type { Viewport } from 'next'
+
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
@@ -14,12 +16,17 @@ import "./globals.css";
 // inter font export
 const inter = Inter({ subsets: ["latin"] });
 
+ 
+export const viewport: Viewport = {
+  themeColor: '#CCD6E0',
+}
+
 // site metadata
 export const metadata: Metadata = {
   title: `${OWNER_NAME.split(" ")[0]} | Personal Portfolio`,
   description: `${
     OWNER_NAME.split(" ")[0]
-  } is a full-stack developer with 4 years of experience.`,
+  } is a embedded software with 1+ years of experience.`,
   authors: {
     name: OWNER_NAME,
     url: EXTRA_LINKS.github,
@@ -31,7 +38,6 @@ export const metadata: Metadata = {
     "react",
     "portfolio",
     "portfolio-next",
-    "emailjs",
     "framer-motion",
     "react-hot-toast",
     "react-icons",
@@ -45,7 +51,6 @@ export const metadata: Metadata = {
     "html",
     "css",
   ],
-  themeColor: "#CCD6E0",
   manifest: "/manifest.json",
   other: {
     "google-site-verification":

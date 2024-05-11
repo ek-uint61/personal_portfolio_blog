@@ -83,7 +83,7 @@ const Intro = () => {
         <div className="flex gap-2 flex-col sm:flex-row text-lg font-medium">
           <Link
             href="#contact"
-            className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-95 transition"
+            className="group bg-gray-00 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-95 transition"
             onClick={() => {
               // Set the active section and the time of the last click.
               setActiveSection("Contact");
@@ -107,7 +107,7 @@ const Intro = () => {
             href={EXTRA_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-[1.1] hover:scale-[1.1] active:scale-95 hover:text-gray-950 transition borderBlack dark:bg-white/10 dark:text-white/60"
+            className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none focus:scale-[1.1] hover:scale-[1.1] active:scale-95 hover:text-blue-700 transition borderBlack dark:bg-white/10 dark:text-white/60"
             aria-label="Linkedin"
             title="Linkedin"
           >
@@ -117,7 +117,7 @@ const Intro = () => {
             href={EXTRA_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full outline-none focus:scale-[1.1] hover:scale-[1.1] active:scale-95 hover:text-gray-950 transition borderBlack dark:bg-white/10 dark:text-white/60"
+            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full outline-none focus:scale-[1.1] hover:scale-[1.1] active:scale-95 hover:text-blue-700 transition borderBlack dark:bg-white/10 dark:text-white/60"
             aria-label="GitHub"
             title="GitHub"
           >
