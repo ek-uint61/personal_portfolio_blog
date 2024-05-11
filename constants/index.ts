@@ -6,6 +6,8 @@ import { LuGraduationCap } from "react-icons/lu";
 import timer from "@/public/Timer.jpg";
 import realtorImg from "@/public/realtor.png";
 import ecommerceImg from "@/public/ecommerce.png";
+import teknoopak from "@/public/teknoopak.png";
+import mobileApp from "@/public/mobileApp.png";
 
 // Navigation links
 export const LINKS = [
@@ -46,6 +48,7 @@ export const EXTRA_LINKS = {
 
 // Data for work experience
 export const EXPERIENCES_DATA = [
+  
   {
     title: "Freelance Web Developer",
     location: "Kirsehir, Turkiye",
@@ -55,10 +58,11 @@ export const EXPERIENCES_DATA = [
       date: "April   2020 - June 2022",
   },
   {
-    title: "Ahi Evran University",
+    title: "Ahi Evran University - GPA: 3.05",
     location: "Kirsehir, Turkiye",
     description:
-      "Throughout my university education, I honed my skills in robust mathematics, embedded systems, and artificial intelligence subjects, laying a strong foundation in these areas",
+      "Throughout my university education, I honed my skills in robust mathematics, embedded systems, and artificial intelligence subjects, laying a strong foundation in these areas"
+       , 
     icon: React.createElement(LuGraduationCap),
     date: "May - 2024",
   },
@@ -83,12 +87,12 @@ export const EXPERIENCES_DATA = [
 // Data for projects
 export const PROJECTS_DATA = [
   {
-    title: "Timer Applications",
+    title: "LCD module, 4-bit parallel communication",
     description:
-      "A web app that is built using NextJS and enables users to quickly search and obtain information about cars.",
-    tags: ["STM32F103C8T6 - Blue Pill", "Next.js", "TypeScript", "Tailwind", "Headless UI"],
+      "This project links an alphanumeric LCD module to the STM32F103C8T6 Blue Pill board, enabling text display through 4-bit parallel communication. It provides hands-on embedded system experience",
+    tags: ["STM32F103C8T6 - Blue Pill", "Alphanumeric LCD module", "Jumper wires", "10k potentiometer", "Breadboard","USB cable", " ST-LINK v2 "],
     imageUrl: timer,
-    projectUrl: "https://circuitdigest.com/microcontroller-projects/how-to-use-adc-in-stm32f103c8-stm32-blue-pill-board",
+    projectUrl: "https://github.com/ek-uint61/Ecomm-Mobile-App",
   },
   {
     title: "Realtor",
@@ -107,32 +111,50 @@ export const PROJECTS_DATA = [
     projectUrl: "https://ecommerce-app-next.vercel.app/",
   },
 
+ 
+
   {
-    title: "ECommerce Store",
+    title: "EComm Mobile App",
     description:
-      "A NextJS-based eCommerce store that allows users to order different products. It supports real-time payments using Stripe.",
-    tags: ["React", "Next.js", "Sanity", "React Router", "Stripe"],
-    imageUrl: ecommerceImg,
-    projectUrl: "https://ecommerce-app-next.vercel.app/",
+      "This application is an e-commerce mobile application of the support packages provided by the above technoopak company. Our app consist of a NodeJS Backend, a separate stripe Node server and React Native front end.  ",
+    tags: ["React Native", "NodeJS", "Stripe", "MongoDB", "RestAPI", ],
+    imageUrl: mobileApp,
+    projectUrl: "https://github.com/ek-uint61/Ecomm-Mobile-App",
   },
 
   {
-    title: "ECommerce Store",
+    title: "Teknoopak",
     description:
-      "A NextJS-based eCommerce store that allows users to order different products. It supports real-time payments using Stripe.",
-    tags: ["React", "Next.js", "Sanity", "React Router", "Stripe"],
-    imageUrl: ecommerceImg,
-    projectUrl: "https://ecommerce-app-next.vercel.app/",
+      "Teknoopak is an advanced ERP software for businesses. It streamlines processes, supports digital transitions like e-Invoicing, and offers broad solutions from production to finance. Teknoopak aims to evolve with technology, becoming a top choice for businesses worldwide.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    imageUrl: teknoopak,
+    projectUrl: "https://www.teknoopak.com.tr/",
   },
+
+
+
+
 ] as const;
 
 // Data for skills
 export const SKILLS_DATA = [
-  "C",
-  "C++",
+  "C",,
   "Python",
+] as const;
+
+
+// Data for skills
+export const SKILLS1_DATA = [
   "STM32F407 Discovery Board",
   "STM32F103C8T6 - Blue Pill",
+  "STM32 Nucleo-F401RE",
+  "STM32 NUCLEO-C031C6",
+  "EK-TM4C123GXL LaunchPad Evaluation Board",
+  "ESP32",
+  "Internal architecture of ARM Cortex M3/M4 Processor",
+  "Embeddedd C",
+  "Assembly - Basic",
+  "Driver Development",
   "GPIO",
   "Interputs",
   "ADC/DAC",
@@ -142,24 +164,80 @@ export const SKILLS_DATA = [
   "I2C",
   "SPI",
   "UART",
+  "CAN",
+] as const;
+
+// Data for skills
+export const SKILLS2_DATA = [ 
+  "GCC",
+  "CMake",
+  "GDB",
+  "TDD",
+  "Unit Testing"
+] as const;
+
+
+// Data for skills
+export const SKILLS3_DATA = [ 
+
   "Numpy",
   "Pandas",
   "Matplotlib",
   "Seaborn",
   "Scikit-Learn",
   "OpenCv",
+  "YOLOv5",
   "PyTorch",
   "OpenAI API",
+  "Llama 3",
+
+  // "QT Framework",
+
+
+// "Three.js",
+// "WebGL",
+// "Blender",
+
+] as const;
+
+// Data for skills
+export const SKILLS4_DATA = [ 
   "HTML",
   "CSS",
-  "Tailwind",
+  "Tailwind CSS",
   "JavaScript",
   "TypeScript",
   "React",
-  "Three.js",
+] as const;
+
+
+
+// Data for skills
+export const SKILLS5_DATA = [ 
   "Git",
+  "VSCode",
+  "STM32CubeIDE",
+  "Atollic TrueSTUDIO",
+  "IAR Embedded Workbench for ARM",
+  "Keil MDK",
+  "Jupyter Notebook",
+  "Google Colab"
+] as const;
+
+// Data for skills
+export const SKILLS6_DATA = [ 
+   
+  "Electronics",
+  "Soldering",
+  "Basic PCB Design",
+  "Fusion 360", 
+  "GNU Linux",
+  "Network",
 
 ] as const;
+
+
+
 
 // Owner name
 export const OWNER_NAME = "Emre KALAYCİ";

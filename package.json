@@ -74,12 +74,12 @@
   },
   "funding": [
     {
-      "type": "",
-      "url": ""
+      "type": "aa",
+      "url": "aa"
     },
     {
-      "type": "",
-      "url": ""
+      "type": "a",
+      "url": "a"
     }
   ]
 }

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: `${OWNER_NAME.split(" ")[0]} | Personal Portfolio`,
   description: `${
     OWNER_NAME.split(" ")[0]
-  } is a full-stack developer with 4 years of experience.`,
+  } is a embedded software with 1+ years of experience.`,
   authors: {
     name: OWNER_NAME,
     url: EXTRA_LINKS.github,
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     "react",
     "portfolio",
     "portfolio-next",
-    "emailjs",
     "framer-motion",
     "react-hot-toast",
     "react-icons",
