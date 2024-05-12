@@ -58,7 +58,7 @@ export const EXPERIENCES_DATA = [
       date: "April   2020 - June 2022",
   },
   {
-    title: "Ahi Evran University - GPA: 3.05",
+    title: "Ahi Evran University Computer Science - GPA: 3.05",
     location: "Kirsehir, Turkiye",
     description:
       "Throughout my university education, I honed my skills in robust mathematics, embedded systems, and artificial intelligence subjects, laying a strong foundation in these areas"

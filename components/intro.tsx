@@ -83,7 +83,7 @@ const Intro = () => {
         <div className="flex gap-2 flex-col sm:flex-row text-lg font-medium">
           <Link
             href="#contact"
-            className="group bg-gray-00 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-95 transition"
+            className="group bg-gradient-to-br from-gray-800 to-gray-500 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-95 transition"
             onClick={() => {
               // Set the active section and the time of the last click.
               setActiveSection("Contact");

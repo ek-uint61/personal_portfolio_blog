@@ -29,7 +29,8 @@ export default function Home() {
       <Skills />
 
       {/* The Experience component displays work or education experience. */}
-      <Experience />
+      <Experience  />
+      
 
       {/* The Contact component allows users to get in touch. */}
       <Contact />

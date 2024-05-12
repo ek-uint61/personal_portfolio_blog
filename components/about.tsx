@@ -43,7 +43,7 @@ const About = () => {
       {/* Display another paragraph about the user's interests and hobbies. */}
       <p>
     <i className="italic ">When I'm not coding</i>, I enjoy playing video
-    games, watching series and movies, and playing with <a href="./cadi_pamuk.jpg" target="_blank" className="font-medium italic hover:text-blue-700">my cat</a>. I also enjoy <b className="font-medium">learning new things</b>.
+    games, watching series and movies, and playing with <a href="./cadi_pamuk.jpg" target="_blank" className="font-medium italic text-blue-400 hover:text-blue-700">my cat</a>. I also enjoy <b className="font-medium">learning new things</b>.
 </p>
 
     </motion.section>

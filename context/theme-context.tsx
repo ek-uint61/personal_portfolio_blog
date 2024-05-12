@@ -24,34 +24,34 @@ const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   // Initialize state for the current theme
   const [theme, setTheme] = useState<Theme>("light");
 
-  // Function to toggle between light and dark themes
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-    }
-  };
+// Function to toggle between light and dark themes
+const toggleTheme = () => {
+  if (theme === "dark") { // Değişiklik burada yapıldı
+    setTheme("light");
+    window.localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark"); // Değişiklik burada yapıldı
+  } else {
+    setTheme("dark");
+    window.localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
+  }
+};
 
-  // Check local storage and user's system preferences for theme
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+  // // Check local storage and user's system preferences for theme
+  // useEffect(() => {
+  //   const localTheme = window.localStorage.getItem("theme") as Theme | null;
 
-    if (localTheme) {
-      setTheme(localTheme);
+  //   if (localTheme) {
+  //     setTheme(localTheme);
 
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+  //     if (localTheme === "dark") {
+  //       document.documentElement.classList.add("dark");
+  //     }
+  //   } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  //     setTheme("dark");
+  //     document.documentElement.classList.add("dark");
+  //   }
+  // }, []);
 
   return (
     <ThemeContext.Provider
