@@ -2,16 +2,16 @@
 title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 author: "Emre Kalayci"
-date: "2020-12-27"
-
+date: "Aug 17, 2023"
 tags:
   - AWS
   - Cloud computing
   - Deneme
   - Tech
   - Deneme
+contentHtml: string;
+slug: daneme1;
 ---
-
 
 
 
@@ -98,7 +98,7 @@ printf Format Belirleyicileri:
 
 
 Kullanımları;
-```c
+```javascript
 
 printf("Total distance from A2C is = `%d` km",distanceA2C);
 
@@ -246,7 +246,7 @@ unsigned short int -> 0 to 65535
 
 
 
-```c
+```javascript
 long long myLongHistory = 900 ;
 char size = sizeof(myLongHistory);
 printf("%d",size);  /* sonuç = 8 

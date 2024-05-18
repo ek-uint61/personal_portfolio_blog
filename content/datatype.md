@@ -3,15 +3,16 @@ title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
-
 tags:
   - AWS
   - Cloud computing
   - Deneme
   - Tech
   - Deneme
+contentHtml: string;
+slug: datatype;
 ---
-
+ 
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.
 
 
@@ -272,7 +273,7 @@ The AWS CLI is a command-line application that lets you interact with your AWS a
 
 If you are a proficient Python user, you can just install it with `pip`.
 
-```bash
+```javascript
 pip install awscli
 ```
 
@@ -280,7 +281,7 @@ Otherwise, check out the [official instructions](https://docs.aws.amazon.com/cli
 
 Once installed, you should be able to run this command from the terminal to see its version.
 
-```bash
+```javascript
 aws --version
 ```
 
@@ -307,7 +308,7 @@ Next you need to [configure the CLI](https://docs.aws.amazon.com/cli/latest/user
 
 Basically, just run this command and paste in your access keys.
 
-```bash
+```javascript
 aws configure
 ```
 
@@ -335,7 +336,7 @@ You can open them up and edit them if you like or just run `aws configure` again
 
 Now you should be able to use your CLI to access AWS. For example, I should be able to see the S3 buckets I have in `us-east-1`:
 
-```bash
+```javascript
 aws s3 ls
 
 2020-12-09 22:36:32 blog.pixegami.com

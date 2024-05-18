@@ -5,9 +5,7 @@ import { getPostData } from '@/lib/markdown';
 import Link from 'next/link';
 import { BlogLayout } from '@/components';
 import Prism from 'prismjs';
-
-
-
+import { useEffect } from 'react';
 
 type PostData = {
   title: string;
@@ -22,9 +20,11 @@ type Params = {
   slug: string;
 };
 
-const tagClasses = ['tag-1', 'tag-2', 'tag-3', 'tag-4', 'tag-5'];
+const BlogPost = ({ postData }: { postData: PostData }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [postData]);
 
-export default function BlogPost({ postData }: { postData: PostData }) {
   if (!postData) {
     return <p>Post not found</p>;
   }
@@ -37,7 +37,7 @@ export default function BlogPost({ postData }: { postData: PostData }) {
           <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
           <div className="tags-container">
             {postData.tags.map((tag, index) => (
-              <span key={tag} className={tagClasses[index % tagClasses.length]}>{tag}</span>
+              <span key={tag} className={`tag-${(index % 5) + 1}`}>{tag}</span>
             ))}
           </div>
           <div className="author-info">
@@ -46,11 +46,14 @@ export default function BlogPost({ postData }: { postData: PostData }) {
             <p className="author-date">{postData.date}</p>
           </div>
         </div>
-        <div className="content" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="content prose">
+      
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
       </article>
     </BlogLayout>
   );
-}
+};
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
@@ -77,7 +80,7 @@ export const getStaticProps: GetStaticProps<{ postData: PostData | null }> = asy
 
   const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
   const postData = getPostData(slug);
-  if (!postData) {
+  if (!postData || !postData.title) {
     return {
       notFound: true,
     };
@@ -89,3 +92,5 @@ export const getStaticProps: GetStaticProps<{ postData: PostData | null }> = asy
     },
   };
 };
+
+export default BlogPost;

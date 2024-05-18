@@ -2,14 +2,15 @@
 title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 author: "Emre Kalayci"
-date: "2020-12-27"
-
+date: "Aug 17, 2023"
 tags:
   - AWS
   - Cloud computing
   - Deneme
   - Tech
   - Deneme
+contentHtml: string;
+slug: deneme3;
 ---
 
 -> Scope, Visibility ve Lifetime bir değişkenin özellikleridir, *storage classes* belirleyicileri kullanarak bunlar değiştirilebilir.
@@ -22,7 +23,7 @@ tags:
 
 *NOT*
 
-```c
+```javascript
 
 #include <stdio.h>
 
@@ -64,7 +65,7 @@ void myFunc(void) {
 # This function executed %d time(s) 4
 ```
 
-```c
+```javascript
 
 => fakat bu projenin başka dosyasındaki counter değişkeninin değiştirilmesiyle
    değiştirilebilir bu private hale getirmemiz lazım yani değişken özelliğini 
@@ -113,7 +114,7 @@ void myFunc(void) {
 * değişkenin çeşitli dosyalar arasında kullanılmasını sağlar.
 
 
-```c
+```javascript
 
 >>>>>>>>>>>>>> main.c 
 
@@ -149,7 +150,7 @@ void file1_func(void) {
 
 ##### Fonksiyonlarda Storage Classes Kullanımı
 
-```c
+```javascript
 
 static void change_system_clock(int system_clock) {
     
@@ -184,7 +185,7 @@ başka scopelarda veya başka dosyalar içersinde bu fonksiyon değiştirilemez.
 ![[Pasted image 20240309222202.png | 300]]
 
 
-```c
+```javascript
    char a1 = 'A';
    char a2 = 'p';
    char a3 = 'p';

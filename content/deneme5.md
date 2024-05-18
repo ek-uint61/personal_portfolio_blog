@@ -2,16 +2,16 @@
 title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 author: "Emre Kalayci"
-date: "2020-12-27"
-
+date: "Aug 17, 2023"
 tags:
   - AWS
   - Cloud computing
   - Deneme
   - Tech
   - Deneme
+contentHtml: string;
+slug: deneme5;
 ---
-
 ![[Pasted image 20240317013214.png |400]]
 
 Build project yaptıktan sonra

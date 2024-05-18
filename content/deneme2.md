@@ -2,14 +2,15 @@
 title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 author: "Emre Kalayci"
-date: "2020-12-27"
-
+date: "Aug 17, 2023"
 tags:
   - AWS
   - Cloud computing
   - Deneme
   - Tech
   - Deneme
+contentHtml: string;
+slug: deneme2;
 ---
 
 ##### Adress of Variables
@@ -20,7 +21,7 @@ tags:
 %p => bellekteki adresi yazmak için format seçicidirç (pointer)
 
 
-```c
+```javascript
    char a1 = "A";
    printf("adress of variable a1 = %d\n", &a1);
    ```
@@ -47,7 +48,7 @@ ve tip uyuşmazlığı oluyor.
 Bunu sorunu çözmek için pointer veri tipini, değişkene çeviririz.
 (typecasting)
 
-```c
+```javascript
 char  a1 = "A";
 unsigned long int addressOfa1 = (unsigned long int) &a1;
 // &a1 pointer veri tipi => unsigned long int'e çevirilir,
