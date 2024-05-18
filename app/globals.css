@@ -119,3 +119,19 @@ body::before {
   border-radius: 50%;
 }
 
+
+
+@media (max-width: 640px) {
+  .bg-blur-effect-1 {
+    background-color: #8bb0ff4a ;
+  }
+  .bg-blur-effect-2 {
+    background-color: #c08b7882 ;
+  }
+  .dark .bg-blur-effect-1 {
+    background-color: #b18e8f;
+  }
+  .dark .bg-blur-effect-2 {
+    background-color: #a7b7bb ;
+  }
+}

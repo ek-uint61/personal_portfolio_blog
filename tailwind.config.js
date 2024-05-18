@@ -7,9 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        'sm': '320px', // 320px ve üzeri ekranlar için
-      },
+      
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
