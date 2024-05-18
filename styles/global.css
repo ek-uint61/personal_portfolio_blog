@@ -150,11 +150,11 @@ body {
 }
 
 .author-info .author-name {
-  @apply text-sm font-medium text-gray-700;
+  @apply text-sm font-medium text-gray-800;
 }
 
 .author-info .author-date {
-  @apply text-sm font-medium text-gray-700;
+  @apply text-sm font-medium text-gray-800;
 }
 
 .header-container {
