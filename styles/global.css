@@ -1,0 +1,186 @@
+/* styles/globals.css */
+
+@import 'prismjs/themes/prism-coy.css'; /* Change this to the theme you prefer */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts'tan Merriweather yazı tipini içe aktarma */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+/* Genel stil kuralları */
+body {
+  font-family: 'Merriweather', Georgia, Cambria, 'Times New Roman', Times, serif;
+  color: #24292e;
+  line-height: 1.6; /* Satır yüksekliğini azaltma */
+  letter-spacing: 0.001em; /* Harf aralığını azaltma */
+}
+
+/* Custom styles */
+.prose {
+  max-width: 150ch; /* Daha da genişletmek için bu değeri artırabilirsiniz */
+  margin: auto;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4;
+  font-size: 42px;
+  line-height: 1.2; /* Satır yüksekliğini azaltma */
+  letter-spacing: -0.01em; /* Harf aralığını azaltma */
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-6 mb-3;
+  font-size: 36px;
+  line-height: 1.2; /* Satır yüksekliğini azaltma */
+  letter-spacing: -0.008em; /* Harf aralığını azaltma */
+}
+
+.prose h3 {
+  @apply text-xl font-medium mt-5 mb-3;
+  font-size: 32px;
+  line-height: 1.3; /* Satır yüksekliğini azaltma */
+  letter-spacing: -0.006em; /* Harf aralığını azaltma */
+}
+
+.prose h4 {
+  @apply text-lg font-medium mt-4 mb-2;
+  font-size: 28px;
+  line-height: 1.4; /* Satır yüksekliğini azaltma */
+}
+
+.prose h5 {
+  @apply text-base font-medium mt-3 mb-2;
+  font-size: 24px;
+  line-height: 1.5; /* Satır yüksekliğini azaltma */
+}
+
+.prose h6 {
+  @apply text-sm font-medium mt-2 mb-2;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5; /* Satır yüksekliğini azaltma */
+}
+
+.prose p {
+  @apply text-base leading-relaxed mb-4;
+  font-size: 20px;
+  line-height: 1.6; /* Satır yüksekliğini azaltma */
+  letter-spacing: 0.001em; /* Harf aralığını azaltma */
+  margin-top: 1rem; /* Paragraflar arası boşluk */
+}
+
+.prose a {
+  @apply text-gray-700 hover:underline;
+}
+
+.prose img {
+  @apply rounded-lg my-4;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-700;
+  margin-top: 1.5rem; /* Başlık ve blockquote arası boşluk */
+  margin-bottom: 1.5rem; /* Paragraflar ve blockquote arası boşluk */
+}
+
+.prose ul,
+.prose ol {
+  @apply text-base list-inside mb-4 pl-5;
+  margin-top: 1rem; /* Başlık ve liste arası boşluk */
+  margin-bottom: 1rem; /* Liste ve paragraf arası boşluk */
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose ul > li::marker,
+.prose ol > li::marker {
+  @apply font-bold text-gray-700; /* Kalın ve gri renk */
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose li p {
+  @apply mb-0;
+}
+
+.prose code {
+  @apply bg-gray-800 text-white text-sm px-1.5 py-0.5 rounded;
+}
+
+.prose pre {
+  @apply bg-gray-800 text-white rounded-lg overflow-x-auto relative p-4;
+}
+
+.prose code.language-javascript {
+  @apply bg-gray-100 text-black text-sm px-1.5 py-0.5 rounded;
+}
+
+.prose pre.language-javascript {
+  @apply bg-gray-100 text-black rounded-md overflow-x-auto relative;
+}
+
+.prose table {
+  @apply w-full text-left border-collapse mt-4;
+}
+
+.prose th,
+.prose td {
+  @apply border border-gray-200 px-4 py-2;
+}
+
+.prose th {
+  @apply bg-gray-100 font-semibold;
+}
+
+.author-info {
+  @apply flex justify-center items-center space-x-1;
+}
+
+.author-info .author-name {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.author-info .author-date {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.header-container {
+  @apply border-y-2;
+}
+
+.tags-container {
+  @apply text-center;
+}
+
+.tag-1 {
+  @apply bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-sm font-medium mr-2 inline-block;
+}
+
+.tag-2 {
+  @apply bg-green-200 text-green-800 px-2 py-1 rounded-full text-sm font-medium mr-2 inline-block;
+}
+
+.tag-3 {
+  @apply bg-red-200 text-red-800 px-2 py-1 rounded-full text-sm font-medium mr-2 inline-block;
+}
+
+.tag-4 {
+  @apply bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full text-sm font-medium mr-2 inline-block;
+}
+
+.tag-5 {
+  @apply bg-purple-200 text-purple-800 px-2 py-1 rounded-full text-sm font-medium mr-2 inline-block;
+}

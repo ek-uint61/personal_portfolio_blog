@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* react-timeline-vertical-component line color */
 html {
-  --line-color: #e5e7eb;
+  --line-color: #bbb;
+}
+
+body {
+  font-family:"font-sans"; /* Yeni yazı tipi burada */
 }
 
 /* react-timeline-vertical-component line color (dark mode) */
@@ -16,3 +21,101 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+
+@keyframes custom-shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(-15px, 15px) rotate(-5deg);
+  }
+  20% {
+    transform: translate(5px, -5px) rotate(5deg);
+  }
+  30% {
+    transform: translate(-15px, 15px) rotate(-5deg);
+  }
+  40% {
+    transform: translate(5px, -5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-15px, 15px) rotate(-5deg);
+  }
+  60% {
+    transform: translate(5px, -5px) rotate(5deg);
+  }
+  70% {
+    transform: translate(-15px, 15px) rotate(-5deg);
+  }
+  80% {
+    transform: translate(5px, -5px) rotate(5deg);
+  }
+  90% {
+    transform: translate(-15px, 15px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+
+.custom-shake:hover {
+  animation: custom-shake 2s ease-in-out;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background-image: linear-gradient(to right, #3a3a3a 1px, transparent 1px),
+      linear-gradient(to bottom, #3a3a3a 1px, transparent 1px);
+    opacity: 0.050;
+  }
+}
+
+.rotate-icon:hover {
+  animation: rotate 0.5s linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.submit:hover {
+  animation: rotate 0.5s linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.styled-icon {
+  background-color: white;
+  color: gray;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+

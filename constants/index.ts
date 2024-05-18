@@ -9,33 +9,19 @@ import ecommerceImg from "@/public/ecommerce.png";
 import teknoopak from "@/public/teknoopak.png";
 import mobileApp from "@/public/mobileApp.png";
 
-// Navigation links
-export const LINKS = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
-] as const;
+
+
+import { SectionName } from "@/context/active-section-context";
+
+export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
+  { hash: "#home", name: "Home" },
+  { hash: "#about", name: "About" },
+  { hash: "#skills", name: "Skills" },
+  { hash: "#experience", name: "Experience" },
+  { hash: "#articles", name: "Articles" },
+  { hash: "#contact", name: "Contact" },
+];
+
 
 // External links
 export const EXTRA_LINKS = {
@@ -84,57 +70,7 @@ export const EXPERIENCES_DATA = [
   },
 ] as const;
 
-// Data for projects
-export const PROJECTS_DATA = [
-  {
-    title: "LCD module, 4-bit parallel communication",
-    description:
-      "This project links an alphanumeric LCD module to the STM32F103C8T6 Blue Pill board, enabling text display through 4-bit parallel communication. It provides hands-on embedded system experience",
-    tags: ["STM32F103C8T6 - Blue Pill", "Alphanumeric LCD module", "Jumper wires", "10k potentiometer", "Breadboard","USB cable", " ST-LINK v2 "],
-    imageUrl: timer,
-    projectUrl: "https://github.com/ek-uint61/Ecomm-Mobile-App",
-  },
-  {
-    title: "Realtor",
-    description:
-      "Buy and rent homes for everyone. I was the front-end developer. It has features like filtering, sorting, and pagination.",
-    tags: ["React", "Chakra UI", "Next.js", "Framer Motion", "React Icons"],
-    imageUrl: realtorImg,
-    projectUrl: "https://real-estate-app-react.vercel.app/",
-  },
-  {
-    title: "ECommerce Store",
-    description:
-      "A NextJS-based eCommerce store that allows users to order different products. It supports real-time payments using Stripe.",
-    tags: ["React", "Next.js", "Sanity", "React Router", "Stripe"],
-    imageUrl: ecommerceImg,
-    projectUrl: "https://ecommerce-app-next.vercel.app/",
-  },
 
- 
-
-  {
-    title: "EComm Mobile App",
-    description:
-      "This application is an e-commerce mobile application of the support packages provided by the above technoopak company. Our app consist of a NodeJS Backend, a separate stripe Node server and React Native front end.  ",
-    tags: ["React Native", "NodeJS", "Stripe", "MongoDB", "RestAPI", ],
-    imageUrl: mobileApp,
-    projectUrl: "https://github.com/ek-uint61/Ecomm-Mobile-App",
-  },
-
-  {
-    title: "Teknoopak",
-    description:
-      "Teknoopak is an advanced ERP software for businesses. It streamlines processes, supports digital transitions like e-Invoicing, and offers broad solutions from production to finance. Teknoopak aims to evolve with technology, becoming a top choice for businesses worldwide.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: teknoopak,
-    projectUrl: "https://www.teknoopak.com.tr/",
-  },
-
-
-
-
-] as const;
 
 // Data for skills
 export const SKILLS_DATA = [
@@ -148,23 +84,26 @@ export const SKILLS1_DATA = [
   "STM32F407 Discovery Board",
   "STM32F103C8T6 - Blue Pill",
   "STM32 Nucleo-F401RE",
-  "STM32 NUCLEO-C031C6",
-  "EK-TM4C123GXL LaunchPad Evaluation Board",
-  "ESP32",
+  // "STM32 NUCLEO-C031C6",
+  // "EK-TM4C123GXL LaunchPad Evaluation Board",
+  // "ESP32",
   "Internal architecture of ARM Cortex M3/M4 Processor",
   "Embeddedd C",
-  "Assembly - Basic",
-  "Driver Development",
+  "ARM Assembly",
+  "Embedded Driver Development",
   "GPIO",
   "Interputs",
-  "ADC/DAC",
   "Timers",
-  "DMA",
+  "ADC/DAC",
   "PWM",
-  "I2C",
-  "SPI",
+  "DMA",
   "UART",
-  "CAN",
+  "USART",
+  "SPI",
+  "I²C",
+  "1-Wire Bus Protocol",
+  "CANBUS",
+  "MODBUS",
 ] as const;
 
 // Data for skills
@@ -179,25 +118,10 @@ export const SKILLS2_DATA = [
 
 // Data for skills
 export const SKILLS3_DATA = [ 
-
-  "Numpy",
-  "Pandas",
-  "Matplotlib",
-  "Seaborn",
-  "Scikit-Learn",
-  "OpenCv",
-  "YOLOv5",
-  "PyTorch",
-  "OpenAI API",
-  "Llama 3",
-
-  // "QT Framework",
-
-
+// "QT Framework",
 // "Three.js",
 // "WebGL",
 // "Blender",
-
 ] as const;
 
 // Data for skills
@@ -207,37 +131,90 @@ export const SKILLS4_DATA = [
   "Tailwind CSS",
   "JavaScript",
   "TypeScript",
-  "React",
+  "React.js",
+  "Next.js",
+  "-",
+  "Numpy",
+  "Pandas",
+  "Matplotlib",
+  "Seaborn",
+  "Scikit-Learn",
+  "TensorFlow",
+  "PyTorch",
+  // "OpenCV",
+  "OpenAI API",
+  "Llama 3",
+  "Mixtral 8x7B"
 ] as const;
-
 
 
 // Data for skills
 export const SKILLS5_DATA = [ 
   "Git",
   "VSCode",
+  "Vim",
   "STM32CubeIDE",
   "Atollic TrueSTUDIO",
   "IAR Embedded Workbench for ARM",
   "Keil MDK",
-  "Jupyter Notebook",
-  "Google Colab"
 ] as const;
 
 // Data for skills
-export const SKILLS6_DATA = [ 
-   
+export const SKILLS6_DATA = [    
   "Electronics",
   "Soldering",
-  "Basic PCB Design",
-  "Fusion 360", 
+  // "Basic PCB Design",
+  // "Fusion 360", 
   "GNU Linux",
   "Network",
-
 ] as const;
 
 
-
+// /constants/articlesData.ts
+export const ARTICLES_DATA = [
+  {
+    title: "Proje 1",
+    date: "2024-05-18",
+    description: "Bu Proje 1'in açıklamasıdır.",
+    keywords: ["React", "Next.js"],
+    slug: "deneme1", 
+  },
+  {
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "datatype"
+  },
+  {
+    date: "2023-02-15",
+    title: "Upsampling and Downsampling in Digital Signal Processing",
+    description: "A comprehensive guide on the techniques of upsampling and downsampling, their applications, and their importance in digital signal processing.",
+    keywords: ["Upsampling", "Downsampling", "DSP"],
+    slug: "deneme2"
+  },
+  {
+    date: "2023-01-30",
+    title: "AUTOSAR ECU Development: Challenges and Solutions",
+    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
+    keywords: ["AUTOSAR", "ECU Development", "Challenges"],
+    slug: "deneme3"
+  },
+  {
+    date: "2023-01-30",
+    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
+    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
+    keywords: ["LORA", "Arduino", "SX1278"],
+    slug: "deneme4"
+  },
+  {
+    date: "2023-01-30",
+    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
+    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
+    keywords: ["LORA", "Arduino", "SX1278"],
+    slug: "deneme5"
+  },
+];
 
 // Owner name
 export const OWNER_NAME = "Emre KALAYCİ";

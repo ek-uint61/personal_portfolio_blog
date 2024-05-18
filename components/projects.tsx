@@ -1,118 +1,83 @@
-// Import necessary dependencies and components.
-"use client"; // This comment indicates that this code should run on the client side in Next.js.
+"use client"; // Bu yorum, bu kodun Next.js'de istemci tarafında çalışması gerektiğini belirtir.
 
-import { useRef } from "react";
-import Image from "next/image";
-import { motion, useTransform } from "framer-motion";
+import { useRef, RefObject } from "react";
 import { useScroll } from "framer-motion";
-
-import SectionHeading from "./section-heading";
-import { PROJECTS_DATA } from "@/constants";
-import { useSectionInView } from "@/lib/hooks";
-
 import Link from "next/link";
+import SectionHeading from "./section-heading";
+import { useSectionInView } from "@/lib/hooks";
+import { ARTICLES_DATA } from "@/constants";
 
-// Define the ProjectProps type based on the PROJECTS_DATA structure.
-type ProjectProps = (typeof PROJECTS_DATA)[number];
+type ArticleProps = {
+  date: string;
+  title: string;
+  description: string;
+  keywords: string[];
+  slug: string;
+};
 
-// Define the Project component for displaying individual projects.
-const Project = ({
+const Article = ({
   title,
+  date,
   description,
-  tags,
-  imageUrl,
-  projectUrl,
-}: ProjectProps) => {
-  // Create a reference for the project element.
-  const projectRef = useRef<HTMLElement>(null);
-
-  // Use the useScroll hook to track scroll progress for animations.
+  slug,
+  keywords,
+}: ArticleProps) => {
+  const articleRef: RefObject<HTMLLIElement> = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
-    target: projectRef,
+    target: articleRef,
     offset: ["0 1", "1.33 1"],
   });
 
-  // Define animations based on scroll progress.
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const bgColors = ["#51cf66", "#94d82d", "#ffd43b", "#fdf2e9"];
 
   return (
-    <motion.article
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      ref={projectRef}
-      className="group mb-3 sm:mb-8 last:mb-0"
+    <li
+      ref={articleRef}
+      className="mb-6 text-center border rounded-lg shadow-md p-6 bg-white dark:bg-gray-800 flex flex-col justify-between space-y-2"
     >
-      <div className="bg-gray-300 max-w-[42rem] sm:group-even:pl-8 border border-black/5 overflow-hidden sm:pr-8 relative sm:h-[30rem] rounded-lg hover:bg-gray-200 transition dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-
-
-          <ul className="flex flex-wrap mt-4 gap-1.5 sm:mt-auto">
-            {tags.map((tag, i) => (
-              <li
-                key={`${title}-tags-${i}`}
-                className="bg-black/[0.7] px-3 py-1 text-[0.6rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <Link
-          href={projectUrl}
-          target="_blank"
-          rel="noreferrer noopener"
-          title={`Go to Project: ${title}`}
-          className="group/project"
-        >
-          <Image
-            src={imageUrl}
-            alt={title}
-            quality={95}
-            className="absolute hidden sm:block top-8 -right-40 w-[28.25rem]
-            rounded-t-lg shadow-2xl group-even:right-[initial] 
-            group-even:-left-40 group-hover:-translate-x-3
-            group-hover:translate-y-3 group-hover:-rotate-2
-
-            group-focus/project:-translate-x-3
-            group-focus/project:translate-y-3 group-focus/project:-rotate-2
-            group-even:group-focus/project:translate-x-3
-            group-even:group-focus/project:translate-y-3 group-even:group-focus/project:rotate-2
-            
-            group-focus/project:scale-[1.04]
-            
-            group-even:group-hover:translate-x-3
-            group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
-            
-            group-hover:scale-[1.04] transition"
-          />
+      <div>
+        <Link href={`/blog/${slug}`} legacyBehavior>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline dark:text-blue-300"
+          >
+            <h3 className="text-base font-semibold text-blue-700 dark:text-blue-500 mb-1">{title}</h3>
+          </a>
         </Link>
+        <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">{date}</p>
+        <p className="text-xs text-gray-700 dark:text-gray-200">{description}</p>
       </div>
-    </motion.article>
+      <div className="flex justify-center mt-4 space-x-2">
+        {keywords.map((keyword, index) => (
+          <span
+            key={index}
+            className="rounded-full px-3 py-1 text-xs text-gray-700 dark:text-gray-800"
+            style={{ backgroundColor: bgColors[index % bgColors.length] }}
+          >
+            {keyword}
+          </span>
+        ))}
+      </div>
+    </li>
   );
 };
 
-// Define the Projects component to display a list of projects.
-const Projects = () => {
-  // Use the 'useSectionInView' hook to track section visibility.
-  const { ref } = useSectionInView("Projects", 0.5);
+const Articles = () => {
+  const { ref } = useSectionInView("Articles", 0.5);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-      <SectionHeading>My projects</SectionHeading>
-      <div>
-        {PROJECTS_DATA.map((project, i) => (
-          <Project key={`project-${i}`} {...project} />
-        ))}
+    <section ref={ref} id="articles" className="scroll-mt-28 mb-28">
+      <SectionHeading>Projects & Articles</SectionHeading>
+      <div className="flex justify-center">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl px-6 sm:px-0 list-none p-0">
+          {ARTICLES_DATA.map((article, i) => (
+            <Article key={`article-${i}`} {...article} />
+          ))}
+        </ul>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default Articles;

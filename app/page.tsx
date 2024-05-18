@@ -1,3 +1,5 @@
+// /app/page.tsx
+
 // Importing necessary components from the specified location ("@/components").
 import {
   About,
@@ -20,20 +22,20 @@ export default function Home() {
       <SectionDivider />
 
       {/* The About component provides information about the author or user. */}
-      <About />
-
-      {/* The Projects component displays information about projects. */}
-      <Projects />
+      <About />  
 
       {/* The Skills component shows the skills of the author or user. */}
       <Skills />
 
       {/* The Experience component displays work or education experience. */}
-      <Experience  />
-      
+      <Experience  />  
+
+      {/* The Projects component displays information about projects. */}
+      <Projects />   
 
       {/* The Contact component allows users to get in touch. */}
-      <Contact />
+      <Contact /> 
+
     </main>
   );
 }

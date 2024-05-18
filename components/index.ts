@@ -11,7 +11,7 @@ import SectionDivider from "./section-divider"; // Re-export the 'SectionDivider
 import SectionHeading from "./section-heading"; // Re-export the 'SectionHeading' component.
 import Skills from "./skills"; // Re-export the 'Skills' component.
 import ThemeSwitch from "./theme-switch"; // Re-export the 'ThemeSwitch' component.
-
+import BlogLayout from "./blogLayout";
 // Export the re-exported components.
 export {
   About,
@@ -26,3 +26,6 @@ export {
   Skills,
   ThemeSwitch,
 };
+
+export { default as BlogLayout } from './blogLayout';
+

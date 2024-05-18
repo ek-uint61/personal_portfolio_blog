@@ -1,58 +1,45 @@
-// Import necessary dependencies and components.
 "use client"; // This comment indicates that this code should run on the client side in Next.js.
 
 import { FormEvent, useRef, useState } from "react";
-import Link from "next/link";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
-import emailjs from "@emailjs/browser";
 import { EXTRA_LINKS } from "@/constants";
 
-// Define the Contact component.
 const Contact = () => {
-  // Use the useSectionInView custom hook to track when the "Contact" section is in view.
   const { ref } = useSectionInView("Contact");
   const [loading, setLoading] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Handle form field changes.
   const handleChange = (e: FormEvent) => {
-    // Extract the field name and value from the event.
     const { name, value } = e.target as HTMLInputElement;
     setForm({ ...form, [name]: value });
   };
 
-  // Validate the form on submission.
   const validateForm = (): boolean => {
-    // Extract form fields.
     const { name, email, message } = form;
 
-    // Validate the name field.
     if (name.trim().length < 3) {
       toast.error("Invalid Name");
       return false;
     }
 
-    // Regular expression for email validation.
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    // Validate the email field.
     if (!email.trim().toLowerCase().match(emailRegex)) {
       toast.error("Invalid E-mail");
       return false;
     }
 
-    // Validate the message field.
     if (message.trim().length < 5) {
       toast.error("Invalid Message");
       return false;
@@ -61,15 +48,11 @@ const Contact = () => {
     return true;
   };
 
-  // Handle form submission.
   const handleSubmit = (e: FormEvent) => {
-    // Prevent the default page reload.
     e.preventDefault();
 
-    // Validate the form.
     if (!validateForm()) return false;
 
-    // Show a loading indicator.
     setLoading(true);
 
     emailjs
@@ -85,19 +68,14 @@ const Contact = () => {
       )
       .then(
         () => {
-          // Success: Display a success message using toast.
-          toast.success(
-            "Thank You. I will get back to you as soon as possible."
-          );
+          toast.success("Thank You. I will get back to you as soon as possible.");
         },
         (error) => {
-          // Error handling: Display an error message and log the error.
           console.log(error);
           toast.error("Sorry. Something went wrong.");
         }
       )
       .finally(() => {
-        // Clear the loading indicator, and reset the form fields.
         setLoading(false);
         setForm({
           name: "",
@@ -107,98 +85,90 @@ const Contact = () => {
       });
   };
 
-  // Return the Contact section with animations and the contact form.
   return (
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 text-center w-[min(100%,38rem)]"
+      className="mb-20 sm:mb-28 w-[min(100%,60rem)] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-8 rounded-lg shadow-2xl dark:shadow-lg flex flex-col items-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
     >
-      <SectionHeading>My contact</SectionHeading>
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at my{" "}
-        <Link className="underline" href={`mailto:${EXTRA_LINKS.email}`}>
-          e-mail
-        </Link>{" "}
-        or through this form.
+      <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">Contact Me</h2>
+      <p className="text-gray-700 dark:text-gray-300 mb-8">
+        Please contact me directly at my e-mail or through this form.
       </p>
 
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        autoComplete="off"
-        autoCapitalize="off"
-        ref={formRef}
-        onSubmit={handleSubmit}
-      >
-        {/* Input fields for name, email, and message. */}
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="Your name"
-          className="h-14 rounded-lg px-4 borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          required
-          maxLength={200}
+      <div className="flex flex-col sm:flex-row gap-8 items-start">
+        <form
+          className="w-full max-w-lg bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex flex-col dark:text-white"
           autoComplete="off"
           autoCapitalize="off"
-        />
-
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Your email"
-          className="h-14 rounded-lg my-4 px-4 borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          required
-          maxLength={100}
-          autoComplete="off"
-          autoCapitalize="off"
-        />
-
-        <textarea
-          className="h-52 rounded-lg mb-4 borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
-          id="message"
-          value={form.message}
-          onChange={handleChange}
-          placeholder="Your message"
-          cols={30}
-          rows={10}
-          required
-          maxLength={500}
-        />
-
-        {/* Submit button with conditional rendering for loading state. */}
-        <button
-          type="submit"
-          className="group flex self-center  items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gradient-to-br from-gray-800 to-gray-400 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 active:scale-105 hover:bg-gray- disabled:scale-100 disabled:bg-opacity-65 dark:bg-white dark:bg-opacity-10"
-          disabled={loading}
+          onSubmit={handleSubmit}
         >
-          {loading ? (
-            <span className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
-          ) : (
-            <>
-              Submit{" "}
-              <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </>
-          )}
-        </button>
-      </form>
+          <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              className="flex-1 h-14 rounded-lg px-1 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition-all outline-none"
+              required
+              maxLength={200}
+              autoComplete="off"
+              autoCapitalize="off"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="abc@xyz.com"
+              className="flex-1 h-14 rounded-lg px-1 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition-all outline-none"
+              required
+              maxLength={100}
+              autoComplete="off"
+              autoCapitalize="off"
+            />
+          </div>
+
+          <textarea
+            className="h-32 rounded-lg mb-4 border border-gray-300 dark:border-gray-600 p-4 dark:bg-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition-all outline-none"
+            name="message"
+            id="message"
+            value={form.message}
+            onChange={handleChange}
+            placeholder="Your message"
+            cols={30}
+            rows={10}
+            required
+            maxLength={500}
+          />
+
+          <button
+            type="submit"
+            className="flex items-center justify-center gap-2 h-12 w-full bg-blue-600 text-white rounded-lg outline-none transition-all focus:scale-105 hover:scale-105 active:scale-100 disabled:scale-100 disabled:bg-opacity-65"
+            disabled={loading}
+          >
+            {loading ? (
+              <span className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
+            ) : (
+              <>
+                Submit <FaPaperPlane className="text-xs opacity-70 transition-all rotate-icon" />
+              </>
+            )}
+          </button>
+        </form>
+            
+      </div>
     </motion.section>
   );
 };
 
-// Export the Contact component.
 export default Contact;
+
+
