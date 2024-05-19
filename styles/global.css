@@ -14,15 +14,55 @@ body {
   letter-spacing: 0.01em; /* Harf aralığı */
 }
 
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.prose {
+  max-width: 600px; /* Daha dar bir genişlik */
+  margin: 0 auto;
+}
+
+.header-container {
+  margin-bottom: 2rem;
+}
+
+.tags-container span {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.author-info {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+aside {
+  margin-right: 2rem; /* Sidebar ile içerik arasında boşluk bırak */
+}
 /* Medium benzeri stil kuralları */
 .prose {
-  max-width: 85ch; /* Medium'daki gibi geniş bir okuma alanı */
+  max-width: 100%; /* İçeriği tam genişlikte yap */
   margin: auto;
-  padding: 2rem 1rem; /* İçerik kenar boşlukları */
+  padding: 2rem 1rem; 
   background-color: #ffffff;
   border-radius: 0.5rem;
 
-  @apply lg:max-w-none lg:px-6 lg:py-4; /* Large ekranlar için daha geniş bir alan ve padding */
+    @apply lg:max-w-none lg:px-8 lg:py-6 ; /* Büyük ekranlarda daha fazla padding */
+}
+
+@screen lg {
+  .prose {
+    max-width: 1500px; /* 1200px genişlik */
+  }
 }
 
 .prose h1 {
@@ -60,7 +100,7 @@ body {
 }
 
 .prose img {
-  @apply rounded-lg my-4;
+  @apply rounded-lg my-4 mx-auto; /* Görüntüleri ortalamak için mx-auto ekledik */
 }
 
 .prose blockquote {
@@ -96,10 +136,11 @@ body {
 
 .prose code {
   @apply bg-gray-800 text-white text-xs sm:text-sm px-1.5 py-0.5 rounded;
+  
 }
 
 .prose pre {
-  @apply bg-gray-800 text-white rounded-lg overflow-x-auto relative;
+  @apply bg-gray-800 text-white text-xs sm:text-sm rounded-lg overflow-x-auto relative;
 }
 
 .prose code.language-javascript {
@@ -107,7 +148,7 @@ body {
 }
 
 .prose pre.language-javascript {
-  @apply bg-gray-100 text-black rounded-md overflow-x-auto relative;
+  @apply bg-gray-100 text-black text-xs sm:text-sm rounded-md overflow-x-auto relative;
 }
 
 .prose table {
@@ -135,7 +176,8 @@ body {
 }
 
 .header-container {
-  @apply border-y-2;
+  @apply border-2 border-black ;
+  
 }
 
 .tags-container {

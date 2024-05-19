@@ -134,7 +134,7 @@ if (!self.define) {
       url: "/_next/static/media/teknoopak.656a4d75.png",
       revision: "4c698188b754520198076a28993ab286"
     }, {
-      url: "/cadi_pamuk.jpg",
+      url: "/putin.jpg",
       revision: "86da98e563709967b1b8ab448fbb2be8"
     }, {
       url: "/carhub.png",

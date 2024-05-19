@@ -6,6 +6,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypePrism from 'rehype-prism';
+import rehypeSlug from 'rehype-slug';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
@@ -27,6 +28,7 @@ export function getPostData(slug: string): PostData {
   const processedContent = remark()
     .use(remarkParse)
     .use(remarkRehype)
+    .use(rehypeSlug)  // Add IDs to headings
     .use(rehypePrism)
     .use(rehypeStringify)
     .processSync(matterResult.content)

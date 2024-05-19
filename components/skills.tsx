@@ -43,7 +43,7 @@ const Skills = () => {
             <motion.li
               id="skills"
               key={`skill-${i}`}
-              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:text-white"
+              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
@@ -65,7 +65,7 @@ const Skills = () => {
             <motion.li
               id="skills"
               key={`skill-${i}`}
-              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:text-white"
+              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
@@ -87,7 +87,7 @@ const Skills = () => {
             <motion.li
               id="skills"
               key={`skill-${i}`}
-              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:text-white"
+              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
@@ -109,7 +109,7 @@ const Skills = () => {
             <motion.li
               id="skills"
               key={`skill-${i}`}
-              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:text-white"
+              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
@@ -131,7 +131,7 @@ const Skills = () => {
             <motion.li
               id="skills"
               key={`skill-${i}`}
-              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:text-white"
+              className="bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"

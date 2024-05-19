@@ -2,56 +2,82 @@ import fs from 'fs';
 import path from 'path';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getPostData } from '@/lib/markdown';
-import Link from 'next/link';
-import { BlogLayout } from '@/components';
+import { getSortedPostsData } from '@/lib/posts';
+import { extractHeadings } from '@/lib/extractHeadings';
+import { PostData } from '@/lib/types';
+import Navbar from '@/components/navbar';
+import HeadingsSidebar from '@/components/HeadingsSidebar';
+import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
-import { useEffect } from 'react';
-
-type PostData = {
-  title: string;
-  subtitle: string;
-  author: string;
-  date: string;
-  contentHtml: string;
-  tags: string[];
-};
+import { useRouter } from 'next/router';
 
 type Params = {
   slug: string;
 };
 
-const BlogPost = ({ postData }: { postData: PostData }) => {
+const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData: PostData[] }) => {
+  const [headings, setHeadings] = useState<{ id: string; text: string; level: number }[]>([]);
+  const router = useRouter();
+
   useEffect(() => {
     Prism.highlightAll();
+    const extractedHeadings = extractHeadings(postData.contentHtml);
+    setHeadings(extractedHeadings);
   }, [postData]);
 
-  if (!postData) {
-    return <p>Post not found</p>;
-  }
+  const currentIndex = allPostsData.findIndex((post) => post.slug === postData.slug);
+  const prevPost = currentIndex > 0 ? allPostsData[currentIndex - 1] : null;
+  const nextPost = currentIndex < allPostsData.length - 1 ? allPostsData[currentIndex + 1] : null;
 
   return (
-    <BlogLayout>
-      <article className="prose lg:prose-xl mx-auto">
-        <div className="header-container p-4 rounded-lg mb-4">
-          <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
-          <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
-          <div className="tags-container">
-            {postData.tags.map((tag, index) => (
-              <span key={tag} className={`tag-${(index % 5) + 1}`}>{tag}</span>
-            ))}
-          </div>
-          <div className="author-info">
-            <p className="author-name">{postData.author} </p>
-            <p> / </p>
-            <p className="author-date">{postData.date}</p>
+    <div className="relative min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex mt-16 flex-grow">
+        <HeadingsSidebar headings={headings} />
+        <div className="flex-1 flex flex-col items-center p-8 ml-64">
+          <article className="prose max-w-xl w-full ">
+            <div className="header-container p-4 rounded-lg mb-4">
+              <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
+              <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
+              <div className="tags-container">
+                {postData.tags.map((tag, index) => (
+                  <span key={tag} className={`tag-${(index % 5) + 1}`}>{tag}</span>
+                ))}
+              </div>
+              <div className="author-info">
+                <p className="author-name">{postData.author} </p>
+                <p> / </p>
+                <p className="author-date">{postData.date}</p>
+              </div>
+            </div>
+            <div className="content prose max-w-full">
+              <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            </div>
+          </article>
+          <div className="flex justify-between w-full mt-8">
+            {prevPost && (
+              <button
+                onClick={() => router.push(`/blog/${prevPost.slug}`)}
+                className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
+                style={{ boxShadow: 'inset 0 0 0 2px #000'}}
+              >
+                <p className="text-gray-800">&larr; Previous Post</p>
+              </button>
+            )}
+            {nextPost && (
+              <button
+                onClick={() => router.push(`/blog/${nextPost.slug}`)}
+                className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
+                style={{ boxShadow: 'inset 0 0 0 2px #000'}}
+              >
+                <p className="text-gray-800">Next Post &rarr;</p>
+              </button>
+            )}
           </div>
         </div>
-        <div className="content prose">
-      
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </div>
-      </article>
-    </BlogLayout>
+      </div>
+
+    </div>
   );
 };
 
@@ -71,7 +97,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<{ postData: PostData | null }> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<{ postData: PostData; allPostsData: PostData[] }> = async ({ params }) => {
   if (!params || !params.slug) {
     return {
       notFound: true,
@@ -86,9 +112,12 @@ export const getStaticProps: GetStaticProps<{ postData: PostData | null }> = asy
     };
   }
 
+  const allPostsData = getSortedPostsData();
+
   return {
     props: {
       postData,
+      allPostsData,
     },
   };
 };
