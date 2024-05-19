@@ -163,10 +163,10 @@ export const SKILLS6_DATA = [
 // /constants/articlesData.ts
 export const ARTICLES_DATA = [
   {
-    title: "Proje 1",
     date: "2024-05-18",
-    description: "Bu Proje 1'in açıklamasıdır.",
-    keywords: ["React", "Next.js"],
+    title: "Upsampling and Downsampling in Digital Signal Processing",
+    description: "A comprehensive guide on the techniques of upsampling and downsampling, their applications, and their importance in digital signal processing.",
+    keywords: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next"],
     slug: "deneme1", 
   },
   {

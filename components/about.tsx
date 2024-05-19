@@ -11,7 +11,6 @@ const About = () => {
   // Use the useSectionInView custom hook to track when the "About" section is in view.
   const { ref } = useSectionInView("About");
 
-  // Return the About section, which uses framer-motion for animations.
   return (
     <motion.section
       ref={ref}
@@ -25,24 +24,22 @@ const About = () => {
       <SectionHeading>about me</SectionHeading>
 
       {/* Display a paragraph with information about the user's background and interests. */}
-      <p className="mb-3 font-rubik italic">
-  During my university years, I developed projects across many different fields. Initially, it took me some time to find my preferred domain. Eventually, I discovered a strong interest in <b className="font-medium">embedded software</b>, a field that connects with my childhood experiences of working with <b className="font-medium">electronics</b>, <b className="font-medium">soldering</b>, and repair tasks. This hands-on background provided a solid foundation for my current focus on <b className="font-medium">embedded software development</b>.
-</p>
+      <p className="mb-3 font-rubik italic text-sm sm:text-base md:text-lg">
+        During my university years, I developed projects across many different fields. Initially, it took me some time to find my preferred domain. Eventually, I discovered a strong interest in <b className="font-medium">embedded software</b>, a field that connects with my childhood experiences of working with <b className="font-medium">electronics</b>, <b className="font-medium">soldering</b>, and repair tasks. This hands-on background provided a solid foundation for my current focus on <b className="font-medium">embedded software development</b>.
+      </p>
 
-<p className="mb-3 font-rubik italic">
-  Currently, I am deeply involved in developing <b className="font-medium">embedded software</b> and conducting research in <b className="font-medium">machine learning</b>, <b className="font-medium">computer vision</b>, and <b className="font-medium">large language models (LLMs)</b>. My journey has been driven by a passion for learning new technologies. This passion motivates me to continually expand my knowledge and skills, keeping up with the latest advancements in these cutting-edge fields.
-</p>
+      <p className="mb-3 font-rubik italic text-sm sm:text-base md:text-lg">
+        Currently, I am deeply involved in developing <b className="font-medium">embedded software</b> and conducting research in <b className="font-medium">machine learning</b>, <b className="font-medium">computer vision</b>, and <b className="font-medium">large language models (LLMs)</b>. My journey has been driven by a passion for learning new technologies. This passion motivates me to continually expand my knowledge and skills, keeping up with the latest advancements in these cutting-edge fields.
+      </p>
 
-<p className="mb-3 font-rubik italic">
-  I am committed to using my diverse experiences and deep technical expertise to contribute meaningfully to the ever-evolving technology landscape. My goal is to develop innovative solutions that address real-world challenges, utilizing the power of <b className="font-medium">embedded systems</b> and <b className="font-medium">artificial intelligence</b> to create a better future.
-</p>
+      <p className="mb-3 font-rubik italic text-sm sm:text-base md:text-lg">
+        I am committed to using my diverse experiences and deep technical expertise to contribute meaningfully to the ever-evolving technology landscape. My goal is to develop innovative solutions that address real-world challenges, utilizing the power of <b className="font-medium">embedded systems</b> and <b className="font-medium">artificial intelligence</b> to create a better future.
+      </p>
 
-{/* Display another paragraph about the user's interests and hobbies. */}
-
-  <p className="italic font-rubik mt-8">When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with <a href="./cadi_pamuk.jpg" target="_blank" className="font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800">my cat</a>. I also enjoy learning new things.
-</p>
-
-
+      {/* Display another paragraph about the user's interests and hobbies. */}
+      <p className="italic font-rubik mt-8 text-sm sm:text-base md:text-lg">
+        When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with <a href="./cadi_pamuk.jpg" target="_blank" className="font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800">my cat</a>. I also enjoy learning new things.
+      </p>
 
       {/* Add the illustrations within the About section */}
       <img

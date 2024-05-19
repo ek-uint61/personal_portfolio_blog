@@ -48,17 +48,18 @@ const Article = ({
         <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">{date}</p>
         <p className="text-xs text-gray-700 dark:text-gray-200">{description}</p>
       </div>
-      <div className="flex justify-center mt-4 space-x-2">
-        {keywords.map((keyword, index) => (
-          <span
-            key={index}
-            className="rounded-full px-3 py-1 text-xs text-gray-700 dark:text-gray-800"
-            style={{ backgroundColor: bgColors[index % bgColors.length] }}
-          >
-            {keyword}
-          </span>
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-center mt-4 gap-2">
+  {keywords.map((keyword, index) => (
+    <span
+      key={index}
+      className="rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-700 dark:text-gray-800"
+      style={{ backgroundColor: bgColors[index % bgColors.length] }}
+    >
+      {keyword}
+    </span>
+  ))}
+</div>
+
     </li>
   );
 };
