@@ -68,7 +68,7 @@ const Articles = () => {
 
   return (
     <section ref={ref} id="articles" className="scroll-mt-28 mb-28">
-      <SectionHeading>Projects & Articles</SectionHeading>
+      <SectionHeading>projects & articles</SectionHeading>
       <div className="flex justify-center">
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl px-6 sm:px-0 list-none p-0">
           {ARTICLES_DATA.map((article, i) => (

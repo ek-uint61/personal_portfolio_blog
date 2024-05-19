@@ -1,16 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+
 
 
 /* react-timeline-vertical-component line color */
-html {
+html {  
   --line-color: #bbb;
 }
 
-body {
-  font-family:"font-sans"; /* Yeni yazı tipi burada */
-}
+
 
 /* react-timeline-vertical-component line color (dark mode) */
 html.dark {
@@ -117,21 +118,4 @@ body::before {
   color: gray;
   padding: 0.5rem;
   border-radius: 50%;
-}
-
-
-
-@media (max-width: 640px) {
-  .bg-blur-effect-1 {
-    background-color: #8bb0ff4a ;
-  }
-  .bg-blur-effect-2 {
-    background-color: #c08b7882 ;
-  }
-  .dark .bg-blur-effect-1 {
-    background-color: #b18e8f;
-  }
-  .dark .bg-blur-effect-2 {
-    background-color: #a7b7bb ;
-  }
 }

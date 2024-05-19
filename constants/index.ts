@@ -72,25 +72,17 @@ export const EXPERIENCES_DATA = [
 
 
 
-// Data for skills
-export const SKILLS_DATA = [
-  "C",,
-  "Python",
-] as const;
-
 
 // Data for skills
 export const SKILLS1_DATA = [
-  "STM32F407 Discovery Board",
-  "STM32F103C8T6 - Blue Pill",
-  "STM32 Nucleo-F401RE",
-  // "STM32 NUCLEO-C031C6",
-  // "EK-TM4C123GXL LaunchPad Evaluation Board",
-  // "ESP32",
-  "Internal architecture of ARM Cortex M3/M4 Processor",
-  "Embeddedd C",
+  "C",
+  "Python",
   "ARM Assembly",
+  "ARM® Cortex® -M3 & M4 MCU Architecture",
   "Embedded Driver Development",
+
+  "STM32",
+  "ESP32",
   "GPIO",
   "Interputs",
   "Timers",
@@ -133,7 +125,7 @@ export const SKILLS4_DATA = [
   "TypeScript",
   "React.js",
   "Next.js",
-  "-",
+  "/",
   "Numpy",
   "Pandas",
   "Matplotlib",
@@ -141,7 +133,6 @@ export const SKILLS4_DATA = [
   "Scikit-Learn",
   "TensorFlow",
   "PyTorch",
-  // "OpenCV",
   "OpenAI API",
   "Llama 3",
   "Mixtral 8x7B"
@@ -156,7 +147,6 @@ export const SKILLS5_DATA = [
   "STM32CubeIDE",
   "Atollic TrueSTUDIO",
   "IAR Embedded Workbench for ARM",
-  "Keil MDK",
 ] as const;
 
 // Data for skills

@@ -89,7 +89,7 @@ const Contact = () => {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,60rem)] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-8 rounded-lg shadow-2xl dark:shadow-lg flex flex-col items-center"
+      className="mb-20 sm:mb-28 w-[min(100%,60rem)] bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 p-8 rounded-lg shadow-2xl dark:shadow-lg flex flex-col items-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -97,8 +97,9 @@ const Contact = () => {
     >
       <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">Contact Me</h2>
       <p className="text-gray-700 dark:text-gray-300 mb-8">
-        Please contact me directly at my e-mail or through this form.
-      </p>
+  Please contact me directly at my <a href="mailto:emrklyci61@gmail.com" className="underline font-bold">e-mail</a> or through this form.
+</p>
+
 
       <div className="flex flex-col sm:flex-row gap-8 items-start">
         <form
@@ -151,14 +152,15 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="flex items-center justify-center gap-2 h-12 w-full bg-blue-600 text-white rounded-lg outline-none transition-all focus:scale-105 hover:scale-105 active:scale-100 disabled:scale-100 disabled:bg-opacity-65"
+            className="flex items-center justify-center gap-2 h-12 w-full bg-blue-600 text-white rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700 active:scale-100 disabled:scale-100 disabled:bg-opacity-65"
+            style={{ boxShadow: 'inset 0 0 0 2px blue' }}
             disabled={loading}
           >
             {loading ? (
-              <span className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
+              <span className="h-5 w-5 animate-spin rounded-full border-b-2 border-white " />
             ) : (
               <>
-                Submit <FaPaperPlane className="text-xs opacity-70 transition-all rotate-icon" />
+                Submit <FaPaperPlane className="text-xs opacity-100  rotate-icon" />
               </>
             )}
           </button>

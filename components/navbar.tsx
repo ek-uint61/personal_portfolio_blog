@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>         
         <button
           type="button"
-          className="flex text-sm  rounded-full md:me-0 focus:ring-4 focus:ring-gray-500 dark:focus:ring-gray-500"
+          className="flex text-sm  rounded-full md:me-0  dark:focus:ring-gray-500"
           id="user-menu-button"
         >
           <img className="w-8 h-8 rounded-full" src="https://cdn.pixabay.com/photo/2020/07/21/16/10/pokemon-5426712_640.png" alt="user photo" />
