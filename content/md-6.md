@@ -37,6 +37,88 @@ Build project yaptıktan sonra
 .c (source file) --> preprocessor (.i) --> parser --> code generator (.s) --> Assembler --> .o
 
 
+```javascript
+
+#include <stdio.h>
+
+
+# burda ki prototip fonksiyon, derleyiciye fonksiyonun varlığını bildirir,
+# yani bu fonksiyon ilerleyen kısımlardda kullanılacağını ve nasıl çağırılması gerektiğini söyler.
+
+# Fonksiyon prototipleri, programın daha düzenli ve okunabilir olmasına yardımcı olur ve fonksiyonların doğru kullanılmasını sağlar.
+void myFunc(void);
+# int counter = 0;
+int main() { 
+    myFunc();
+    myFunc();
+    myFunc();
+    myFunc();
+    
+    return 0;
+}
+
+void myFunc(void) {
+	int counter = 0;
+    counter += 1;    
+    printf("This function executed %d time(s) \n", counter);    
+}
+
+
+# This function executed %d time(s) 1
+# This function executed %d time(s) 1
+# This function executed %d time(s) 1
+# This function executed %d time(s) 1
+
+
+	int counter = 0; 
+	global değişken olsaydı
+
+# This function executed %d time(s) 1
+# This function executed %d time(s) 2
+# This function executed %d time(s) 3
+# This function executed %d time(s) 4
+```
+
+```javascript
+
+=> fakat bu projenin başka dosyasındaki counter değişkeninin değiştirilmesiyle
+   değiştirilebilir bu private hale getirmemiz lazım yani değişken özelliğini 
+   kaybetmeden kullanılabilsin istiyoruz.
+
+=> program myFunc() dan çıksa bile değişkenin değeri değişmeyecektir.
+=> özetle: static kullanılınca, değişken global olarak ele alınır ancak
+   myFunc() a özeldir ve myFunc() a geri dönse bile değişmezdir.
+
+
+
+#include <stdio.h>
+
+void myFunc(void);
+
+int main () {
+
+	myFunc();
+	myFunc();
+	myFunc();
+	myFunc();
+
+	return 0;
+}
+
+void myFunc(void) {
+	static int counter = 0;
+	counter += 1;
+
+	printf("This function executed %d time(s) \n", counter);
+	
+}
+
+# This function executed %d time(s) 1
+# This function executed %d time(s) 2
+# This function executed %d time(s) 3
+# This function executed %d time(s) 4
+
+```
 ----------
 
 ![[Pasted image 20240317015142.png | 500]]
