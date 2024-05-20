@@ -89,7 +89,7 @@ const Contact = () => {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,60rem)] bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 p-8 rounded-lg shadow-2xl dark:shadow-lg flex flex-col items-center"
+      className="border-2 border-[#45260a] rounded-lg mb-20 sm:mb-28 w-[min(100%,60rem)] bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 p-8  shadow-2xl dark:shadow-lg flex flex-col items-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -101,14 +101,14 @@ const Contact = () => {
 </p>
 
 
-      <div className="flex flex-col sm:flex-row gap-8 items-start">
+      <div className="flex flex-col sm:flex-row gap-8 items-start  ">
         <form
-          className="w-full max-w-lg bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex flex-col dark:text-white"
+          className="w-full max-w-lg bg-white dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#45260a] rounded-lg"
           autoComplete="off"
           autoCapitalize="off"
           onSubmit={handleSubmit}
         >
-          <div className="flex flex-col sm:flex-row gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-4 ">
             <input
               type="text"
               name="name"
@@ -116,7 +116,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="flex-1 h-14 rounded-lg px-1 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition-all outline-none"
+              className="flex-1 h-14  px-1 border-2 border-[#45260a] rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-[#45260a] focus:ring-2 focus:ring-[#45260a] transition-all outline-none"
               required
               maxLength={200}
               autoComplete="off"
@@ -129,7 +129,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="abc@xyz.com"
-              className="flex-1 h-14 rounded-lg px-1 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition-all outline-none"
+              className="flex-1 h-14  px-1 border-2 border-[#45260a] rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-[#45260a] focus:ring-2 focus:ring-[#45260a] transition-all outline-none"
               required
               maxLength={100}
               autoComplete="off"
@@ -138,7 +138,7 @@ const Contact = () => {
           </div>
 
           <textarea
-            className="h-32 rounded-lg mb-4 border border-gray-300 dark:border-gray-600 p-4 dark:bg-gray-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition-all outline-none"
+            className="h-32  mb-4 border-2 border-[#45260a] rounded-lg dark:border-gray-600 p-4 dark:bg-gray-700 focus:border-[#45260a] focus:ring-2 focus:ring-[#45260a] transition-all outline-none"
             name="message"
             id="message"
             value={form.message}
@@ -152,8 +152,8 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="flex items-center justify-center gap-2 h-12 w-full bg-blue-600 text-white rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700 dark:bg-blue-700 dark:hover:bg-blue-800 dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65"
-            style={{ boxShadow: 'inset 0 0 0 2px blue' }}
+            className="flex items-center justify-center gap-2 h-12 w-full  bg-gray-400 text-[#fff] text-lg rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700 dark:bg-blue-700 dark:hover:bg-blue-800 dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65 	"
+            style={{ boxShadow: 'inset 0 0 0 2px #45260a ' }}
             disabled={loading}
           >
             {loading ? (

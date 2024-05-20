@@ -75,10 +75,10 @@ const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
           <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-4">All Posts</h2>
           <ul className="space-y-2">
             {sortedPosts.map((post) => (
-              <li className={`border-b-2 border-black ${post.slug === currentPostSlug ? 'bg-red-200' : ''}`} key={post.slug}>
+              <li className={`border-b-2 border-black ${post.slug === currentPostSlug ? 'bg-gray-300 rounded-md p-2' : ''}`} key={post.slug}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className={`text-black hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-red-500' : ''}`}
+                  className={`text-gray-700 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-black' : ''}`}
                   onClick={toggleMenu}
                 >
                   {post.number}. {post.title}
