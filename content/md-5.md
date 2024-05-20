@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with AWS"
-subtitle: "Create an AWS account and set up CLI/SDK access."
+title: "Deneme Baslik -5"
+subtitle: "Deneme Alt Baslik -5"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -10,8 +10,8 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: deneme4;
-number: 5;
+slug: title-5;
+number: 5
 ---
 
 

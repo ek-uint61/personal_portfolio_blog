@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with AWS"
-subtitle: "Create an AWS account and set up CLI/SDK access."
+title: "Deneme Baslik -4"
+subtitle: "Deneme Alt Baslik -4"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -10,10 +10,9 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: deneme3;
-number: 4;
+slug: title-4;
+number: 4
 ---
-
 -> Scope, Visibility ve Lifetime bir değişkenin özellikleridir, *storage classes* belirleyicileri kullanarak bunlar değiştirilebilir.
 
 -> 2 çeşit depolama sınıf vardır

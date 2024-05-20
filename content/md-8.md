@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with AWS"
-subtitle: "Create an AWS account and set up CLI/SDK access."
+title: "Deneme Baslik -8"
+subtitle: "Deneme Alt Baslik -8"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -10,10 +10,9 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: deneme6;
-number: 7;
+slug: title-8;
+number: 8
 ---
-
 
 q*Cross Compailer* => host (ana) makina da çalışır fakat farklı makinalar için dosya üretebilir.
 yani windows üzerine yazılmış ve derlenen programı linux üzerinde de derleyebilme olayıdır.

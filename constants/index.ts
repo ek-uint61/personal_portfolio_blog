@@ -164,70 +164,161 @@ export const SKILLS6_DATA = [
 export const ARTICLES_DATA = [
   {
     date: "2024-05-18",
-    title: "Cloud computing plays a vital role in the creation of software products and services",
+    title: "title-1",
     description: "A comprehensive guide on the techniques of upsampling and downsampling, their applications, and their importance in digital signal processing.",
     keywords: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next"],
-    slug: "datatype",
+    slug: "md-1",
     number: 1, 
   },
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-2",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme1",
+    slug: "md-2",
     number: 2,
 
   },
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-3",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme2",
+    slug: "md-3",
     number: 3,
   },
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-4",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme3",
+    slug: "md-4",
     number: 4,
   },
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-5",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme4",
+    slug: "md-5",
     number: 5,
   },
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-6",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme5",
+    slug: "md-6",
     number: 6,
   },
   
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-7",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme6",
-    number: 6,
+    slug: "md-7",
+    number: 7,
   },
 
   {
     date: "2023-03-22",
-    title: "Designing Effective Intrusion Detection Systems",
+    title: "title-8",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "deneme7",
-    number: 6,
+    slug: "md-8",
+    number: 8,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title-9",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-9",
+    number: 9,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title-10",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-10",
+    number: 10,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title-11",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-11",
+    number: 11,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title 12",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-12",
+    number: 12,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title 13",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-13",
+    number: 13,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title 14",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-14",
+    number: 14,
+  },
+
+
+  {
+    date: "2023-03-22",
+    title: "title 15",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-15",
+    number: 15,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title 16",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-16",
+    number: 16,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title 17",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-17",
+    number: 17,
+  },
+
+  {
+    date: "2023-03-22",
+    title: "title 18",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "md-18",
+    number: 18,
   },
 
 ];

@@ -9,7 +9,7 @@ import Prism from 'prismjs';
 import { useRouter } from 'next/router';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-type PostData = {
+export type PostData = {
   title: string;
   subtitle: string;
   author: string;
@@ -51,12 +51,12 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar allPostsData={allPostsData} currentPostSlug={postData.slug} /> {/* currentPostSlug prop'u ekleniyor */}
       <div className="flex mt-16 flex-grow">
-        <HeadingsSidebar headings={headings} />
-        <div className="flex-1 flex flex-col items-center p-8 ml-64">
-          <article className="prose max-w-xl w-full">
-            <div className="header-container p-4 rounded-lg mb-4">
+        <HeadingsSidebar headings={headings} className="hidden md:block" />
+        <div className="flex-1 flex flex-col items-center p-8">
+          <article className="prose max-w-2xl w-full">
+            <div className="header-container p-4 rounded-lg mb-4 mx-auto">
               <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
               <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
               <div className="tags-container">
@@ -74,7 +74,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
               <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </div>
           </article>
-          <div className="flex justify-between w-full mt-8">
+          <div className="flex justify-center gap-2 w-full mt-8">
             {prevPost && (
               <button
                 onClick={() => router.push(`/blog/${prevPost.slug}`)}
@@ -96,7 +96,6 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
           </div>
         </div>
       </div>
-
     </div>
   );
 };

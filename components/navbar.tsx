@@ -2,10 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaBars } from 'react-icons/fa';
+import { PostData } from '@/pages/blog/[slug]';
 
-const Navbar = () => {
+type NavbarProps = {
+  allPostsData: PostData[];
+  currentPostSlug: string; // Mevcut post slug'ını props olarak alıyoruz
+};
+
+const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
   const [showNavbar, setShowNavbar] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +30,13 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  // Postları 'number' alanına göre sıralıyoruz
+  const sortedPosts = [...allPostsData].sort((a, b) => a.number - b.number);
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-10 transition-transform transform ${
@@ -30,7 +44,7 @@ const Navbar = () => {
       } bg-white dark:bg-gray-900 border-solid border-b border-gray-100`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-        <div className="flex items-center ml-2"> {/* Margin-left added here */}
+        <div className="flex items-center ml-2">
           <Link href="/" className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700" style={{ boxShadow: 'inset 0 0 0 2px #000' }}>
             <FaArrowLeft className="text-black text-sm" />
             <span className="text-black text-sm font-semibold">back to home</span>
@@ -39,14 +53,40 @@ const Navbar = () => {
         <button
           type="button"
           className="flex text-sm rounded-full md:me-0 dark:focus:ring-gray-500"
-          id="user-menu-button"
+          id="menu-button"
+          onClick={toggleMenu}
         >
-          <img
-            className="w-8 h-8 rounded-full"
-            src="https://cdn.pixabay.com/photo/2020/07/21/16/10/pokemon-5426712_640.png"
-            alt="user photo"
-          />
+          <FaBars className="text-black text-2xl" />
         </button>
+      </div>
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
+          showMenu ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <button
+          type="button"
+          className="absolute top-4 right-4 text-black dark:text-white"
+          onClick={toggleMenu}
+        >
+          <FaBars className="text-2xl" />
+        </button>
+        <div className="p-4 bg-white gap-x-2 rounded-r-lg shadow-lg h-[calc(100vh)] overflow-y-auto">
+          <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-4">All Posts</h2>
+          <ul className="space-y-2">
+            {sortedPosts.map((post) => (
+              <li className={`border-b-2 border-black ${post.slug === currentPostSlug ? 'bg-red-200' : ''}`} key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className={`text-black hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-red-500' : ''}`}
+                  onClick={toggleMenu}
+                >
+                  {post.number}. {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
