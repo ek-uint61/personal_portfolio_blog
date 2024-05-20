@@ -1,18 +1,38 @@
 import fs from 'fs';
 import path from 'path';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { getPostData } from '@/lib/markdown';
-import { getSortedPostsData } from '@/lib/posts';
-import { extractHeadings } from '@/lib/extractHeadings';
-import { PostData } from '@/lib/types';
+import { getPostData, getSortedPostsData } from '@/lib/markdown';
 import Navbar from '@/components/navbar';
 import HeadingsSidebar from '@/components/HeadingsSidebar';
 import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { useRouter } from 'next/router';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
+type PostData = {
+  title: string;
+  subtitle: string;
+  author: string;
+  date: string;
+  contentHtml: string;
+  tags: string[];
+  slug: string;
+  number: number;
+};
 
 type Params = {
   slug: string;
+};
+
+const extractHeadings = (html: string) => {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const headings = Array.from(doc.querySelectorAll('h1, h2, h3, h4, h5, h6')).map((heading) => ({
+    id: heading.id,
+    text: heading.textContent || '',
+    level: parseInt(heading.tagName.replace('H', ''), 10),
+  }));
+  return headings;
 };
 
 const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData: PostData[] }) => {
@@ -26,8 +46,8 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
   }, [postData]);
 
   const currentIndex = allPostsData.findIndex((post) => post.slug === postData.slug);
-  const prevPost = currentIndex > 0 ? allPostsData[currentIndex - 1] : null;
-  const nextPost = currentIndex < allPostsData.length - 1 ? allPostsData[currentIndex + 1] : null;
+  const prevPost = allPostsData[currentIndex - 1] || null;
+  const nextPost = allPostsData[currentIndex + 1] || null;
 
   return (
     <div className="relative min-h-screen flex flex-col">
@@ -35,7 +55,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
       <div className="flex mt-16 flex-grow">
         <HeadingsSidebar headings={headings} />
         <div className="flex-1 flex flex-col items-center p-8 ml-64">
-          <article className="prose max-w-xl w-full ">
+          <article className="prose max-w-xl w-full">
             <div className="header-container p-4 rounded-lg mb-4">
               <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
               <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
@@ -61,7 +81,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
                 className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
                 style={{ boxShadow: 'inset 0 0 0 2px #000'}}
               >
-                <p className="text-gray-800">&larr; Previous Post</p>
+                <FaArrowLeft className="text-gray-800" /> Previous Post
               </button>
             )}
             {nextPost && (
@@ -70,7 +90,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
                 className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
                 style={{ boxShadow: 'inset 0 0 0 2px #000'}}
               >
-                <p className="text-gray-800">Next Post &rarr;</p>
+                Next Post <FaArrowRight className="text-gray-800" />
               </button>
             )}
           </div>

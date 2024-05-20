@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with AWS"
+title: "Cloud computing plays a vital role in the creation of software products and services"
 subtitle: "Create an AWS account and set up CLI/SDK access."
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
@@ -11,6 +11,7 @@ tags:
   - Deneme
 contentHtml: string;
 slug: datatype;
+number: 1;
 ---
  
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.
@@ -226,3 +227,21 @@ In comparison, the price of hosting a server typically starts at **$5.00 per mon
 * [Official documentation](https://aws.amazon.com/getting-started/)
 * [Free YouTube videos](https://www.youtube.com/watch?v=ubCNZRNjhyo)
 * [Udemy Courses](https://www.udemy.com/course/aws-certified-developer-associate/)
+
+
+### 1Install the CLI
+
+### 2Install the CLI
+### 3Install the CLI
+### 4Install the CLI
+### 5Install the CLI
+### 6Install the CLI
+### 7Install the CLI
+### 8Install the CLI
+### 9Install the CLI
+### 10Install the CLI
+### 11Install the CLI
+### 12Install the CLI
+### 13Install the CLI
+### 14Install the CLI
+### 15Install the CLI

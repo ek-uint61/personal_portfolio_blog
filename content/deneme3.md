@@ -11,6 +11,7 @@ tags:
   - Deneme
 contentHtml: string;
 slug: deneme3;
+number: 4;
 ---
 
 -> Scope, Visibility ve Lifetime bir değişkenin özellikleridir, *storage classes* belirleyicileri kullanarak bunlar değiştirilebilir.

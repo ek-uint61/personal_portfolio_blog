@@ -152,7 +152,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="flex items-center justify-center gap-2 h-12 w-full bg-blue-600 text-white rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700 active:scale-100 disabled:scale-100 disabled:bg-opacity-65"
+            className="flex items-center justify-center gap-2 h-12 w-full bg-blue-600 text-white rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700 dark:bg-blue-700 dark:hover:bg-blue-800 dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65"
             style={{ boxShadow: 'inset 0 0 0 2px blue' }}
             disabled={loading}
           >

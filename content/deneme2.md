@@ -11,6 +11,7 @@ tags:
   - Deneme
 contentHtml: string;
 slug: deneme2;
+number: 3;
 ---
 
 ##### Adress of Variables

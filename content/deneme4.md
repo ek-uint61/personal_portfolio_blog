@@ -11,6 +11,7 @@ tags:
   - Deneme
 contentHtml: string;
 slug: deneme4;
+number: 5;
 ---
 
 

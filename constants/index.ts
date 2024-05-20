@@ -164,468 +164,72 @@ export const SKILLS6_DATA = [
 export const ARTICLES_DATA = [
   {
     date: "2024-05-18",
-    title: "Upsampling and Downsampling in Digital Signal Processing",
+    title: "Cloud computing plays a vital role in the creation of software products and services",
     description: "A comprehensive guide on the techniques of upsampling and downsampling, their applications, and their importance in digital signal processing.",
     keywords: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next"],
-    slug: "deneme1", 
+    slug: "datatype",
+    number: 1, 
   },
   {
     date: "2023-03-22",
     title: "Designing Effective Intrusion Detection Systems",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
-    slug: "datatype"
-  },
-  {
-    date: "2023-02-15",
-    title: "Upsampling and Downsampling in Digital Signal Processing",
-    description: "A comprehensive guide on the techniques of upsampling and downsampling, their applications, and their importance in digital signal processing.",
-    keywords: ["Upsampling", "Downsampling", "DSP"],
-    slug: "deneme2"
-  },
-  {
-    date: "2023-01-30",
-    title: "AUTOSAR ECU Development: Challenges and Solutions",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["AUTOSAR", "ECU Development", "Challenges"],
-    slug: "deneme3"
-  },
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme4"
-  },
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
+    slug: "deneme1",
+    number: 2,
 
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
   },
-
   {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "deneme2",
+    number: 3,
   },
-
   {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "deneme3",
+    number: 4,
+  },
+  {
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "deneme4",
+    number: 5,
+  },
+  {
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "deneme5",
+    number: 6,
+  },
+  
+  {
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "deneme6",
+    number: 6,
   },
 
   {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
+    date: "2023-03-22",
+    title: "Designing Effective Intrusion Detection Systems",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["Intrusion Detection", "Cybersecurity", "Vehicle Security"],
+    slug: "deneme7",
+    number: 6,
   },
 
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },  
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  }, 
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  }, 
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  }, 
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  },
-
-  {
-    date: "2023-01-30",
-    title: "Interfacing SX1278 (Ra-02) LORA Module with Arduino",
-    description: "An overview of the development process of AUTOSAR ECUs, highlighting common challenges and practical solutions.",
-    keywords: ["LORA", "Arduino", "SX1278"],
-    slug: "deneme5"
-  }, 
 ];
 
 // Owner name

@@ -10,8 +10,8 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: deneme6;
-number: 7;
+slug: deneme7;
+number: 8;
 ---
 
 

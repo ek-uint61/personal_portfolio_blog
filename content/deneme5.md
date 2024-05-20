@@ -11,6 +11,7 @@ tags:
   - Deneme
 contentHtml: string;
 slug: deneme5;
+number: 6;
 ---
 ![[Pasted image 20240317013214.png |400]]
 

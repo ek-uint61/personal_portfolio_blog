@@ -11,6 +11,7 @@ tags:
   - Deneme
 contentHtml: string;
 slug: daneme1;
+number: 2;
 ---
 
 

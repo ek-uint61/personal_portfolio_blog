@@ -18,6 +18,7 @@ type PostData = {
   contentHtml: string;
   tags: string[];
   slug: string;
+  number: number;
 };
 
 export function getPostData(slug: string): PostData {
@@ -28,8 +29,8 @@ export function getPostData(slug: string): PostData {
   const processedContent = remark()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypeSlug)  // Add IDs to headings
     .use(rehypePrism)
+    .use(rehypeSlug) // rehype-slug eklendi
     .use(rehypeStringify)
     .processSync(matterResult.content)
     .toString();
@@ -42,5 +43,17 @@ export function getPostData(slug: string): PostData {
     date: matterResult.data.date,
     tags: matterResult.data.tags || [],
     contentHtml: processedContent,
+    number: matterResult.data.number ?? -1,
   };
+}
+
+export function getSortedPostsData() {
+  const filenames = fs.readdirSync(contentDirectory);
+  const allPostsData = filenames.map((filename) => {
+    const slug = filename.replace(/\.md$/, '');
+    const postData = getPostData(slug);
+    return postData;
+  });
+
+  return allPostsData.sort((a, b) => a.number - b.number);
 }
