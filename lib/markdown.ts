@@ -1,3 +1,5 @@
+// lib/markdown.ts
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -10,7 +12,7 @@ import rehypeSlug from 'rehype-slug';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
-type PostData = {
+export type PostData = {
   title: string;
   subtitle: string;
   author: string;

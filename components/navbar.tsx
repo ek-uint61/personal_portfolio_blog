@@ -1,13 +1,15 @@
+// components/navbar.tsx
+
 "use client";
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaArrowLeft, FaBars } from 'react-icons/fa';
-import { PostData } from '@/pages/blog/[slug]';
+import { PostData } from '@/lib/markdown';
 
 type NavbarProps = {
   allPostsData: PostData[];
-  currentPostSlug: string; // Mevcut post slug'ını props olarak alıyoruz
+  currentPostSlug: string;
 };
 
 const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
@@ -34,8 +36,11 @@ const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
     setShowMenu(!showMenu);
   };
 
-  // Postları 'number' alanına göre sıralıyoruz
   const sortedPosts = [...allPostsData].sort((a, b) => a.number - b.number);
+
+  const boxShadowStyle = {
+    boxShadow: 'inset 0 0 0 2px #45260a'
+  };
 
   return (
     <nav
@@ -45,7 +50,7 @@ const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
         <div className="flex items-center ml-2">
-          <Link href="/" className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700" style={{ boxShadow: 'inset 0 0 0 2px #000' }}>
+          <Link href="/" className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700" style={boxShadowStyle}>
             <FaArrowLeft className="text-black text-sm" />
             <span className="text-black text-sm font-semibold">back to home</span>
           </Link>
@@ -75,10 +80,10 @@ const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
           <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-4">All Posts</h2>
           <ul className="space-y-2">
             {sortedPosts.map((post) => (
-              <li className={`border-b-2 border-black ${post.slug === currentPostSlug ? 'bg-gray-300 rounded-md p-2' : ''}`} key={post.slug}>
+              <li className={`border-b-2 border-black ${post.slug === currentPostSlug ? 'bg-red-200' : ''}`} key={post.slug}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className={`text-gray-700 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-black' : ''}`}
+                  className={`text-black hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-red-500' : ''}`}
                   onClick={toggleMenu}
                 >
                   {post.number}. {post.title}
