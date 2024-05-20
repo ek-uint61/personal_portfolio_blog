@@ -93,7 +93,7 @@ const Intro = () => {
           <a
             href={EXTRA_LINKS.resume}
             target="_blank"
-            className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white  active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700 "
+            className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-500 active:scale-35 dark:bg-white/10 visited:bg-white visited:text-gray-700 "
             style={{ boxShadow: 'inset 0 0 0 2px #000'}}
           >
             <p className="text-gray-800">Download Resume{" "}</p>

@@ -1,5 +1,3 @@
-// lib/markdown.ts
-
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -32,7 +30,7 @@ export function getPostData(slug: string): PostData {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrism)
-    .use(rehypeSlug) // rehype-slug eklendi
+    .use(rehypeSlug)
     .use(rehypeStringify)
     .processSync(matterResult.content)
     .toString();

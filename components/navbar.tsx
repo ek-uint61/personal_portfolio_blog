@@ -76,14 +76,14 @@ const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
         >
           <FaBars className="text-2xl" />
         </button>
-        <div className="p-4 bg-white gap-x-2 rounded-r-lg shadow-lg h-[calc(100vh)] overflow-y-auto">
+        <div className="p-4 bg-white gap-x-3 rounded-r-lg shadow-lg h-[calc(100vh)] overflow-y-auto">
           <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-4">All Posts</h2>
           <ul className="space-y-2">
             {sortedPosts.map((post) => (
-              <li className={`border-b-2 border-black ${post.slug === currentPostSlug ? 'bg-red-200' : ''}`} key={post.slug}>
+              <li className={`p-2 border-2 rounded-md border-black ${post.slug === currentPostSlug ? 'bg-gray-200 rounded-md ' : ''}`} key={post.slug}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className={`text-black hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-red-500' : ''}`}
+                  className={`text-gray-600 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-gray-800': ''}`}
                   onClick={toggleMenu}
                 >
                   {post.number}. {post.title}

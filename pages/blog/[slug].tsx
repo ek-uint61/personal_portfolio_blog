@@ -1,5 +1,3 @@
-// pages/blog/[slug].tsx
-
 import fs from 'fs';
 import path from 'path';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -37,24 +35,19 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
   const nextPost = allPostsData[currentIndex + 1] || null;
 
   return (
-    <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug}> {/* BlogLayout bileşenine gerekli prop'ları geçiriyoruz */}
+    <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug}>
       <div className="relative min-h-screen flex flex-col">
-        <div className="flex mt-16 flex-grow">
+        <div className="flex mt-2 flex-grow">
           <HeadingsSidebar headings={headings} className="hidden md:block" />
-          <div className="flex-1 flex flex-col items-center p-8">
+          <div className="flex-1 flex flex-col items-center p-4">
             <article className="prose max-w-2xl w-full">
-              <div className="header-container p-4 rounded-lg mb-4 mx-auto">
+              <div className="header-container p-4 rounded-lg mb-1 mx-auto">
                 <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
                 <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
-                <div className="tags-container">
-                  {postData.tags.map((tag, index) => (
-                    <span key={tag} className={`tag-${(index % 5) + 1}`}>{tag}</span>
-                  ))}
-                </div>
-                <div className="author-info">
-                  <p className="author-name">{postData.author} </p>
-                  <p> / </p>
-                  <p className="author-date">{postData.date}</p>
+                <div className="author-info flex items-center justify-center ">
+                  <p className="author-name">{postData.author}</p>
+                  <p className="text-gray-500">/</p>
+                  <p className="author-date text-gray-500">{postData.date}</p>
                 </div>
               </div>
               <div className="content prose max-w-full">

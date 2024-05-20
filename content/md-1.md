@@ -1,6 +1,6 @@
 ---
-title: "Deneme Baslik -1"
-subtitle: "Deneme Alt Baslik -1"
+title: "Implementing SPI Communication on STM32"
+subtitle: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity."
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -229,39 +229,3 @@ In comparison, the price of hosting a server typically starts at **$5.00 per mon
 * [Udemy Courses](https://www.udemy.com/course/aws-certified-developer-associate/)
 
 
-### 1Install the CLI
-
-### 2Install the CLI
-### 3Install the CLI
-### 4Install the CLI
-### 5Install the CLI
-### 6Install the CLI
-### 7Install the CLI
-### 8Install the CLI
-### 9Install the CLI
-### 10Install the CLI
-### 11Install the CLI
-### 12Install the CLI
-### 13Install the CLI
-### 14Install the CLI
-### 15Install the CLI
-
-## 1- Why Serverless?
-## 2- Why Serverless?
-## 3- Why Serverless?
-## 4- Why Serverless?
-## 5- Why Serverless?
-## 6 Why Serverless?
-## 7 Why Serverless?
-## 8 Why Serverless?
-## 9 Why Serverless?
-## 10 Why Serverless?
-## 11 Why Serverless?
-
-### Configuration files
-### Configuration files
-### Configuration files
-### Configuration files
-### Configuration files
-### Configuration files
-### Configuration files

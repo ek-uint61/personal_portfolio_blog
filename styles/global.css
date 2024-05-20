@@ -35,9 +35,8 @@ body {
 }
 
 .header-container {
-  @apply border-2 border-black bg-gradient-to-r from-gray-100 to-gray-200;
-  margin-bottom: 2rem;
-  display: flex;
+  @apply mt-2 border-y-2  border-black;
+
   flex-direction: column;
   align-items: center;
   padding: 1rem;
@@ -51,14 +50,12 @@ body {
 .author-info {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
 }
 
 .content {
-  margin-top: 4rem;
   max-width: 800px;
   width: 100%;
-  padding: 2rem 1rem; /* İçeriğe ek dolgu eklendi */
+  padding: 0rem 1rem; /* İçeriğe ek dolgu eklendi */
 }
 
 @media (max-width: 768px) {
@@ -205,11 +202,11 @@ aside {
 }
 
 .author-info .author-name {
-  @apply text-xs sm:text-sm font-medium text-gray-800;
+  @apply text-xs sm:text-xs font-medium text-gray-800;
 }
 
 .author-info .author-date {
-  @apply text-xs sm:text-sm font-medium text-gray-700;
+  @apply text-xs sm:text-xs font-medium text-gray-700;
 }
 
 .tags-container {
@@ -230,4 +227,14 @@ aside {
 @media (max-width: 450px) {
   .content {
   }
+}
+
+
+.active {
+  @apply text-gray-700 bg-gray-300 transition-colors duration-300 ease-in-out;
+}
+
+/* Aktif olmayan başlık */
+.scroll-link {
+  @apply text-gray-500 transition-colors duration-300 ease-in-out;
 }
