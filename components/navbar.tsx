@@ -6,15 +6,18 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaArrowLeft, FaBars } from 'react-icons/fa';
 import { PostData } from '@/lib/markdown';
+import HeadingsSidebar from './HeadingsSidebar';
 
 type NavbarProps = {
   allPostsData: PostData[];
   currentPostSlug: string;
+  headings: { id: string; text: string; level: number }[];
 };
 
-const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
+const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,62 +39,85 @@ const Navbar = ({ allPostsData, currentPostSlug }: NavbarProps) => {
     setShowMenu(!showMenu);
   };
 
-  const sortedPosts = [...allPostsData].sort((a, b) => a.number - b.number);
-
-  const boxShadowStyle = {
-    boxShadow: 'inset 0 0 0 2px #45260a'
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
   };
 
+  const sortedPosts = [...allPostsData].sort((a, b) => a.number - b.number);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-10 transition-transform transform ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
-      } bg-white dark:bg-gray-900 border-solid border-b border-gray-100`}
-    >
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-        <div className="flex items-center ml-2">
-          <Link href="/" className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700" style={boxShadowStyle}>
-            <FaArrowLeft className="text-black text-sm" />
-            <span className="text-black text-sm font-semibold">back to home</span>
-          </Link>
+    <nav className={`border-b-2 border-black fixed top-0 left-0 w-full z-10 transition-transform transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} bg-white   `}>
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3 ">
+      <div className="flex justify-center w-full">
+      <Link
+        href="/"
+       className="group font-semibold px-7 py-2 rounded-[9px] border-2 cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
+      //  style={{ boxShadow: 'inset 0 0 0 2px #000' }}
+        >
+        <FaArrowLeft className="text-black text-sm" />
+         <span className="text-black text-sm font-semibold">back to home</span>
+         </Link>
         </div>
+
+        <div className='flex items-center mr-2'>
+
         <button
           type="button"
-          className="flex text-sm rounded-full md:me-0 dark:focus:ring-gray-500"
+          className="flex fixed top-5 right-10  text-sm rounded-full md:me-0 dark:focus:ring-gray-500"
           id="menu-button"
           onClick={toggleMenu}
         >
+          <p className='text-sm font-bold border-dashed border-b-2 border-black mr-3'>other posts</p>
+
           <FaBars className="text-black text-2xl" />
         </button>
+        </div>
+
+
+<div className="flex items-center ml-2">
+  <button
+    type="button"
+    className="flex fixed top-5 left-10 text-sm rounded-full md:me-0 dark:focus:ring-gray-500 mr-4"
+    id="sidebar-button"
+    onClick={toggleSidebar}
+  >  <p className='text-sm font-semibold border-dashed border-b-2 border-black mr-4'>post content</p>
+    <FaBars className="text-black text-2xl" />
+  </button>
+</div>
+
+
+
       </div>
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
-          showMenu ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
+      <div className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${showMenu ? 'translate-x-0' : 'translate-x-full'}`}>
         <button
           type="button"
-          className="absolute top-4 right-4 text-black dark:text-white"
+          className="absolute top-5 left-5 text-black dark:text-white"
           onClick={toggleMenu}
         >
           <FaBars className="text-2xl" />
         </button>
-        <div className="p-4 bg-white gap-x-3 rounded-r-lg shadow-lg h-[calc(100vh)] overflow-y-auto">
-          <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-4">All Posts</h2>
+        <div className="border-l-2 border-black rounded-l-lg p-4 bg-white gap-x-3 rounded-r-lg shadow-lg h-[calc(100vh)] overflow-y-auto ">
+          <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-3 text-center">All Posts</h2>
           <ul className="space-y-2">
             {sortedPosts.map((post) => (
-              <li className={`p-2 border-2 rounded-md border-black ${post.slug === currentPostSlug ? 'bg-gray-200 rounded-md ' : ''}`} key={post.slug}>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className={`text-gray-600 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-gray-800': ''}`}
-                  onClick={toggleMenu}
-                >
-                  {post.number}. {post.title}
+              <li className={`text-sm font-semibold p-2 border-2 rounded-md border-black ${post.slug === currentPostSlug ? 'bg-[#ffb80e] hover:bg-[#ffb70eb1] rounded-md ' : ''}`} key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className={`text-gray-600 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-gray-800': ''}`} onClick={toggleMenu}>
+                  {post.number}- {post.title}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
+      </div>
+      <div className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
+        <button
+          type="button"
+          className="absolute top-4 right-4 text-black dark:text-white"
+          onClick={toggleSidebar}
+        >
+          <FaBars className="text-2xl " />
+        </button>
+        <HeadingsSidebar headings={headings} className="p-4" />
       </div>
     </nav>
   );

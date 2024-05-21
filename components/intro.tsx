@@ -64,12 +64,14 @@ const Intro = () => {
       </div>
 
       <motion.h1
-        className="text-gray-800 mb-8 mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-[-0.5px] md:!leading-tight"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <b>Hi, I&apos;m {OWNER_NAME.split(" ")[0]}.</b> <b className="font-bold">I&apos;m an </b> <b>Embedded Software Engineer</b><b className="font-bold"> with 1+ years of experience. I enjoy building Web and Machine Learning Applications.</b>
-      </motion.h1>
+  className="text-gray-800 mb-8 mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-[-0.5px] md:!leading-tight"
+  initial={{ opacity: 0, y: 100 }}
+  animate={{ opacity: 1, y: 0 }}
+>
+  <b>Hi, I'm Emre.</b> <b className="font-bold">I have 2+ years of experience in web development and I am currently learning <b> embedded software and AI.</b></b>
+</motion.h1>
+
+
 
       <motion.div
         initial={{ opacity: 0, y: 100 }}

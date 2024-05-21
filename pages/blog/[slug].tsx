@@ -1,9 +1,10 @@
+// pages/blog/[slug].tsx
+
 import fs from 'fs';
 import path from 'path';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getPostData, getSortedPostsData, PostData } from '@/lib/markdown';
 import BlogLayout from '@/components/blogLayout';
-import HeadingsSidebar from '@/components/HeadingsSidebar';
 import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { useRouter } from 'next/router';
@@ -35,13 +36,12 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
   const nextPost = allPostsData[currentIndex + 1] || null;
 
   return (
-    <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug}>
+    <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug} headings={headings}>
       <div className="relative min-h-screen flex flex-col">
         <div className="flex mt-2 flex-grow">
-          <HeadingsSidebar headings={headings} className="hidden md:block" />
           <div className="flex-1 flex flex-col items-center p-4">
             <article className="prose max-w-2xl w-full">
-              <div className="header-container p-4 rounded-lg mb-1 mx-auto">
+              <div className="header-container p-4  mb-1  mx-auto">
                 <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
                 <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
                 <div className="author-info flex items-center justify-center ">

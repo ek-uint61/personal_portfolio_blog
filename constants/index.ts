@@ -125,6 +125,8 @@ export const SKILLS4_DATA = [
   "TypeScript",
   "React.js",
   "Next.js",
+  "WordPress",
+  "WooCommerce",
   "/",
   "Numpy",
   "Pandas",
