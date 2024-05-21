@@ -106,4 +106,5 @@ npm run dev
 - Intersection observer
 - PWA support
 
+![image](https://github.com/ek-uint61/personal_portfolio_blog/assets/61233795/4567d89c-4619-402c-9dd1-50790b4817aa)
 
