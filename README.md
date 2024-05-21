@@ -11,7 +11,6 @@ This project is a personal blog created using Next.js and Tailwind CSS. It featu
 - [Libraries Used](#libraries-used)
 - [Features](#features)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -36,8 +35,6 @@ npm install
 * Create `.env.local` file in root folder.
 * Contents of `.env.local`:
 
-
-
 ```bash
 # .env.local
 
@@ -45,11 +42,11 @@ npm install
 NEXT_TELEMETRY_DISABLED=1
 
 # email.js id and key
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxxxxxxxxx
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xxxxxxxxxxxx
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=XXXXXXXXXXXXXXX
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
 
-NEXT_PUBLIC_GOOGLE_VERIFICATION_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_VERIFICATION_KEY=
 
 ```
 
