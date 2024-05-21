@@ -12,6 +12,7 @@ tags:
 contentHtml: string;
 slug: title-5;
 number: 5
+category: "Programming"
 ---
 
 

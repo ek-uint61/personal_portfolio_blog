@@ -12,6 +12,8 @@ tags:
 contentHtml: string;
 slug: title-2;
 number: 2
+category: "Embedded Software"
+
 ---
 
 ## Tensorflow ile Transfer Learning - Özellik Çıkarımı (Feature extraction)

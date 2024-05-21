@@ -10,6 +10,7 @@ import Prism from 'prismjs';
 import { useRouter } from 'next/router';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
+
 const extractHeadings = (html: string) => {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');

@@ -12,6 +12,8 @@ tags:
 contentHtml: string;
 slug: title-3;
 number: 3
+category: "Web Development"
+
 ---
 ##### Adress of Variables
 

@@ -19,6 +19,7 @@ export type PostData = {
   tags: string[];
   slug: string;
   number: number;
+  category: string; // Yeni özellik eklendi
 };
 
 export function getPostData(slug: string): PostData {
@@ -44,6 +45,7 @@ export function getPostData(slug: string): PostData {
     tags: matterResult.data.tags || [],
     contentHtml: processedContent,
     number: matterResult.data.number ?? -1,
+    category: matterResult.data.category || 'Uncategorized', // Yeni özellik eklendi
   };
 }
 
