@@ -26,7 +26,7 @@ cd your-repo-name
 
 # Install dependencies
 npm install
-
+```
 
 -----------------------------------------------------------------------------------
 
@@ -45,9 +45,6 @@ NEXT_TELEMETRY_DISABLED=1
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
-
-NEXT_PUBLIC_GOOGLE_VERIFICATION_KEY=
-
 ```
 
 
