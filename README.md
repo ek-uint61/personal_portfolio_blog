@@ -1,5 +1,5 @@
 
-# My Blog Project
+# next personel portfolio and blog project
 
 This project is a personal blog created using Next.js and Tailwind CSS. It features a blog layout with a sidebar for navigation, markdown content rendering, and responsive design.
 
@@ -27,8 +27,6 @@ cd your-repo-name
 # Install dependencies
 npm install
 ```
-
------------------------------------------------------------------------------------
 
 
 * make sure you have github, node.js installed on your pc and cloned the repository
