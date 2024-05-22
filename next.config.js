@@ -8,7 +8,12 @@ const withPWA = require("next-pwa")({
   disable: prod ? false : true,
 });
 
-const nextConfig = {};
+const nextConfig = {
+  experimental: {
+    //largePageDataBytes: 128 * 1000, // 128KB by default
+      largePageDataBytes: 128 * 100000,
+    },
+};
 
 module.exports = withPWA(nextConfig);
 

@@ -19,7 +19,7 @@ To get started with this project, clone the repository and install the dependenc
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/ek-uint61/personal_portfolio_blog.git
 
 # Navigate to the project directory
 cd your-repo-name

@@ -1,13 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-
-import timer from "@/public/Timer.jpg";
-import realtorImg from "@/public/realtor.png";
-import ecommerceImg from "@/public/ecommerce.png";
-import teknoopak from "@/public/teknoopak.png";
-import mobileApp from "@/public/mobileApp.png";
 
 
 

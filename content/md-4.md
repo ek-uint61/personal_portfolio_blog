@@ -1,6 +1,6 @@
 ---
-title: "Deneme Baslik -4"
-subtitle: "Deneme Alt Baslik -4"
+title: "Deneme Baslik -5"
+subtitle: "Deneme Alt Baslik -5"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -10,20 +10,25 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: title-4;
-number: 4
-category: "AI"
-
+slug: title-5;
+number: 5
+category: "Programming"
 ---
--> Scope, Visibility ve Lifetime bir değişkenin özellikleridir, *storage classes* belirleyicileri kullanarak bunlar değiştirilebilir.
-
--> 2 çeşit depolama sınıf vardır
-
-* static
-* extern
 
 
-*NOT*
+* Fonksiyonlar belirli bir görevi yerine getirmek için kullanılan ifadelerdir.
+* Her C programının *main* fonksiyonu vardır.
+* Fonksiyonların avantajları
+	* modülerlik
+	* hata ayıklama kolaylığı
+	* değiştirilebilirlik 
+	* sürdürülebilirlik
+* Fonksiyonlar kod fazlalığını azaltır.
+
+
+*C'de tüm çalıştırılabilen ifadeler fonksiyonun içinde olmalıdır.*
+
+
 
 ```javascript
 
@@ -107,95 +112,275 @@ void myFunc(void) {
 # This function executed %d time(s) 4
 
 ```
-	
-	
-![[Pasted image 20240309193813.png | 300]]
 
-* proje birden fazla source code ile yazılabilir.
-* "static" storage classes, görünürlüğü yönetmek için de kullanılabilir.
-* değişkenin çeşitli dosyalar arasında kullanılmasını sağlar.
+#### C'den Fonksiyon Tanımlama
 
+![[Pasted image 20240313165430.png | 400]]
+
+Fonksiyon prototipi (delacration) => veri_tipi &&&& fonksiyon_adı &&&& (parametreleri)
+
+###### Girdi argümanı olmayan main fonksiyon tanımlama
+
+![[Pasted image 20240313165551.png | 200]]
+###### 2 argümanlı fonksiyon (komut satırı argümanları)
+* Bu tanım genellikle gömülü sistemlerde kullanılmaz çünkü gömülü sistemlerde komut satırı argümanı bulunmaz.
+
+
+![[Pasted image 20240313165833.png | 300]]
+
+
+--------------
+
+* "main" yalnızca 0 veya 2 argüman alır.
+* C'de "main()", bir programın başlangıç ve bitiş noktası olarak işlev gören özel bir fonksiyondur.
+* "main()" fonksiyonu, bir programın başarısını veya başarısızlığını göstermek için program durumunu döndürür. 0 başarıyı, sıfır olmayan bir değer ise hata durumunu gösterir. ===> *return 0*
+* "main()" fonksiyonu, standartlara uygun olarak (C89 ve sonrası) çağıran sürece bir tamsayı değeri döndürmelidir.  *int main()*
 
 ```javascript
 
->>>>>>>>>>>>>> main.c 
+
+void function_add_numbers(int a, int b, int c);
+# prototip fonksiyonu çağırmamız gerekiyor.
+
+int main () {
+	function_add_numbers(10,15,25);
+
+	int valueA = 90, valueB = 70;
+	function_add_numbers(valueA, valueB, 50);
+
+	return 0;
+}
+
+
+void function_add_numbers(int a, int b, int c) {
+	int sum;
+	sum = a + b + c;
+	printf("Sum: %d\n", sum);
+}
+
+```
+
+
+------------
+
+### Function Prototype (Declaration)
+
+* C de fonksiyonlar kullanılmadan önce bildirilirler.
+* Prototip, derleyicinin geri dönüş veri tipi, adı ve argümanları hakkında bilgisi olmasını sağlar.
+
+
+```javascript
+*********      main.c
 
 #include <stdio.h>
 
-int privateData;
-void file1_func(void);
+void addition (int num1, int num2);
+void subtraction (int num1, int num2);
+void multiplication (int num1, int num2);
+void division (int num1, int num2);
 
-int main () {
+int main()
+{
+    addition(10,10);
+    subtraction(10,10);
+    multiplication(10,10);
+    division(10,10);   
     
-    privateData = 100;
-    printf("Private Data = %d\n", privateData);
-    
-    file1_func();
-    printf("Private Data = %d\n", privateData);
-
     return 0;
 }
 
-# Private Data = 100
-# Private Data = 900
 
->>>>>>>>>>>>>  file.c
+***************** math.c
 
-extern int privateData;
-void file1_func(void) {
-    privateData = 900;
+
+#include <stdio.h>
+
+void addition (int num1, int num2) {
+    int result = num1 + num2;
+    printf("result = %d\n", result);
+}
+
+void subtraction (int num1, int num2) {
+    int result = num1 - num2;
+    printf("result = %d\n", result);
+}
+
+void multiplication (int num1, int num2) {
+    int result = num1 * num2;
+    printf("result = %d\n", result);
+}
+
+void division (int num1, int num2) {
+    int result = num1 / num2;
+    printf("result = %d\n", result);
+}
+
+```
+
+
+-----------------
+
+
+##### bu sefer void fonksiyondan değil  retrun kullanarak
+bu geri dönen veri tipleri int - char - pointer vs... olabilir.....
+```javascript
+
+#include <stdio.h>
+
+int addition (int num1, int num2) {
+	int result = num1 + num2;
+	return result;
+}
+int subtraction  (int num1, int num2) {
+	int result = num1 - num2;
+	return result;
+}
+int multiplication (int num1, int num2) {
+	int result = num1 *num2;
+	return result;
+}
+int division (int num1, int num2) {
+	int result = num1 / num2;
+	return result;
 }
 
 
-==> static değişkenler extern edilmezler ve değiştirilemezler.
-```
 
-##### Fonksiyonlarda Storage Classes Kullanımı
+#include <stdio.h>
+int addition (int num1, int num2);
+int subtraction (int num1, int num2);
+int multiplication (int num1, int num2);
+int division (int num1, int num2);
 
-```javascript
+int main () {
+	int add = addition(10, 20);
+	int sub = subtraction(50, 99);
+	int multi = multiplication(50, 7);
+	int div = division(12, 2);
+	
+	printf("add: %d, sub: %d, multi: %d, div: %d\n", add, sub, multi, div);
 
-static void change_system_clock(int system_clock) {
-    
-    printf("system clock change to = %d\n", system_clock);
-    
+	return 0;
 }
 
-başka scopelarda veya başka dosyalar içersinde bu fonksiyon değiştirilemez.
+
 ```
 
 
-* *Extern* storage classes, bir dosyanın scope dışında tanımlanan global değişkenlere erişmek için kullanılır.
-* *Extern* storage classes, bir fonksiyonun, dosyanın scope u dışında olduğu durumlarda da fonksiyon çağrısı olarak kullanılabilir.
-
-* *Extern*, projenin birden fazla dosyalardan oluştuğu durumlarda ve bir dosyada tanımlanan değişkeni diğer dosyadan erişmemizi sağlar.
-* Özetle *Extern*, fonksiyonların veya değişkenlerin görünülürlüğünü artırır.
+-----------------------------------------------------
 
 
 
+![[Pasted image 20240313180917.png | 400]]
 
-##### ASCII CODES
+```javascript
+---------------------- main.c -------------------
+#include <stdio.h>
+#include "math.h"
 
-* American National Standards Institute (ANSI), ANSI C yi geliştirirken aynı zamanda ASCII yi geliştirdi.
-* ASCII = American Standard Code for Information *Interchange (Alışveriş)*
+int main () {
 
-* ASCII standartlarında 128 farklı karakter vardır.
-* Herhangi bir ASCII karakterini kodlamak için sadece 7 bit gerekir. (sadece *char* veri tipi kullanılabilir.)
+	printf("Add: %X\n", math_add(0x0FFF1111 , 0x0FFF1111 ));
+	printf("Mul: %I64\n", math_mul(0x0FFF1111 , 0x0FFF1111 ));
+	printf("Div: %0.2f\n", math_div(60, 20));
+	return 0;
+}
+---------------------- math.c -------------------
+
+int math_add(int num1, int num2) {
+	return num1 + num2;
+}
+int math_sub(int num1, int num2) {
+	return num1 - num2;
+}
+long long int math_mul(int num1, int num2) {
+	return (long long int) num1 * num2;
+}
+float math_div(int num1, int num2) {
+	return (float) num1 / num2;
+}
+
+---------------------- math.h ------------------->
 
 
-![[Pasted image 20240309222058.png | 500]]
 
-![[Pasted image 20240309222202.png | 300]]
+int math_add(int num1, int num2);
+int math_sub(int num1, int num2;
+long long int math_mul(int num1, int num2);
+float math_div(int num1, int num2);
+
+#endif /* MATH_H_ */ 
+
+=> bu yapı önişlemci sembolünün tanımlanıp tanımlanmadığını kontrol eder
+
+```
+
+```javascript
+=> header file, math daki tüm fonksiyonlar tanımlanır ve prototipler yazılır.
+=> IDE bu makroları otomatik ekler,
+
+=> #ifndef, #define ... "ön işlemci direktifleri" => include guard yapısı
+
+
+
+#ifndef MATH_H_ 
+#define MATH_H_   
+{
+
+// bu alan genellikle
+*genel yapı, 
+*fonksiyon prototipleri,
+*makrolar
+ve diğer yapılar içerir.
+
+}
+
+#endif //MATH_H_
+```
+
+
+--------------
+
+
+#### Type Casting
+
+**Tip Dönüşümü Nedir?** 
+	Tip dönüşümü, bir değişkenin veya verinin bir veri türünden diğerine dönüştürülmesi işlemidir.
+
+* **Yüksek Veri Türünden Düşük Veri Türüne Dönüşümde Bilgi Kaybı:**
+	 yüksek bir veri türünün daha düşük bir veri türüne dönüştürüldüğünde verinin kırpılacağını belirtmektedir. Örneğin, bir ondalık sayıyı tam sayıya dönüştürmek, ondalık kısmın kesilerek sadece tam kısmın alınması anlamına gelir.
+
+*2 tür tip dönüşümü vardır.-*
+1- Compailer'ın yaptığı type casting
+2- programcının yapıtğı type casting
 
 
 ```javascript
-   char a1 = 'A';
-   char a2 = 'p';
-   char a3 = 'p';
-   char a4 = 'l';
-   char a5 = 'e';
-   char a6 = ':';
-   char a7 = ')';
-   
-   printf("variables = %c %c %c %c %c %c %c\n", a1, a2, a3, a4, a5, a6, a7);
-   printf("ASCII value of variables = %d %d %d %d %d %d %d\n", a1, a2, a3, a4, a5, a6, a7);
+
+#include <stdio.h>
+
+int main (void) {
+
+	unsigned char data1 = 0x01 + 0x0089;  // burdaki toplam 1 + 137 = 138 olur yani
+	                                     // unsigned char'ın aralığında yer alır.
+	                                     // yani compailer otomatik type casting yapar.
+	                                     // veri kaybı yoktur.
+	unsigned char data = (unsigned char) (0x87 + 0xFF00);  
+	                                     // programcının yaptığı type casting
+	// float result = 80 / 3;  => kesir kısmı kaybolur
+	float resut = (float) 80 / 3;
+
+	printf("Data: %u result: %f\n", data, result);
+	return 0;
+}
+
+```
+
+
+
+```javascript
+unsigned char data = 0x1FFFFFFFA0B0 + 0x1245; 
+
+sağ taraf 6 byte ve 4 byte dır.= long long int
+
 ```

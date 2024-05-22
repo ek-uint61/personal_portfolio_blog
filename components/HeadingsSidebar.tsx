@@ -1,5 +1,4 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { FaArrowRight } from 'react-icons/fa';
 
 type HeadingsSidebarProps = {
   headings: { id: string; text: string; level: number }[];
@@ -24,7 +23,6 @@ const HeadingsSidebar = ({ headings, className }: HeadingsSidebarProps) => {
               className={`${heading.level * 2} text-sm font-semibold border-2 rounded-md cursor-pointer border-black flex items-center mb-2 hover:bg-[#b1b1b1b1]`}
             >
               <span className="mr-1 text-gray-700 ml-2">
-                <FaArrowRight className='border-2 border-black rounded-full'/>
               </span>
               {heading.text}
             </ScrollLink>
