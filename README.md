@@ -22,7 +22,7 @@ To get started with this project, clone the repository and install the dependenc
 git clone https://github.com/ek-uint61/personal_portfolio_blog.git
 
 # Navigate to the project directory
-cd your-repo-name
+cd personal_portfolio_blog
 
 # Install dependencies
 npm install
