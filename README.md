@@ -72,7 +72,7 @@ npm run dev
 
 
 ## 📚libraries used
-- [PrismJS](https://prismjs.com/) for syntax highlighting
+- [PrismJS](https://prismjs.com/) for syntax highlighting styles-link [https://github.com/PrismJS/prism-themes]
 - [React Scroll](https://www.npmjs.com/package/react-scroll) for smooth scrolling
 - React Icons for icons
 - [Gray-Matter](https://github.com/jonschlinkert/gray-matter) for parsing front matter
