@@ -149,9 +149,9 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
                             <h4 className="text-xs font-bold flex items-center mr-2">{subcategory}</h4>
                           </div>
                           {expandedSubcategories[subcategoryKey] && (
-                            <ul className="pl-4 border-l-2 border-black ml-2">
+                            <ul className="pl-4  ml-2">
                               {groupedPosts[category][subcategory].map((post) => (
-                                <li className={`text-sm font-semibold hover:underline ${post.slug === currentPostSlug ? 'bg-gray-200 hover:bg-gray-300 border-2 border-black mt-2 mb-2 hover:no-underline rounded-md ' : ''}`} key={post.slug}>
+                                <li className={`text-sm font-semibold hover:underline ${post.slug === currentPostSlug ? 'bg-gray-200 hover:bg-gray-300  mt-2 mb-2 hover:no-underline rounded-md ' : ''}`} key={post.slug}>
                                   <Link href={`/blog/${post.slug}`} className={`text-gray-600 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-gray-800 hover:text-gray-800 ' : ''}`}>
                                     {post.number}- {post.title}
                                   </Link>
