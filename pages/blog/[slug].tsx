@@ -6,7 +6,8 @@ import BlogLayout from '@/components/blogLayout';
 import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { useRouter } from 'next/router';
-import { FaArrowLeft, FaArrowRight, FaBookmark } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaBookmark,} from 'react-icons/fa';
+import { SlArrowRight } from "react-icons/sl";
 
 const extractHeadings = (html: string) => {
   const parser = new DOMParser();
@@ -44,7 +45,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
                 <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
                 <div className="flex justify-center items-center text-sm font-semibold text-center ">
           <FaBookmark className="text-gray-600 mr-2" /> 
-           {postData.category}
+           {postData.category} <SlArrowRight className='m-1'/> {postData.subcategory}
             </div>
                 <div className="author-info flex items-center justify-center ">
                   <p className="author-name">{postData.author}</p>
