@@ -7,9 +7,9 @@ type HeadingsSidebarProps = {
 
 const HeadingsSidebar = ({ headings, className }: HeadingsSidebarProps) => {
   return (
-    <aside className={`border-r-2 border-gray-300 w-64 bg-white text-black p-4 top-16 left-0 h-[calc(100vh)] overflow-y-auto rounded-r-lg shadow-lg ${className}`}>
+    <aside className={`border-r-2 border-gray-600 w-64 bg-white text-black p-4 top-16 left-0 h-[calc(100vh)] overflow-y-auto rounded-r-lg  ${className}`}>
       <nav className="flex flex-col space-y-1">
-        <h2 className="text-base font-semibold mb-4 border-b-2 border-gray-300 pb-2 text-center">Table of Contents</h2>
+        <h2 className="text-sm font-semibold mb-4 border-b-4 border-black p-3 ">Table of Contents</h2>
         <ul className="list-none text-sm leading-tight">
           {headings.map((heading) => (
             <ScrollLink
