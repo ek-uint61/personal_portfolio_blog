@@ -7,9 +7,9 @@ type HeadingsSidebarProps = {
 
 const HeadingsSidebar = ({ headings, className }: HeadingsSidebarProps) => {
   return (
-    <aside className={`border-r-2 border-black w-64 bg-white text-black p-4 top-16 left-0 h-[calc(100vh)] overflow-y-auto rounded-r-lg shadow-lg ${className}`}>
+    <aside className={`border-r-2 border-gray-300 w-64 bg-white text-black p-4 top-16 left-0 h-[calc(100vh)] overflow-y-auto rounded-r-lg shadow-lg ${className}`}>
       <nav className="flex flex-col space-y-1">
-        <h2 className="text-sm font-semibold mb-8 border-b-4 border-black p-3 text-center">content</h2>
+        <h2 className="text-base font-semibold mb-4 border-b-2 border-gray-300 pb-2 text-center">Table of Contents</h2>
         <ul className="list-none text-sm leading-tight">
           {headings.map((heading) => (
             <ScrollLink
@@ -19,11 +19,10 @@ const HeadingsSidebar = ({ headings, className }: HeadingsSidebarProps) => {
               duration={500}
               offset={-100}
               spy={true}
-              activeClass="bg-gray-300" // aktif sınıf
-              className={`${heading.level * 2} text-sm font-semibold border-2 rounded-md cursor-pointer border-black flex items-center mb-2 hover:bg-[#b1b1b1b1]`}
+              activeClass="bg-gray-200"
+              className={`pl-${heading.level * 2} text-sm font-semibold border-l-4 border-transparent cursor-pointer flex items-center py-1 hover:bg-gray-100 hover:border-gray-300 transition-colors duration-200`}
             >
-              <span className="mr-1 text-gray-700 ml-2">
-              </span>
+              <span className="mr-2 text-gray-500">•</span>
               {heading.text}
             </ScrollLink>
           ))}

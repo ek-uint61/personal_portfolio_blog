@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaArrowLeft, FaBars, FaFolder, FaFolderOpen, } from 'react-icons/fa';
+import { FaArrowLeft, FaBars, FaFolder, FaFolderOpen } from 'react-icons/fa';
 import { PostData } from '@/lib/markdown';
 import HeadingsSidebar from './HeadingsSidebar';
 
@@ -71,12 +71,12 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
   }, {} as Record<string, Record<string, PostData[]>>);
 
   return (
-    <nav className={`border-b-2 border-gray-600 fixed top-0 left-0 w-full z-10 transition-transform transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} bg-white`}>
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3 ">
+    <nav className={`border-b-2 border-gray-600 fixed top-0 left-0 w-full z-10 transition-transform transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} bg-white shadow-md`}>
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3">
         <div className="flex justify-center w-full">
           <Link
             href="/"
-            className="group font-semibold px-7 py-2 rounded-[9px] border-2 border-gray-500 cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#bab6b6] hover:border-6 hover:border-gray-700 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
+            className="group font-semibold px-7 py-2 rounded-md border-2 cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10"
           >
             <FaArrowLeft className="text-black text-sm" />
             <span className="text-black text-sm font-semibold">back to home</span>
@@ -121,7 +121,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
             {Object.keys(groupedPosts).map((category) => (
               <li key={category}>
                 <div
-                  className="flex items-center cursor-pointer"
+                  className="flex items-center cursor-pointer py-2 px-3 hover:bg-gray-100 rounded-md transition-colors duration-200"
                   onClick={() => toggleCategory(category)}
                 >
                   {expandedCategories[category] ? (
@@ -138,7 +138,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
                       return (
                         <li key={subcategory}>
                           <div
-                            className="flex items-center cursor-pointer"
+                            className="flex items-center cursor-pointer py-2 px-3 hover:bg-gray-100 rounded-md transition-colors duration-200"
                             onClick={() => toggleSubcategory(subcategoryKey)}
                           >
                             {expandedSubcategories[subcategoryKey] ? (
@@ -151,7 +151,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
                           {expandedSubcategories[subcategoryKey] && (
                             <ul className="pl-4 border-l-2 border-black ml-2">
                               {groupedPosts[category][subcategory].map((post) => (
-                                <li className={`text-sm font-semibold hover:underline ${post.slug === currentPostSlug ? 'bg-[#b1b1b1b1] hover:bg-[#b4b4b4] border-2 border-black mt-2 mb-2 hover:no-underline rounded-md ' : ''}`} key={post.slug}>
+                                <li className={`text-sm font-semibold hover:underline ${post.slug === currentPostSlug ? 'bg-gray-200 hover:bg-gray-300 border-2 border-black mt-2 mb-2 hover:no-underline rounded-md ' : ''}`} key={post.slug}>
                                   <Link href={`/blog/${post.slug}`} className={`text-gray-600 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-gray-800 hover:text-gray-800 ' : ''}`}>
                                     {post.number}- {post.title}
                                   </Link>
