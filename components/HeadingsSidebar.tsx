@@ -20,7 +20,7 @@ const HeadingsSidebar = ({ headings, className }: HeadingsSidebarProps) => {
               offset={-100}
               spy={true}
               activeClass="bg-gray-200"
-              className={`pl-${heading.level * 2} text-sm font-semibold border-l-4 border-transparent cursor-pointer flex items-center py-1 hover:bg-gray-100 hover:border-gray-300 transition-colors duration-200`}
+              className={`${heading.level * 2} text-sm font-semibold border-l-4 border-transparent cursor-pointer flex items-center py-1 hover:bg-gray-100 hover:border-gray-300 transition-colors duration-200`}
             >
               <span className="mr-2 text-gray-500">•</span>
               {heading.text}
