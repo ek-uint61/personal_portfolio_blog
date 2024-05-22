@@ -19,10 +19,11 @@ export type PostData = {
   tags: string[];
   slug: string;
   number: number;
-  category: string; // Yeni özellik eklendi
+  category: string;
+  subcategory: string;
 };
 
-export function getPostData(slug: string): PostData {
+export function getPostData(slug: string): PostData | null {
   const fullPath = path.join(contentDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
@@ -36,16 +37,27 @@ export function getPostData(slug: string): PostData {
     .processSync(matterResult.content)
     .toString();
 
+  // Filter out posts with default or missing values
+  if (
+    !matterResult.data.title ||
+    matterResult.data.title === 'Untitled' ||
+    !matterResult.data.category ||
+    matterResult.data.category === 'Uncategorized'
+  ) {
+    return null;
+  }
+
   return {
     slug,
     title: matterResult.data.title,
-    subtitle: matterResult.data.subtitle,
-    author: matterResult.data.author,
-    date: matterResult.data.date,
+    subtitle: matterResult.data.subtitle || '',
+    author: matterResult.data.author || 'Unknown',
+    date: matterResult.data.date || 'Unknown date',
     tags: matterResult.data.tags || [],
     contentHtml: processedContent,
     number: matterResult.data.number ?? -1,
-    category: matterResult.data.category || 'Uncategorized', // Yeni özellik eklendi
+    category: matterResult.data.category,
+    subcategory: matterResult.data.subcategory || 'General',
   };
 }
 
@@ -55,7 +67,7 @@ export function getSortedPostsData() {
     const slug = filename.replace(/\.md$/, '');
     const postData = getPostData(slug);
     return postData;
-  });
+  }).filter(postData => postData !== null) as PostData[];
 
   return allPostsData.sort((a, b) => a.number - b.number);
 }

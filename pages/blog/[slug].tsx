@@ -1,5 +1,3 @@
-// pages/blog/[slug].tsx
-
 import fs from 'fs';
 import path from 'path';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -9,7 +7,6 @@ import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { useRouter } from 'next/router';
 import { FaArrowLeft, FaArrowRight, FaBookmark } from 'react-icons/fa';
-
 
 const extractHeadings = (html: string) => {
   const parser = new DOMParser();
