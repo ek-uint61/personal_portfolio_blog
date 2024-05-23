@@ -1,6 +1,6 @@
 ---
-title: "Deneme Baslik -7"
-subtitle: "Deneme Alt Baslik -7"
+title: "Deneme Baslik -8"
+subtitle: "Deneme Alt Baslik -8"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -10,9 +10,10 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: title-7;
-number: 7
-category: "Uncategorized"
+slug: md-8;
+number: 8
+category: "Embedded Software"
+image: "../postDataImg12.png"
 ---
 
 * Fonksiyonlar belirli bir görevi yerine getirmek için kullanılan ifadelerdir.

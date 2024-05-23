@@ -21,6 +21,7 @@ export type PostData = {
   number: number;
   category: string;
   subcategory: string;
+  image: string;
 };
 
 export function getPostData(slug: string): PostData | null {
@@ -37,7 +38,6 @@ export function getPostData(slug: string): PostData | null {
     .processSync(matterResult.content)
     .toString();
 
-  // Filter out posts with default or missing values
   if (
     !matterResult.data.title ||
     matterResult.data.title === 'Untitled' ||
@@ -58,6 +58,7 @@ export function getPostData(slug: string): PostData | null {
     number: matterResult.data.number ?? -1,
     category: matterResult.data.category,
     subcategory: matterResult.data.subcategory || 'General',
+    image: matterResult.data.image || "no image",
   };
 }
 

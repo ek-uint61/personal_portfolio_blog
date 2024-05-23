@@ -1,17 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+
+body {
+  font-family: 'Source Serif Pro', serif; 
+   color: #24292e;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+
+}
+
+.custom-font {
+  font-family: 'Pixelify Sans', sans-serif;
+}
 
 
 
 /* react-timeline-vertical-component line color */
 html {  
-  --line-color: #bbb;
+  --line-color: #aaa;
+  
 }
-
-
 
 /* react-timeline-vertical-component line color (dark mode) */
 html.dark {

@@ -11,11 +11,14 @@ import {
   Skills,
 } from "@/components";
 
+
 // This is the main component for the Home page.
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       {/* The Intro component is displayed at the top of the page. */}
+
+     
       <Intro />
 
       {/* A Vertical line or divider separating sections on the page. */}

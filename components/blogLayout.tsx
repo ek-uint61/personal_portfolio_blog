@@ -4,6 +4,8 @@ import { ReactNode } from 'react';
 import Navbar from './navbar';
 import { PostData } from '@/lib/markdown';
 
+
+
 type BlogLayoutProps = {
   children: ReactNode;
   allPostsData: PostData[];

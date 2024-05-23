@@ -1,6 +1,6 @@
 ---
-title: "Deneme Baslik -5"
-subtitle: "Deneme Alt Baslik -5"
+title: "Deneme Baslik -7"
+subtitle: "Deneme Alt Baslik -7"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
 tags:
@@ -10,12 +10,11 @@ tags:
   - Tech
   - Deneme
 contentHtml: string;
-slug: title-5;
-number: 5
-category: "Programming"
-image:  "../postDataImg5.png"
+slug: title-9;
+number: 9
+category: "Embedded Software"
+image: "../postDataImg11.png"
 ---
-
 
 * Fonksiyonlar belirli bir görevi yerine getirmek için kullanılan ifadelerdir.
 * Her C programının *main* fonksiyonu vardır.

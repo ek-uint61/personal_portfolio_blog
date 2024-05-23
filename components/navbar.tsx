@@ -76,10 +76,10 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
         <div className="flex justify-center w-full">
           <Link
             href="/"
-            className="group font-semibold px-7 py-2 rounded-md border-2 cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10"
+            className="group font-semibold px-7 py-2 rounded-md  cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-white active:scale-95 dark:bg-white/10"
           >
             <FaArrowLeft className="text-black text-sm" />
-            <span className="text-black text-sm font-semibold">back to home</span>
+            <span className="text-sm font-bold mr-4 custom-font">back to home</span>
           </Link>
         </div>
 
@@ -90,7 +90,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
             id="menu-button"
             onClick={toggleMenu}
           >
-            <p className="text-sm font-bold border-dashed border-b-2 border-black mr-3">other posts</p>
+          <p className="text-sm font-bold mr-4 custom-font">other posts</p>
             <FaBars className="text-black text-2xl" />
           </button>
         </div>
@@ -102,7 +102,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
             id="sidebar-button"
             onClick={toggleSidebar}
           >
-            <p className="text-sm font-semibold border-dashed border-b-2 border-black mr-4">post content</p>
+            <p className="text-sm font-bold mr-4 custom-font">post content</p>
             <FaBars className="text-black text-2xl" />
           </button>
         </div>
@@ -116,7 +116,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
           <FaBars className="text-2xl" />
         </button>
         <div className="border-l-2 border-black rounded-l-lg p-4 bg-white gap-x-3 rounded-r-lg shadow-md h-[calc(100vh)] overflow-y-auto shadow-gray-600">
-          <h2 className="text-sm font-semibold mb-4 border-b-4 border-black p-3 text-center">All Posts</h2>
+          <h2 className="text-sm font-semibold mb-4 border-b-4 border-black p-3 text-center custom-font">All Posts</h2>
           <ul className="space-y-2">
             {Object.keys(groupedPosts).map((category) => (
               <li key={category}>

@@ -1,7 +1,8 @@
-@import 'prismjs/themes/prism-coy.css'; /* Change this to the theme you prefer */
-/* Google Fonts'tan Roboto ve Source Serif Pro yazı tiplerini içe aktarma */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -26,7 +27,6 @@ body {
 .prose {
   max-width: 85ch;
   margin: auto;
-  padding: 2rem 1rem;
   background-color: #ffffff;
   border-radius: 0.5rem;
   
@@ -45,7 +45,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  margin-top: 24px;
   margin-bottom: 52px;
   border-bottom: 1px solid #000;
 }
@@ -99,7 +98,7 @@ aside {
 }
 
 .prose h1 {
-  @apply text-2xl sm:text-3xl mt-12 font-bold mb-6;
+  @apply text-2xl sm:text-3xl font-bold mb-6;
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
@@ -133,13 +132,38 @@ aside {
   @apply text-blue-600 hover:underline;
 }
 
-.prose img {
+.image-container img {
   display: block;
   margin: 2rem auto;
-  max-width: 100%;
+  width: 1250px;
+  height: 425px; /* Yüksekliği otomatik ayarla */
   @apply rounded-lg my-4 mx-auto; /* Görüntüleri ortalamak için mx-auto ekledik */
 }
 
+/* Görüntünün genişliğini tam ekran yap */
+@media (min-width: 640px) {
+  .image-container img {
+    width: calc(100% - 2rem); /* Genişlik ayarı, kenar boşluklarını hesaba katarak */
+  }
+}
+
+@media (min-width: 768px) {
+  .image-container img {
+    width: calc(100% - 4rem); /* Daha geniş ekranlar için genişlik ayarı */
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-container img {
+    width: calc(100% - 6rem); /* Daha geniş ekranlar için genişlik ayarı */
+  }
+}
+
+@media (min-width: 1280px) {
+  .image-container img {
+    width: calc(100% - 8rem); /* Daha geniş ekranlar için genişlik ayarı */
+  }
+}
 .prose blockquote {
   @apply border-l-4 border-gray-300 pl-4 italic text-gray-700;
   margin: 1.5rem 0;
@@ -181,7 +205,7 @@ aside {
 }
 
 .prose code.language-javascript {
-  @apply bg-gray-100 text-black text-xs sm:text-sm px-1.5 py-0.5 rounded;
+  @apply bg-gray-100 text-black text-xs sm:text-sm px-1.5 py-0.5 rounded ;
 }
 
 .prose pre.language-javascript {
@@ -230,5 +254,13 @@ aside {
   .content {
   }
 }
+
+/* /styles/global.css */
+
+
+.custom-font {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
 
 

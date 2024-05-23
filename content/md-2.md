@@ -14,7 +14,7 @@ slug: title-2;
 number: 2
 category: "Embedded Software"
 subcategory: "Microcontrollers"
-
+image:  "../postDataImg13.png"
 ---
 
 ## Tensorflow ile Transfer Learning - Özellik Çıkarımı (Feature extraction)

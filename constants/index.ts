@@ -164,7 +164,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "PWM", "UART", "Lighting Control"],
     slug: "md-1",
     number: 1, 
-    image: "https://raw.githubusercontent.com/SMotlaq/LoRa/master/tut.jpg",  
+    image:  "../postDataImg1.png", 
   },
   {
     date: "2023-03-22",
@@ -173,7 +173,9 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "I2C", "Temperature Sensor", "Humidity Sensor"],
     slug: "md-2",
     number: 2,
-    image: "https://circuitdigest.com/sites/default/files/projectimage_mic/SPI-Communication-in-STM32-Microcontroller.jpg",  
+    image:  "../postDataImg13.png",
+
+
   },
   {
     date: "2023-03-22",
@@ -182,7 +184,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "PIR Sensor", "SPI", "Wi-Fi Module"],
     slug: "md-3",
     number: 3,
-    image: "https://deepbluembedded.com/wp-content/uploads/2021/03/STM32-SPI-Tutorial-Interrupt-DMA-Polling-SPI-HAL-Example-Code-Guide.jpg?ezimgfmt=ng%3Awebp%2Fngcb6%2Frs%3Adevice%2Frscb6-2",  
+    image:  "../postDataImg10.png",
   },
   {
     date: "2023-03-22",
@@ -191,7 +193,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "RTC", "Timekeeping", "Automation"],
     slug: "md-4",
     number: 4,
-    image: "https://i0.wp.com/embeddedexplorer.com/wp-content/uploads/2022/07/stm32-max7219-circuit.webp?fit=1024%2C608&ssl=1",  
+    image:  "../postDataImg5.png",
   },
   {
     date: "2023-03-22",
@@ -200,8 +202,9 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "Wi-Fi", "Remote Control", "Mobile App"],
     slug: "md-5",
     number: 5,
-    image: "https://i.ytimg.com/vi/SC6Se_JBs7w/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDPo8MN2mA_bc7iWVm0W3H1-rG9Ew",  
+    image:  "../postDataImg8.png",
   },
+
   {
     date: "2023-03-22",
     title: "Implementing SPI Communication on STM32",
@@ -209,7 +212,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "SPI", "Communication", "Vehicle Security"],
     slug: "md-6",
     number: 6,
-    image: "https://insidefpv.com/cdn/shop/files/Skystars-F405-Flight-Controller-OSD-45A-Blheli_S-3-6S-4-IN-1-FlyStack-insideFPV-974.webp?v=1709983196&width=2048",  
+    image: "../postDataImg7.png",
   },
   {
     date: "2023-03-22",
@@ -218,25 +221,25 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
     slug: "md-7",
     number: 7,
-    image: "https://raw.githubusercontent.com/SMotlaq/LoRa/master/tut.jpg",  
+    image: "../postDataImg6.png",  
+  }, 
+  {
+    date: "2023-03-22",
+    title: "Real-Time Clock (RTC) Configuration on STM32",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["STM32", "RTC", "Configuration", "Timekeeping", "RTOS"],
+    slug: "md-8",
+    number: 8,
+    image: "../postDataImg12.png"
   }, 
   {
     date: "2023-03-22",
     title: "Real-Time Clock (RTC) Configuration on STM32",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
-    slug: "md-7",
-    number: 7,
-    image: "https://raw.githubusercontent.com/SMotlaq/LoRa/master/tut.jpg",  
-  }, 
-  {
-    date: "2023-03-22",
-    title: "Real-Time Clock (RTC) Configuration on STM32",
-    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
-    keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
-    slug: "md-7",
-    number: 7,
-    image: "https://raw.githubusercontent.com/SMotlaq/LoRa/master/tut.jpg",  
+    slug: "md-9",
+    number: 9,
+    image: "../postDataImg11.png",  
   }, 
 ];
 

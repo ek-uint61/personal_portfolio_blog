@@ -13,6 +13,7 @@ contentHtml: string;
 slug: title-7;
 number: 7
 category: "Deneme Yazıları"
+image: "../postDataImg6.png"
 ---
 
 * Fonksiyonlar belirli bir görevi yerine getirmek için kullanılan ifadelerdir.

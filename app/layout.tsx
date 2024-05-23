@@ -72,8 +72,8 @@ export default function RootLayout({
        <div className="relative">
   {/* bg blur effect */}
   
-  <div className="bg-[#8bb0ff4a] dark:bg-[#b18e8f] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] sm:bg-[#8bb0ff67]" />
-  <div className="bg-[#c08b7882] dark:bg-[#fdf2e9] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] sm:bg-[#c08b7875]" />
+  <div className="bg-[#8bb0ff4a] dark:bg-[#b18e8f] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] sm:bg-[#e2b1828e]" />
+  <div className="bg-[#c08b7882] dark:bg-[#fdf2e9] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] sm:bg-[#d1beb0]" />
 </div>  
   
   

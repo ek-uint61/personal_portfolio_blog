@@ -36,7 +36,7 @@ const Article = ({
     >
       <Link href={`/blog/${slug}`} legacyBehavior>
         <a target="_blank" rel="noopener noreferrer">
-          <img src={image} alt={title} className="w-full h-64 object-cover mb-2 rounded-t-lg" />
+          <img src={image} alt={title} className="w-full h-56 object-cover mb-2 rounded-t-lg" />
         </a>
       </Link>
       <div className="p-1">
