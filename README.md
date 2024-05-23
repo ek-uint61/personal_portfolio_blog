@@ -22,7 +22,7 @@ To get started with this project, clone the repository and install the dependenc
 git clone https://github.com/ek-uint61/personal_portfolio_blog.git
 
 # Navigate to the project directory
-cd your-repo-name
+cd personal_portfolio_blog
 
 # Install dependencies
 npm install
@@ -72,7 +72,7 @@ npm run dev
 
 
 ## 📚libraries used
-- [PrismJS](https://prismjs.com/) for syntax highlighting
+- [PrismJS](https://prismjs.com/) for syntax highlighting "[*](https://github.com/PrismJS/prism-themes)"
 - [React Scroll](https://www.npmjs.com/package/react-scroll) for smooth scrolling
 - React Icons for icons
 - [Gray-Matter](https://github.com/jonschlinkert/gray-matter) for parsing front matter
