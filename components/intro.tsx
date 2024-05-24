@@ -44,7 +44,7 @@ const Intro = () => {
               height={192}
               quality={95}
               priority={true}
-              className="h-20 w-20 sm:h-24 sm:w-24 object-cover border-[0.2rem] border-white shadow-x2 rounded-xl rotate-[6deg] bg-gray-500 p-1"
+              className="h-20 w-20 sm:h-24 sm:w-24 object-cover border-[0.2rem] border-white shadow-x2 rounded-xl rotate-[6deg] bg-gray-300 p-1"
             />
           </motion.div>
           <motion.span

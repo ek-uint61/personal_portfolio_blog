@@ -42,7 +42,7 @@ const Experience = () => {
               visible={isExperienceSectionActive}
               contentStyle={{
                 background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
+                  theme === "light" ? "#fdf2e9" : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "none",
                 border: "1px solid rgba(0, 0, 0, 0.05)",
                 textAlign: "left",
@@ -51,7 +51,7 @@ const Experience = () => {
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
-                    ? "0.4rem solid #9ca3af"
+                    ? "0.4rem solid #666"
                     : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={experience.date}
@@ -62,13 +62,11 @@ const Experience = () => {
                 fontSize: "1.5rem",
               }}
             >
-              <h3 className="font-semibold ">{experience.title}</h3>
+              <h3 className="font-bold ">{experience.title}</h3>
               <p className="font-normal text-xs !mt-0">{experience.location}</p>
-              <p className="!mt-1 !font-normal  text-gray-700 dark:text-white/75">
-                {experience.description}
-              </p>            
-
-              
+              <p className="!mt-2 font-medium text-xs text-gray-700 dark:text-white/75">
+                {experience.description} 
+              </p> 
             </VerticalTimelineElement>
           </React.Fragment>
         ))}

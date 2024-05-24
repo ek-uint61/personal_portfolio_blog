@@ -37,6 +37,28 @@ const Skills = () => {
       <SectionHeading>tech stack</SectionHeading>
 
       <div className="mt-8">
+        <h2 className="mb-2 font-semibold">Programming: </h2>
+        <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
+          {SKILLS2_DATA.map((skill, i) => (
+            <motion.li
+              id="skills"
+              key={`skill-${i}`}
+              className="text-base bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={i} // Assign a custom index for animation delay
+            >
+              {skill}
+            </motion.li>
+          ))}
+        </ul>
+      </div> 
+
+      <div className="mt-8">
         <h2 className="mb-2 font-semibold ">Embedded Software ~ (<b className="bg-[#94d82d]">`still learning`</b>):</h2>
         <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6 ">
           {SKILLS1_DATA.map((skill, i) => (
@@ -58,27 +80,7 @@ const Skills = () => {
         </ul>
       </div>
 
-      {/* <div className="mt-8">
-        <h2 className="mb-2 font-semibold">Testing & Debugging Tools: </h2>
-        <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
-          {SKILLS2_DATA.map((skill, i) => (
-            <motion.li
-              id="skills"
-              key={`skill-${i}`}
-              className="text-base bg-white borderBlack rounded-xl px-2 py-1 bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800 dark:border-white	"
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{
-                once: true,
-              }}
-              custom={i} // Assign a custom index for animation delay
-            >
-              {skill}
-            </motion.li>
-          ))}
-        </ul>
-      </div> */}
+  
 
       <div className="mt-8">
         <h2 className="mb-2 font-semibold">Web Development & AI Tools: </h2>

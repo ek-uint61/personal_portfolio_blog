@@ -37,13 +37,13 @@ export const EXPERIENCES_DATA = [
       date: "April   2020 - June 2022",
   },
   {
-    title: "Ahi Evran University Computer Science - GPA: 3.05",
+    title: "Ahi Evran University Computer Science GPA: 3.05 ",
     location: "Kirsehir, Turkiye",
     description:
-      "Throughout my university education, I honed my skills in robust mathematics, embedded systems, and ai subjects, laying a strong foundation in these areas"
-       , 
+    "During my university education, I focused on web applications and AI. I took several courses that provided a deep understanding of these subjects. I gained hands-on experience in developing and working with web applications and explored various AI tech", 
     icon: React.createElement(LuGraduationCap),
     date: "May - 2024",
+
   },
   {
     title: "C ve Sistem Programlama Dernegi",
@@ -52,6 +52,7 @@ export const EXPERIENCES_DATA = [
       "The course covers microcontroller fundamentals, focusing on general and ARM microcontroller principles, software development without an operating system, basic software architectures, multitasking, and common communication protocols. Projects will be developed using C programming language and low-level system and hardware libraries. It aims to provide both introductory and advanced knowledge on microcontroller applications, with additional basic electronics and measurement tool usage.",
     icon: React.createElement(CgWorkAlt),
     date: "July 2024 - present",
+
   },
   {
     title: "Intern",
@@ -60,6 +61,7 @@ export const EXPERIENCES_DATA = [
       "",
     icon: React.createElement(CgWorkAlt),
     date: "",
+
   },
 ] as const;
 
@@ -68,8 +70,7 @@ export const EXPERIENCES_DATA = [
 
 // Data for skills
 export const SKILLS1_DATA = [
-  "C",
-  "Python",
+ ,
   "ARM Assembly",
   "ARM® Cortex® -M3 & M4 MCU Architecture",
   "Embedded Driver Development",
@@ -98,7 +99,8 @@ export const SKILLS1_DATA = [
 
 // Data for skills
 export const SKILLS2_DATA = [ 
-
+  "C",
+  "Python",
 ] as const;
 
 
@@ -249,7 +251,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
     slug: "md-10",
     number: 10,
-    image: "../navBarProfile.png",  
+    image: "../postDataImg15.png",  
   }, 
 ];
 
