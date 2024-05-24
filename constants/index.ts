@@ -165,7 +165,6 @@ export const ARTICLES_DATA = [
     slug: "md-1",
     number: 1, 
     image:  "../postDataImg1.png", 
-  
   },
   {
     date: "2023-03-22",
@@ -194,7 +193,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "RTC", "Timekeeping", "Automation"],
     slug: "md-4",
     number: 4,
-    image:  "../postDataImg5.png",
+    image:  "../postDataImg14.png",
   },
   {
     date: "2013-03-22",
