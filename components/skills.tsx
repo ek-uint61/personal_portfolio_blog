@@ -37,8 +37,8 @@ const Skills = () => {
       <SectionHeading>tech stack</SectionHeading>
 
       <div className="mt-8">
-        <h2 className="mb-2 font-semibold">Embedded Software:</h2>
-        <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
+        <h2 className="mb-2 font-semibold ">Embedded Software ~ (<b className="bg-[#94d82d]">`still learning`</b>):</h2>
+        <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6 ">
           {SKILLS1_DATA.map((skill, i) => (
             <motion.li
               id="skills"
@@ -58,7 +58,7 @@ const Skills = () => {
         </ul>
       </div>
 
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <h2 className="mb-2 font-semibold">Testing & Debugging Tools: </h2>
         <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
           {SKILLS2_DATA.map((skill, i) => (
@@ -78,7 +78,7 @@ const Skills = () => {
             </motion.li>
           ))}
         </ul>
-      </div>
+      </div> */}
 
       <div className="mt-8">
         <h2 className="mb-2 font-semibold">Web Development & AI Tools: </h2>

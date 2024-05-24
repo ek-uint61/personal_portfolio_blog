@@ -51,15 +51,15 @@ export const EXPERIENCES_DATA = [
     description:      
       "The course covers microcontroller fundamentals, focusing on general and ARM microcontroller principles, software development without an operating system, basic software architectures, multitasking, and common communication protocols. Projects will be developed using C programming language and low-level system and hardware libraries. It aims to provide both introductory and advanced knowledge on microcontroller applications, with additional basic electronics and measurement tool usage.",
     icon: React.createElement(CgWorkAlt),
-    date: "July - 2024",
+    date: "July 2024 - present",
   },
   {
-    title: "X - Intern",
+    title: "Intern",
     location: "Istanbul, Turkiye",
     description:
-      ".",
+      "",
     icon: React.createElement(CgWorkAlt),
-    date: "2024 - present",
+    date: "",
   },
 ] as const;
 
@@ -89,15 +89,16 @@ export const SKILLS1_DATA = [
   "1-Wire Bus Protocol",
   "CANBUS",
   "MODBUS",
-] as const;
-
-// Data for skills
-export const SKILLS2_DATA = [ 
   "GCC",
   "CMake",
   "GDB",
   "TDD",
   "Unit Testing"
+] as const;
+
+// Data for skills
+export const SKILLS2_DATA = [ 
+
 ] as const;
 
 
@@ -126,7 +127,6 @@ export const SKILLS4_DATA = [
   "Matplotlib",
   "Seaborn",
   "Scikit-Learn",
-  "TensorFlow",
   "PyTorch",
   "OpenAI API",
   "Llama 3",
@@ -165,6 +165,7 @@ export const ARTICLES_DATA = [
     slug: "md-1",
     number: 1, 
     image:  "../postDataImg1.png", 
+  
   },
   {
     date: "2023-03-22",
@@ -196,7 +197,7 @@ export const ARTICLES_DATA = [
     image:  "../postDataImg5.png",
   },
   {
-    date: "2023-03-22",
+    date: "2013-03-22",
     title: "Remote Monitoring and Control",
     description: "A mobile app will be developed to allow users to remotely monitor the sensor data and control the lights. The STM32 will communicate with the app over Wi-Fi, providing real-time updates and control.",
     keywords: ["STM32", "Wi-Fi", "Remote Control", "Mobile App"],
@@ -206,7 +207,7 @@ export const ARTICLES_DATA = [
   },
 
   {
-    date: "2023-03-22",
+    date: "2025-03-22",
     title: "Implementing SPI Communication on STM32",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["STM32", "SPI", "Communication", "Vehicle Security"],
@@ -215,7 +216,7 @@ export const ARTICLES_DATA = [
     image: "../postDataImg7.png",
   },
   {
-    date: "2023-03-22",
+    date: "2026-03-22",
     title: "Real-Time Clock (RTC) Configuration on STM32",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
@@ -233,13 +234,23 @@ export const ARTICLES_DATA = [
     image: "../postDataImg12.png"
   }, 
   {
-    date: "2023-03-22",
+    date: "2023-05-22",
     title: "Real-Time Clock (RTC) Configuration on STM32",
     description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
     keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
     slug: "md-9",
     number: 9,
     image: "../postDataImg11.png",  
+  }, 
+
+  {
+    date: "2023-06-11",
+    title: "Real-Time Clock (RTC) Configuration on STM32",
+    description: "Exploring the methodologies and technologies involved in creating robust intrusion detection systems for vehicle cybersecurity.",
+    keywords: ["STM32", "RTC", "Configuration", "Timekeeping"],
+    slug: "md-10",
+    number: 10,
+    image: "../navBarProfile.png",  
   }, 
 ];
 
