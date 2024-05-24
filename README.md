@@ -10,8 +10,6 @@ This project is a personal blog created using Next.js and Tailwind CSS. It featu
 - [Technologies Used](#technologies-used)
 - [Libraries Used](#libraries-used)
 - [Features](#features)
-- [Project Structure](#project-structure)
-- [License](#license)
 
 ## Installation
 
