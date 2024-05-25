@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ARTICLES_DATA } from '@/constants';
 import { CgWorkAlt } from "react-icons/cg";
 import { SlArrowRight } from 'react-icons/sl';
-import MusicPlayer from '@/components/MusicPlayer';
+// import MusicPlayer from '@/components/MusicPlayer';
 import "../styles/music.css";
 import { FaIcons } from 'react-icons/fa';
 
@@ -108,9 +108,9 @@ const NewPage = () => {
 </tbody>
         </table>
       </div>
-      <div className="mb-20">
+      {/* <div className="mb-20">
         <MusicPlayer />
-      </div>
+      </div> */}
     </div>
     
   );
