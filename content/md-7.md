@@ -12,7 +12,7 @@ tags:
 contentHtml: string;
 slug: title-7;
 number: 7
-category: "Deneme Yazıları"
+category: "Embedded Software"
 image: "../postDataImg6.png"
 ---
 

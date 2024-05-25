@@ -167,6 +167,8 @@ export const ARTICLES_DATA = [
     slug: "md-1",
     number: 1, 
     image:  "../postDataImg1.png", 
+    category: "Embedded Software",
+    subcategory: "STM32 Microcontroller",
   },
   {
     date: "2023-03-22",
@@ -176,6 +178,8 @@ export const ARTICLES_DATA = [
     slug: "md-2",
     number: 2,
     image:  "../postDataImg13.png",
+    category: "Embedded Software",
+    subcategory: "Microcontrollers",
 
 
   },
@@ -187,6 +191,8 @@ export const ARTICLES_DATA = [
     slug: "md-3",
     number: 3,
     image:  "../postDataImg10.png",
+    category: "Web Development",
+    subcategory: "General",
   },
   {
     date: "2023-03-22",
@@ -196,6 +202,8 @@ export const ARTICLES_DATA = [
     slug: "md-4",
     number: 4,
     image:  "../postDataImg14.png",
+    category: "Programming",
+    subcategory: "General",
   },
   {
     date: "2013-03-22",
@@ -205,6 +213,8 @@ export const ARTICLES_DATA = [
     slug: "md-5",
     number: 5,
     image:  "../postDataImg8.png",
+    category: "AI",
+    subcategory: "General",
   },
 
   {
@@ -215,6 +225,8 @@ export const ARTICLES_DATA = [
     slug: "md-6",
     number: 6,
     image: "../postDataImg7.png",
+    category: "Embedded Software",
+    subcategory: "General",
   },
   {
     date: "2026-03-22",
@@ -224,6 +236,8 @@ export const ARTICLES_DATA = [
     slug: "md-7",
     number: 7,
     image: "../postDataImg6.png",  
+    category: "Embedded Software",
+    subcategory: "General",
   }, 
   {
     date: "2023-03-22",
@@ -232,7 +246,9 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "RTC", "Configuration", "Timekeeping", "RTOS"],
     slug: "md-8",
     number: 8,
-    image: "../postDataImg12.png"
+    image: "../postDataImg12.png",
+    category: "Embedded Software",
+    subcategory: "General",
   }, 
   {
     date: "2023-05-22",
@@ -242,6 +258,8 @@ export const ARTICLES_DATA = [
     slug: "md-9",
     number: 9,
     image: "../postDataImg11.png",  
+    category: "Embedded Software",
+    subcategory: "General",
   }, 
 
   {
@@ -252,6 +270,8 @@ export const ARTICLES_DATA = [
     slug: "md-10",
     number: 10,
     image: "../postDataImg15.png",  
+    category: "Embedded Software",
+    subcategory: "General",
   }, 
 ];
 

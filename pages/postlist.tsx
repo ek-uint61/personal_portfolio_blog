@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ARTICLES_DATA } from '@/constants';
 import { CgWorkAlt } from "react-icons/cg";
+import { SlArrowRight } from 'react-icons/sl';
 import MusicPlayer from '@/components/MusicPlayer';
 import "../styles/music.css";
+import { FaIcons } from 'react-icons/fa';
 
 type Article = {
   date: string;
@@ -67,25 +69,43 @@ const NewPage = () => {
             <tr className="border-b">
               <th className="py-1 px-2 text-left text-xs">Published</th>
               <th className="py-1 px-2 text-left text-xs">Title</th>
+              <th className='py-1 px-2 text-left text-xs'>Category </th>
+              <th className='py-1 px-2 text-left text-xs'></th>
+              <th className='py-1 px-2 text-left text-xs'>Subcategory </th>
             </tr>
           </thead>
           <tbody>
-            {filteredArticles.map((article, index) => (
-              <tr key={index} className="border-b hover:bg-gray-100">
-                <td className="py-1 px-2 text-xs flex items-center">
-                  <CgWorkAlt className="w-4 h-4 mr-2" /> {/* SVG simgesi */}
-                  {article.date}
-                </td>
-                <td className="py-1 px-2 text-xs">
-                  <Link target='_blank' href={`/blog/${article.slug}`} legacyBehavior>
-                    <a className="text-blue-500 hover:underline cursor-pointer">
-                      {article.title}
-                    </a>
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+  {filteredArticles.map((article, index) => (
+    <tr key={index} className="border-b hover:bg-gray-100">
+      <td className="py-1 px-2 text-xs flex items-center">
+        <CgWorkAlt className="w-4 h-4 mr-2" />
+        {article.date}
+      </td>
+      <td className="py-1 px-2 text-xs">
+        <Link  href={`/blog/${article.slug}`} legacyBehavior>
+          <a className="text-blue-500 hover:underline cursor-pointer"  target='_blank'>         
+            {article.title}
+          </a>
+        </Link>
+      </td>
+      <td className='py-1 px-2 text-xs'>
+        <p className="flex  text-gray-500 ">
+          {article.category}  
+        </p>
+      </td>
+      <td className='py-1 px-2 text-xs'>
+        <p className="flex  text-gray-500 ">
+        <SlArrowRight/></p>
+      </td>
+      <td className='py-1 px-2 text-xs'>
+        <p className="flex  text-gray-500 ">
+          {article.subcategory}
+        </p>
+      </td>
+  
+    </tr>
+  ))}
+</tbody>
         </table>
       </div>
       <div className="mb-20">

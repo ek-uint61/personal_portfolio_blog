@@ -53,9 +53,9 @@ const Articles = () => {
 
   return (
     <section ref={ref} id="articles" className="scroll-mt-28 mb-28">
-      <div className="flex justify-center items-center space-x-4">
-        <Link href="/postlist" target="_blank" onClick={handleIconToggle} onMouseEnter={handleIconToggle} onMouseLeave={handleIconToggle}>
-          <svg className={`w-8 h-8 cursor-pointer transition-transform duration-500 ${isIconToggled ? "transform scale-110" : ""}`} fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <div className="flex justify-center items-center space-x-2">
+      <Link href="/postlist" target="_blank" onClick={handleIconToggle} onMouseEnter={handleIconToggle} onMouseLeave={handleIconToggle}>
+          <svg className={`w-5 h-5 cursor-pointer transition-transform duration-500 ${isIconToggled ? "transform scale-110" : ""}`} fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             {isIconToggled ? (
               <path d="M3 3h8v2H3v12h8V5h2v12h8V5h-8V3h10v16H13v2h-2v-2H1V3h2zm16 7h-4v2h4v-2zm-4-3h4v2h-4V7zm2 6h-2v2h2v-2z"/>
             ) : (
@@ -63,8 +63,10 @@ const Articles = () => {
             )}
           </svg>
         </Link>
+        <b className="custom-font">search the archives</b> 
+        </div>
+
         <SectionHeading>projects & articles</SectionHeading>
-      </div>
       <div className="flex justify-center">
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[1300px] px-8 sm:px-0 list-none p-0">
           {currentArticles.map((article, i) => (
