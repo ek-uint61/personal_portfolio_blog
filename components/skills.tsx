@@ -37,7 +37,7 @@ const Skills = () => {
       <SectionHeading>tech stack</SectionHeading>
 
       <div className="mt-8">
-        <h2 className="mb-2 font-semibold">Programming: </h2>
+        <h2 className="mb-2 font-semibold">Programming</h2>
         <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
           {SKILLS2_DATA.map((skill, i) => (
             <motion.li
@@ -83,7 +83,7 @@ const Skills = () => {
   
 
       <div className="mt-8">
-        <h2 className="mb-2 font-semibold">Web Development & AI Tools: </h2>
+        <h2 className="mb-2 font-semibold">Web Development & AI Tools</h2>
         <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
           {SKILLS4_DATA.map((skill, i) => (
             <motion.li
@@ -105,7 +105,7 @@ const Skills = () => {
       </div>
 
       <div className="mt-8">
-        <h2 className="mb-2 font-semibold">CI / CD & Development Environments: </h2>
+        <h2 className="mb-2 font-semibold">CI / CD & Development Environments</h2>
         <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
           {SKILLS5_DATA.map((skill, i) => (
             <motion.li
@@ -127,7 +127,7 @@ const Skills = () => {
       </div>
 
       <div className="mt-8">
-        <h2 className="mb-2 font-semibold">Others: </h2>
+        <h2 className="mb-2 font-semibold">Others</h2>
         <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg text-gray-800 mt-6">
           {SKILLS6_DATA.map((skill, i) => (
             <motion.li
