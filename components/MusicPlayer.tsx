@@ -4,11 +4,11 @@ import Draggable from 'react-draggable';
 
 const songs = [
   // Too Many Nights
-  "./yolumuz.mp3",
+  "https://audmak.icu/wp-content/uploads/2024/03/09.%20Cinderella%20-%20%28Hiphopde.com%29.mp3",
   // Cinderella
   "https://audmak.icu/wp-content/uploads/2024/03/09.%20Cinderella%20-%20%28Hiphopde.com%29.mp3",
   // Am I Dreaming
-  "./yolumuz.mp3",
+  "https://audmak.icu/wp-content/uploads/2024/03/09.%20Cinderella%20-%20%28Hiphopde.com%29.mp3",
   // Mr. Right Now
   "https://offblogmedia.com/wp-content/uploads/2024/03/21_Savage_Metro_Boomin_Ft_Drake_-_Mr_Right_Now_Offblogmedia.com.mp3"
 ];
