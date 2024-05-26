@@ -90,9 +90,7 @@ export const SKILLS1_DATA = [
   "1-Wire Bus Protocol",
   "CANBUS",
   "MODBUS",
-  "GCC",
   "CMake",
-  "GDB",
   "TDD",
   "Unit Testing"
 ] as const;
