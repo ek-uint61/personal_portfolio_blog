@@ -83,7 +83,7 @@ const NewPage = () => {
       </td>
       <td className="py-1 px-2 text-xs">
         <Link  href={`/blog/${article.slug}`} legacyBehavior>
-          <a className="text-blue-500 hover:underline cursor-pointer"  target='_blank'>         
+          <a className="text-gray-700  cursor-pointer"  target='_blank'>         
             {article.title}
           </a>
         </Link>

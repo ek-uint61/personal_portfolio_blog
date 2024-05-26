@@ -68,7 +68,7 @@ const Articles = () => {
 
         <SectionHeading>projects & articles</SectionHeading>
       <div className="flex justify-center">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[1300px] px-8 sm:px-0 list-none p-0">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 w-full max-w-[1200px] px-8 sm:px-0 list-none p-0">
           {currentArticles.map((article, i) => (
             <Article key={`article-${i}`} {...article} />
           ))}

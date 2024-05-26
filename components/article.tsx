@@ -27,7 +27,7 @@ const Article = ({
     offset: ["0 1", "1.33 1"],
   });
 
-  const bgColors = ["#51cf66", "#94d82d", "#ffd43b", "#AF8F6F"];
+  const bgColors = ["#51cf66", "#94d82d", "#ffd43b", "#ddd"];
 
   return (
     <li
@@ -36,7 +36,7 @@ const Article = ({
     >
       <Link href={`/blog/${slug}`} legacyBehavior>
         <a target="_blank" rel="noopener noreferrer">
-          <img src={image} alt={title} className="w-full h-56 object-cover mb-2 rounded-t-lg" />
+          <img src={image} alt={title} className="w-full h-44 object-cover mb-2 rounded-t-lg" />
         </a>
       </Link>
       <div className="p-1">
@@ -52,13 +52,13 @@ const Article = ({
           </a>
         </Link>
         <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">{date}</p>
-        <p className="text-xs text-gray-700 dark:text-gray-200 mb-4">{description}</p>
+        <p className="text-xs text-gray-700 dark:text-gray-200 mb-1">{description}</p>
       </div>
       <div className="flex flex-wrap justify-center mt-4 gap-2">
         {keywords.map((keyword, index) => (
           <span
             key={index}
-            className="rounded-full px-2 mb-2 sm:px-3 py-1 text-xs sm:text-xs text-gray-700 dark:text-gray-800"
+            className="rounded-full px-1 mb-2 sm:px-2 py-1 text-xs sm:text-xs text-gray-700 dark:text-gray-800"
             style={{ backgroundColor: bgColors[index % bgColors.length] }}
           >
             {keyword}

@@ -42,9 +42,10 @@ const Experience = () => {
               visible={isExperienceSectionActive}
               contentStyle={{
                 background:
-                  theme === "light" ? "#fdf2e9" : "rgba(255, 255, 255, 0.05)",
+                  theme === "light" ? "#dfdfdf" : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "none",
                 border: "1px solid rgba(0, 0, 0, 0.05)",
+                borderRadius: "2%",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}

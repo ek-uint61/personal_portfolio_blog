@@ -14,6 +14,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { EXTRA_LINKS, OWNER_NAME } from "@/constants";
 
+
 // Define the Intro component.
 const Intro = () => {
   // Use the 'useSectionInView' hook to track section visibility.
@@ -38,7 +39,7 @@ const Intro = () => {
             }}
           >
             <Image
-              src="/profile.png"
+              src="/profile2.jpg"
               alt={`${OWNER_NAME.split(" ")[0]} portrait`}
               width={192}
               height={192}
@@ -71,8 +72,6 @@ const Intro = () => {
   <b>Hi, I'm Emre.</b> <b className="font-bold">I have 2+ years of experience in web development and I am currently learning <b> embedded software and AI.</b></b>
 </motion.h1>
 
-
-
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -95,7 +94,7 @@ const Intro = () => {
           <a
             href={EXTRA_LINKS.resume}
             target="_blank"
-            className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#dabfab] hover:border-6 hover:border-gray-100 dark:bg-white dark:hover:bg-gray-300 dark:hover:text-white active:scale-35 visited:bg-white  "
+            className="group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#ddd] hover:border-6 hover:border-gray-100 dark:bg-white dark:hover:bg-gray-300 dark:hover:text-white active:scale-35 visited:bg-white  "
             style={{ boxShadow: 'inset 0 0 0 2px #000'}}
           >
             <p className="text-gray-800">Download Resume{" "}</p>
@@ -107,7 +106,7 @@ const Intro = () => {
             href={EXTRA_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white p-3 sm:p-4 text-gray-900 ml-3 flex items-center gap-2 text-[1rem] sm:text-[1.1rem] rounded-full outline-none active:scale-95 hover:bg-[#fff0e1] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
+            className="bg-white p-3 sm:p-4 text-gray-900 ml-3 flex items-center gap-2 text-[1rem] sm:text-[1.1rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#ddd] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
             style={{ boxShadow: 'inset 0 0 0 1px #000' }}
             aria-label="Linkedin"
             title="Linkedin"
@@ -118,7 +117,7 @@ const Intro = () => {
             href={EXTRA_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white p-3 sm:p-4 text-gray-900 flex items-center gap-2 text-[1rem] sm:text-[1.1rem] rounded-full outline-none active:scale-95 hover:bg-[#fff0e1] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
+            className="bg-white p-3 sm:p-4 text-gray-900 flex items-center gap-2 text-[1rem] sm:text-[1.1rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#ddd] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
             style={{ boxShadow: 'inset 0 0 0 1px #000' }}
             aria-label="GitHub"
             title="GitHub"
@@ -128,15 +127,18 @@ const Intro = () => {
           <Link
             href="#about"
             target="_self"
-            className="bg-white p-3 sm:p-4 text-gray-900 flex items-center gap-2 text-[1rem] sm:text-[1.1rem] rounded-full outline-none active:scale-95 hover:bg-[#fff0e1] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
+            className="bg-white p-3 sm:p-4 text-gray-900 flex items-center gap-2 text-[1rem] sm:text-[1.1rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#ddd] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
             style={{ boxShadow: 'inset 0 0 0 1px #000' }}
             aria-label="Medium"
             title="Medium"
           >
             <FaMedium />
           </Link>
+          
         </div>
+        
       </motion.div>
+
     </section>
   );
 };

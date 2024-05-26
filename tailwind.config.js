@@ -14,6 +14,28 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      backgroundSize: {
+        '300%': '300%',
+      },
+      animation: {
+        'fade-right': 'fade-right 1s ease-out',
+        'fade-left': 'fade-left 1s ease-out',
+        'gradient': 'gradient 3s ease infinite',
+      },
+      keyframes: {
+        'fade-right': {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-left': {
+          '0%': { opacity: '0', transform: 'translateX(20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'gradient': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

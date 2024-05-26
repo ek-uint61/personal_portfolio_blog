@@ -25,7 +25,7 @@ const About = () => {
 
       {/* Display a paragraph with information about the user's background and interests. */}
       <p className="mb-3 font-rubik italic text-sm sm:text-base md:text-lg">
-        During my uni years, I developed projects across many different fields. Initially, it took me some time to find my preferred domain. Eventually, I discovered a strong interest in <b className="font-medium">embedded software</b>, a field that connects with my childhood experiences of working with <b className="font-medium">electronics</b>, <b className="font-medium">soldering</b>, and repair tasks. This hands-on background provided a solid foundation for my current focus on <b className="font-medium">embedded software development</b>.
+         I developed projects across many different fields. Initially, it took me some time to find my preferred domain. Eventually, I discovered a strong interest in <b className="font-medium">embedded software</b>, a field that connects with my childhood experiences of working with <b className="font-medium">electronics</b>, <b className="font-medium">soldering</b>, and repair tasks. This hands-on background provided a solid foundation for my current focus on <b className="font-medium">embedded software development</b>.
       </p>
 
       <p className="mb-3 font-rubik italic text-sm sm:text-base md:text-lg">
@@ -33,15 +33,9 @@ const About = () => {
       </p>   
       {/* Display another paragraph about the user's interests and hobbies. */}
       <p className="italic font-rubik mt-8 text-sm sm:text-base md:text-lg">
-        When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with <a href="./putin.jpg" target="_blank" className="font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-800">my cat</a>. I also enjoy learning new things.
+        When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with <a href="./putin.jpg" target="_blank" className="font-bold italic bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">my cat</a>. I also enjoy learning new things.
       </p>
 
-      {/* Add the illustrations within the About section */}
-      <img
-        src=".\icons\about.webp"
-        alt="lightning"
-        className="absolute w-16 h-auto -top-8 -left-4 sm:w-20 sm:-top-8 sm:-left-12 md:w-24 md:-top-8 md:-left-20"
-      />
     </motion.section>
   );
 };
