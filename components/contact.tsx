@@ -103,7 +103,7 @@ const Contact = () => {
 
       <div className="flex flex-col sm:flex-row gap-8 items-start  ">
         <form
-          className="w-full max-w-lg bg-white dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#bbb] dark:border-[#fddfdf] rounded-lg"
+          className="w-full max-w-lg bg-white dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#ddd] dark:border-[#fddfdf] rounded-lg"
           autoComplete="off"
           autoCapitalize="off"
           onSubmit={handleSubmit}
@@ -116,7 +116,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="flex-1 h-14  px-1 border-2 border-[#bbb] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#555] focus:ring-1 focus:ring-[#555]  transition-all outline-none"
+              className="flex-1 h-14  px-1 border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5]  transition-all outline-none"
               required
               maxLength={200}
               autoComplete="off"
@@ -129,7 +129,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="abc@xyz.com"
-              className="flex-1 h-14  px-1 border-2 border-[#bbb] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#555] focus:ring-1 focus:ring-[#555] transition-all outline-none"
+              className="flex-1 h-14   border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5] transition-all outline-none"
               required
               maxLength={100}
               autoComplete="off"
@@ -138,7 +138,7 @@ const Contact = () => {
           </div>
 
           <textarea
-            className="h-32  mb-4 border-2 border-[#bbb] rounded-lg dark:border-[#fddfdf] p-4 dark:bg-gray-700 focus:border-[#555] focus:ring-1 focus:ring-[#555] transition-all outline-none"
+            className="h-32  mb-4 border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] p-4 dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5] transition-all outline-none"
             name="message"
             id="message"
             value={form.message}

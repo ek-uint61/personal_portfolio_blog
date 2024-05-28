@@ -9,10 +9,11 @@ import { SectionName } from "@/context/active-section-context";
 export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
   { hash: "#home", name: "Home" },
   { hash: "#about", name: "About" },
-  // { hash: "#skills", name: "Skills" },
-  // { hash: "#experience", name: "Experience" },
+  { hash: "#skills", name: "Skills" },
+  { hash: "#experience", name: "Experience" },
   { hash: "#articles", name: "Articles" },
   { hash: "#contact", name: "Contact" },
+
 ];
 
 

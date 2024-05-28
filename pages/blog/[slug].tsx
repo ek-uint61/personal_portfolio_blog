@@ -42,9 +42,9 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
       <div className="relative min-h-screen flex flex-col">
         <div className="flex mt-2 flex-grow">
           <div className="flex-1 flex flex-col items-center p-4">
-          <div className="image-container w-8/12">
+          {/* <div className="image-container w-8/12">
                 <img src={postData.image} alt="post data image" className="w-full h-auto object-cover" />
-              </div>
+              </div> */}
             <article className="prose max-w-2xl w-full">
             
               <div className="header-container p-4 mb-1 mx-auto">

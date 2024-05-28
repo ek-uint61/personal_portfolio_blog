@@ -5,10 +5,11 @@ import {
   About,
   Contact,
   Experience,
-  Intro,
+  // Intro,
   Projects,
   SectionDivider,
   Skills,
+  Hero,
 } from "@/components";
 
 // This is the main component for the Home page.
@@ -17,8 +18,9 @@ export default function Home() {
     <main className="flex flex-col items-center px-4">
       {/* The Intro component is displayed at the top of the page. */}
 
+      <Hero/>
 
-      <Intro />
+      {/* <Intro /> */}
 
       {/* A Vertical line or divider separating sections on the page. */}
       <SectionDivider />
@@ -30,7 +32,7 @@ export default function Home() {
       { <Skills /> }
 
       {/* The Experience component displays work or education experience. */}
-      {/* <Experience  />   */}
+      {/* <Experience  />    */}
 
       {/* The Projects component displays information about projects. */}
       <Projects />   

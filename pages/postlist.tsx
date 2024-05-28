@@ -4,7 +4,7 @@ import { ARTICLES_DATA } from '@/constants';
 import { CgWorkAlt } from "react-icons/cg";
 import { SlArrowRight } from 'react-icons/sl';
 // import MusicPlayer from '@/components/MusicPlayer';
-import "../styles/music.css";
+// import "../styles/music.css";
 import { FaIcons } from 'react-icons/fa';
 
 type Article = {
