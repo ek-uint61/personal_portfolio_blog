@@ -59,7 +59,7 @@ const Hero = () => {
       id="home"
       className="mt-8 mb-28 max-w-[50rem] sm:mb-0 scroll-mt-[100rem] px-4"
     >
-      <div className='flex flex-col md:flex-row md:justify-between md:gap-20 mb-16'>
+      <div className='flex flex-col md:flex-row md:justify-between md:gap-20 items-center'>
         <motion.div
           className='flex flex-col gap-4 will-change-[transform,opacity] md:max-w-xl'
           initial={{ y: 40, opacity: 0 }}
@@ -79,29 +79,25 @@ const Hero = () => {
             </div>{' '}
             <b>embedded software and AI.</b>
           </h1>
-          <div className='text-sm text-muted-foreground'>
-            <p className="dark:text-gray-700">Istanbul • GMT +3</p>
-          </div>
         </motion.div>
         <motion.div
-  className='relative w-full h-64 md:w-1/2 flex justify-center items-center'
-  initial={{ scale: 0 }}
-  animate={{ scale: 1 }}
-  transition={{ duration: 0.3 }}
->
-  <Canvas className="w-full h-full ">
-    <Model />
-  </Canvas>
-</motion.div>
-
+          className='relative w-full h-64 md:w-1/2 flex justify-center items-center md:flex '
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Canvas className="w-full h-full">
+            <Model />
+          </Canvas>
+        </motion.div>
       </div>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-1 items-center"
+        className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-1  mt-6"
       >
-        <div className="flex gap-4 flex-col sm:flex-row text-base font-medium">
+        <div className="flex gap-4 flex-col sm:flex-row text-base font-medium items-center justify-center">
           <Link
             href="#contact"
             className="group font-semibold text-base text-white px-7 py-2 bg-gray-700 hover:bg-gray-800 flex items-center gap-2 rounded-[9px] outline-none focus:scale-105 active:scale-95 transition-all duration-300"
@@ -116,19 +112,19 @@ const Hero = () => {
           <a
             href={EXTRA_LINKS.resume}
             target="_blank"
-            className="group font-semibold text-base px-5 py-1 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#efeeee] dark:bg-white dark:hover:bg-gray-300 dark:hover:text-white active:scale-35 visited:bg-white"
+            className="group font-semibold text-base px-5 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#efeeee] dark:bg-white dark:hover:bg-gray-300 dark:hover:text-white active:scale-35 visited:bg-white"
             style={{ boxShadow: 'inset 0 0 0 1px #dfdfdf'}}
           >
             <p className="text-gray-800">Download Resume{" "}</p>
             <HiDownload className="opacity-60 group-hover:translate-y-0.1 transition text-black" />
           </a>
         </div>
-        <div className="flex gap-1 text-lg font-medium">
+        <div className="flex gap-1 text-lg font-medium items-center justify-center">
           <Link
             href={EXTRA_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white p-2 sm:p-3 text-gray-900 ml-3 flex items-center  text-[1rem] sm:text-[0.9rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#efeeee] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
+            className="bg-white p-2 sm:p-3 text-gray-900 ml-3 flex items-center text-[1rem] sm:text-[0.9rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#efeeee] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
             aria-label="Linkedin"
             title="Linkedin"
           >

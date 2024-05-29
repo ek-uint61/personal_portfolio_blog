@@ -111,7 +111,7 @@ export default function RootLayout({
 
             {/* theme switcher */}
             <aside>
-              <ThemeSwitch />
+              {/* <ThemeSwitch /> */}
             </aside>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
@@ -120,7 +120,7 @@ export default function RootLayout({
         <Image
           width={1512}
           height={447}
-          className='absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2'
+          className='absolute -bottom-10 left-1/2 -z-10 -translate-x-1/2'
           src='/gradient-background-bottom.png'
           alt=''
           role='presentation'

@@ -12,13 +12,13 @@ import {
   Hero,
 } from "@/components";
 
+
 // This is the main component for the Home page.
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       {/* The Intro component is displayed at the top of the page. */}
-
-      <Hero/>
+      <Hero />
 
       {/* <Intro /> */}
 
@@ -26,20 +26,19 @@ export default function Home() {
       <SectionDivider />
 
       {/* The About component provides information about the author or user. */}
-      <About />  
+      <About />
 
       {/* The Skills component shows the skills of the author or user. */}
-      { <Skills /> }
+      <Skills />
 
       {/* The Experience component displays work or education experience. */}
-      {/* <Experience  />    */}
+      {/* <Experience /> */}
 
       {/* The Projects component displays information about projects. */}
-      <Projects />   
+      <Projects />
 
       {/* The Contact component allows users to get in touch. */}
-      <Contact /> 
-
+      <Contact />
     </main>
   );
 }

@@ -5,6 +5,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
+// import LocationCard from "./LocationCard";
 
 // Define the About component.
 const About = () => {
@@ -32,9 +33,13 @@ const About = () => {
       </p>   
       {/* Display another paragraph about the user's interests and hobbies. */}
       <p className="font-rubik  text-sm sm:text-sm md:text-base">
-        When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with <a href="./putin.jpg" target="_blank" className="font-bold italic bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">my cat</a>. I also enjoy learning new things.
+        When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with my <a href="./putin1.png" target="_blank" className="font-bold italic bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">cat</a>. I also enjoy learning new things.
       </p>
 
+      {/* <div className="flex justify-center mt-6">
+   
+        <LocationCard />
+      </div> */}
     </motion.section>
   );
 };

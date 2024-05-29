@@ -1,8 +1,9 @@
-"use client"; // Bu yorum, bu kodun Next.js'de istemci tarafında çalışması gerektiğini belirtir.
+"use client"; // This comment indicates that this code should run on the client side in Next.js.
 
 import { useRef, RefObject } from "react";
 import { useScroll } from "framer-motion";
 import Link from "next/link";
+import { FaPen, FaLocationArrow } from 'react-icons/fa';
 
 type ArticleProps = {
   date: string;
@@ -10,7 +11,9 @@ type ArticleProps = {
   description: string;
   keywords: string[];
   slug: string;
-  image: string; // Yeni image prop'u ekliyoruz
+  image: string;
+  category: string;
+  type: string; // New type prop for Blog or Project
 };
 
 const Article = ({
@@ -19,7 +22,9 @@ const Article = ({
   description,
   slug,
   keywords,
-  image, // Yeni image prop'unu alıyoruz
+  image,
+  category,
+  type, // New type prop for Blog or Project
 }: ArticleProps) => {
   const articleRef: RefObject<HTMLLIElement> = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
@@ -27,43 +32,31 @@ const Article = ({
     offset: ["0 1", "1.33 1"],
   });
 
-  const bgColors = ["#51cf66", "#94d82d", "#ffd43b", "#ddd"];
-
   return (
     <li
       ref={articleRef}
-      className="mb-2 text-center pb-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 flex flex-col justify-between space-y-1"
+      className="group mb-4 p-4 border rounded-lg bg-white dark:bg-gray-800 flex flex-col justify-between space-y-4 w-full shadow-md  transition-shadow duration-300"
     >
-      <Link href={`/blog/${slug}`} legacyBehavior>
-        <a target="_blank" rel="noopener noreferrer">
-          <img src={image} alt={title} className="w-full h-48 object-cover  rounded-t-lg" />
-        </a>
-      </Link>
-      <div className="p-1">
-        <Link href={`/blog/${slug}`} legacyBehavior>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline dark:text-blue-300"
-          >
-            <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-500 mb-1">
-              {title}
-            </h3>
-          </a>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2 text-sm">
+          <FaPen className="text-gray-700 dark:text-gray-400" />
+          <span className="text-xs font-medium text-gray-700 dark:text-gray-400">{type}</span>
+        </div>
+        <Link href={`/blog/${slug}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+          <FaLocationArrow className="text-white bg-black bg-opacity-75 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-300" />
         </Link>
-        <p className="text-xs text-gray-500 dark:text-gray-300 mb-1">{date}</p>
-        <p className="text-xs text-gray-700 dark:text-gray-200 mb-1">{description}</p>
       </div>
-      <div className="flex flex-wrap justify-center mt-4 gap-2">
-        {keywords.map((keyword, index) => (
-          <span
-            key={index}
-            className="rounded-full px-1 mb-2 sm:px-2 py-1 text-xs sm:text-xs text-gray-700 dark:text-gray-800"
-            style={{ backgroundColor: bgColors[index % bgColors.length] }}
-          >
-            {keyword}
-          </span>
-        ))}
+      <Link href={`/blog/${slug}`} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg">
+        <img src={image} alt={title} className="w-full h-48 object-cover" />
+      </Link>
+      <div className="px-4 text-left space-y-2">
+        <p className="text-xs text-zinc-500 dark:text-gray-300">{date}</p>
+        <Link href={`/blog/${slug}`} target="_blank" rel="noopener noreferrer" className="">
+          <h3 className="text-md font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+        </Link>
+        <p className="text-xs text-gray-600 dark:text-gray-200 line-clamp-3">{description}</p>
       </div>
     </li>
   );

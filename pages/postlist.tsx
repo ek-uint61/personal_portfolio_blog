@@ -42,7 +42,7 @@ const NewPage = () => {
     <div className="flex flex-col min-h-screen mt-20">   
       <div className="mx-auto px-4 flex-grow">
         <div className="flex justify-center items-center space-x-4">
-          <Link href="/#articles" legacyBehavior>
+          <Link href="/posts" legacyBehavior>
             <a onClick={handleIconToggle} onMouseEnter={handleIconToggle} onMouseLeave={handleIconToggle}>
               <svg className={`w-8 h-8 cursor-pointer transition-transform duration-500 ${isIconToggled ? "transform scale-110" : ""}`} fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 {isIconToggled ? (
