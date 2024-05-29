@@ -16,21 +16,21 @@ import Model from "./Model";
 
 const TEXTS = [
   {
-    text: ',',
+    text: 'searching',
     className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
   },
   {
-    text: ',',
+    text: 'learning',
     className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]'
   },
   {
-    text: ',',
+    text: 'working',
     className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#7f00de] to-[#ff007f]'
   },
-  {
-    text: ',',
-    className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
-  }
+  // {
+  //   text: ',',
+  //   className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
+  // }
 ]
 
 const Hero = () => {
@@ -42,10 +42,10 @@ const Hero = () => {
   useEffect(() => {
     animate(
       [
-        [scope.current, { y: '0%' }, { duration: 0 }],
-        [scope.current, { y: '-25%' }, { duration: 0.3, at: '+1.3' }],
-        [scope.current, { y: '-50%' }, { duration: 0.3, at: '+1.3' }],
-        [scope.current, { y: '-75%' }, { duration: 0.3, at: '+1.3' }]
+        [scope.current, { y: '0%' }, { duration: 0.3 }],
+        [scope.current, { y: '-33%' }, { duration: 0.3, at: '+1.3' }],
+        [scope.current, { y: '-66%' }, { duration: 0.3, at: '+1.3' }],
+        // [scope.current, { y: '-75%' }, { duration: 0.3, at: '+1.3' }]
       ],
       {
         repeat: Number.POSITIVE_INFINITY
@@ -67,7 +67,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className='bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text font-title text-2xl font-bold leading-9 text-transparent sm:text-4xl sm:leading-[3.5rem]'>
-            Hi, I'm <b>Emre</b>. I have 2+ years of experience in <b>web development</b> and I am currently learning{' '}
+            Hi, I'm <b>Emre</b>. I have 2+ years of experience in <b>web development</b> and I am currently {' '}
             <div className='inline-grid h-9 overflow-hidden sm:h-14'>
               <div ref={scope}>
                 {TEXTS.map(({ text, className }, index) => (
