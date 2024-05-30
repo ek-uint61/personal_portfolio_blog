@@ -41,6 +41,12 @@ NEXT_TELEMETRY_DISABLED=1
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
+
+# spotify api
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_REFRESH_TOKEN=
+NEXT_PUBLIC_SPOTIFY_ENABLED=
 ```
 
 
@@ -87,6 +93,7 @@ npm run dev
 - [React Hot Toast](https://react-hot-toast.com/) for notifications
 - [React Intersection Observer](https://www.npmjs.com/package/react-intersection-observer) for observing elements in the viewport
 - [Next PWA](https://github.com/shadowwalker/next-pwa) for Progressive Web App support
+- Three Fiber
 
 
 
@@ -103,6 +110,7 @@ npm run dev
 - Toast notifications
 - Intersection observer
 - PWA support
+- Spotify API
 
 
 ## 🔍 stats
