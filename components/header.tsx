@@ -35,7 +35,7 @@ const Header = () => {
         />
 
         <nav className="flex fixed top-[0.15rem] left-[45%] h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-          <ul className="flex flex-wrap w-[22rem] items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-600 sm:w-[initial] sm:flex-nowrap sm:gap-5 text-sm">
+          <ul className="flex flex-wrap w-[22rem] items-center justify-center gap-y-1 text-[0.9rem] font-semibold text-sm text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-5 ">
             {LINKS.map((link, index) => (
               <motion.li
                 className="h-3/4 flex items-center justify-center relative"
@@ -96,7 +96,7 @@ const Header = () => {
 
           <button
             type="button"
-            className="ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
+            className="font-semibold ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
             onClick={toggleTheme}
             aria-label="Toggle Dark/Light mode"
             title="Toggle Dark/Light mode"
@@ -107,7 +107,7 @@ const Header = () => {
 
           <button
             type="button"
-            className="ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
+            className="font-semibold ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
             onClick={handleModalToggle}
             aria-label="Command Icon"
             title="Command Icon"

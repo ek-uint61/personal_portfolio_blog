@@ -48,7 +48,7 @@ const Articles = () => {
            className="mt-8 font-bold text-sm px-5 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300  flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#efeeee] dark:hover:bg-gray-700  active:scale-35 "
            style={{ boxShadow: 'inset 0 0 0 1px #dfdfdf'}}
            >
-            see all project articles
+            see all articles
           </a>
     
         </Link>
