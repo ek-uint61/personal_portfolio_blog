@@ -10,7 +10,7 @@ import Link from "next/link"
 import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { FaGithubSquare, FaMedium } from "react-icons/fa"
 import { HiDownload } from "react-icons/hi"
-import { EXTRA_LINKS, OWNER_NAME } from "@/constants"
+import { EXTRA_LINKS, OTHER_LINKS, OWNER_NAME } from "@/constants"
 import { Canvas } from "@react-three/fiber";
 import Model from "./Model";
 
@@ -27,10 +27,6 @@ const TEXTS = [
     text: 'working',
     className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#7f00de] to-[#ff007f]'
   },
-  // {
-  //   text: ',',
-  //   className: 'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
-  // }
 ]
 
 const Hero = () => {
@@ -45,7 +41,6 @@ const Hero = () => {
         [scope.current, { y: '0%' }, { duration: 0.3 }],
         [scope.current, { y: '-33%' }, { duration: 0.3, at: '+1.3' }],
         [scope.current, { y: '-66%' }, { duration: 0.3, at: '+1.3' }],
-        // [scope.current, { y: '-75%' }, { duration: 0.3, at: '+1.3' }]
       ],
       {
         repeat: Number.POSITIVE_INFINITY
@@ -110,7 +105,7 @@ const Hero = () => {
             <BsArrowRight className="opacity-70 group-hover:translate-x-0.5 transition" />
           </Link>
           <a
-            href={EXTRA_LINKS.resume}
+            href={OTHER_LINKS.resume}
             target="_blank"
             className="group font-semibold text-base px-5 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#efeeee] dark:bg-white dark:hover:bg-gray-300 dark:hover:text-white active:scale-35 visited:bg-white"
             style={{ boxShadow: 'inset 0 0 0 1px #dfdfdf'}}
@@ -121,7 +116,7 @@ const Hero = () => {
         </div>
         <div className="flex gap-1 text-lg font-medium items-center justify-center">
           <Link
-            href={EXTRA_LINKS.linkedin}
+            href={OTHER_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white p-2 sm:p-3 text-gray-900 ml-3 flex items-center text-[1rem] sm:text-[0.9rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#efeeee] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"
@@ -131,7 +126,7 @@ const Hero = () => {
             <BsLinkedin />
           </Link>
           <Link
-            href={EXTRA_LINKS.github}
+            href={OTHER_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white p-2 sm:p-3 text-gray-900 flex items-center gap-2 text-[1rem] sm:text-[0.9rem] rounded-[9px] outline-none active:scale-95 hover:bg-[#efeeee] hover:text-gray-800 transition borderBlack dark:bg-white dark:text-gray-700 dark:hover:bg-gray-300"

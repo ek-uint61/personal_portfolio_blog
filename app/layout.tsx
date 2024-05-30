@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { Header, Footer, ThemeSwitch } from "@/components";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
-import { EXTRA_LINKS, OWNER_NAME } from "@/constants";
+import { EXTRA_LINKS, OTHER_LINKS, OWNER_NAME } from "@/constants";
 import "./globals.css";
 
 // inter font export
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   } is a web development with 2+ years of experience.`,
   authors: {
     name: OWNER_NAME,
-    url: EXTRA_LINKS.github.href, // URL olarak sadece string değeri kullanıyoruz
+    url: OTHER_LINKS.github, 
   },
   keywords: [
     "reactjs",

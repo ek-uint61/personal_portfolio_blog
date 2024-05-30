@@ -304,10 +304,26 @@ export const FOOTER_LINKS: FooterLink[] = [
   { hash: "#contact", name: "Contact", icon: FaEnvelope },
 ];
 
-export const EXTRA_LINKS: { [key: string]: { href: string; icon: IconType } } = {
-  linkedin: { href: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/", icon: FaLinkedin },
+ export const EXTRA_LINKS: { [key: string]: { href: string; icon: IconType } } = {  
+   linkedin: { href: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/", icon: FaLinkedin },
+   resume: {href: "./resume.pdf", icon: FaProjectDiagram},
   github: { href: "https://github.com/ek-uint61", icon: FaGithub },
-  // facebook: { href: "https://www.facebook.com", icon: FaFacebook },
+  facebook: { href: "https://www.facebook.com", icon: FaFacebook },
   instagram: { href: "https://www.instagram.com", icon: FaInstagram },
-  twitter: { href: "https://X.com", icon: FaTwitter },
+   twitter: { href: "https://X.com", icon: FaTwitter },
+ } as const;
+
+ export const OTHER_LINKS = {
+  linkedin: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/",
+  github: "https://github.com/ek-uint61",
+  resume: "/resume.pdf",
 } as const;
+
+// export const EXTRA_LINKS = {
+//   linkedin: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/",
+//   github: "https://github.com/ek-uint61",
+//   instagram: "https://www.instagram.com",
+//   resume: "/resume.pdf",
+//   source_code: "https://github.com/sanidhyy/portfolio",
+//   twitter: "x.com",
+// } as const;
