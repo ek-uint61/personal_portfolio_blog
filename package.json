@@ -49,6 +49,9 @@
   "dependencies": {
     "@babel/core": "^7.24.6",
     "@emailjs/browser": "^3.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-three/drei": "^9.105.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.13",

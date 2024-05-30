@@ -103,7 +103,7 @@ const Contact = () => {
 
       <div className="flex flex-col sm:flex-row gap-8 items-start  ">
         <form
-          className="w-full max-w-lg bg-gradient-to-br from-gray-100 to-gray-300 dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#ddd] dark:border-[#fddfdf] rounded-lg"
+          className="w-full max-w-lg bg-gray-200 dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#ddd] dark:border-[#fddfdf] rounded-lg"
           autoComplete="off"
           autoCapitalize="off"
           onSubmit={handleSubmit}
@@ -152,7 +152,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="text-sm font-semibold flex items-center justify-center gap-2 h-12 w-full  bg-gray-500 text-[#fff]  rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700  dark:bg-blue-700 dark:hover:bg-blue-800  dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65 	"
+            className="text-sm font-semibold flex items-center justify-center gap-2 h-12 w-full  bg-gray-400 text-[#fff]  rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700  dark:bg-blue-700 dark:hover:bg-blue-800  dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65 	"
               style={{ boxShadow: 'inset 0 0 0 2px #bbb'}}
             disabled={loading}
           >

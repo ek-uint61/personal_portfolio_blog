@@ -2,7 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 import { IconType } from 'react-icons';
-import { FaHome, FaLinkedin, FaBlog, FaInfoCircle, FaEnvelope, FaProjectDiagram, FaBook, FaFacebook, FaInstagram, FaGithub, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { FaHome, FaLinkedin, FaBlog, FaInfoCircle, FaEnvelope, FaProjectDiagram,FaCode,  FaBook, FaFacebook, FaInstagram, FaGithub, FaYoutube, FaTwitter } from 'react-icons/fa';
 
 export interface FooterLink {
   href?: string;
@@ -311,6 +311,7 @@ export const FOOTER_LINKS: FooterLink[] = [
   facebook: { href: "https://www.facebook.com", icon: FaFacebook },
   instagram: { href: "https://www.instagram.com", icon: FaInstagram },
    twitter: { href: "https://X.com", icon: FaTwitter },
+   source: {href: "https://github.com/ek-uint61/personal_portfolio_blog", icon: FaCode },
  } as const;
 
  export const OTHER_LINKS = {

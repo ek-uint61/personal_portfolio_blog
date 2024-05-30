@@ -207,3 +207,14 @@ aside {
 .custom-font {
   font-family: 'Pixelify Sans', sans-serif;
 }
+
+
+/* global.css veya tailwind.css */
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-open .fixed {
+  backdrop-filter: blur(5px);
+}
