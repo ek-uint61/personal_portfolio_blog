@@ -45,7 +45,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
      <div className='flex justify-center items-center'>
        <h1 className="bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text text-center font-title text-4xl font-bold text-transparent dark:from-white dark:via-white/90 dark:to-white/70 md:text-4xl md:leading-[64px] ">{postData.title}</h1>
      </div>
-     <div className="flex justify-center items-center text-sm font-semibold text-center mb-4 space-x-12 mt-20" >
+     <div className="flex justify-center items-center text-sm font-semibold text-center mb-4 space-x-12 mt-12" >
      <div className="author-info flex flex-col items-start">
   <p className="text-gray-500 mb-1 text-xs">Written by</p>
   <div className="flex items-center">
@@ -96,7 +96,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </BlogLayout>
   );
 };
