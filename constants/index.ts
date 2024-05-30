@@ -163,7 +163,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "PWM", "UART", "Lighting Control"],
     slug: "md-1",
     number: 1, 
-    image:  "https://honghong.me/_next/image?url=%2Fimages%2Fblog%2Ftop-8-attractive-web-design-websites%2Fcover.png&w=1200&q=100", 
+    image: "../postDataImg19.png",
     category: "Embedded Software",
     subcategory: "STM32 Microcontroller",
     type: "project",
