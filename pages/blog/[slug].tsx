@@ -41,7 +41,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
 
   return (
     <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug} headings={headings}>
-      <div className="relative min-h-screen flex flex-col mt-24 "> {/* Added mt-24 for margin-top */}
+      <div className="relative min-h-screen flex flex-col mt-32 "> {/* Added mt-24 for margin-top */}
      <div className='flex justify-center items-center'>
        <h1 className="bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text text-center font-title text-4xl font-bold text-transparent dark:from-white dark:via-white/90 dark:to-white/70 md:text-4xl md:leading-[64px] ">{postData.title}</h1>
      </div>

@@ -5,7 +5,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
-import LocationCard from "./LocationCard";
+// import LocationCard from "./LocationCard";
 
 // Define the About component.
 const About = () => {
@@ -38,7 +38,7 @@ const About = () => {
 
       { <div className="flex justify-center mt-6">
    
-        <LocationCard />
+        {/* <LocationCard /> */}
       </div> }
     </motion.section>
   );
