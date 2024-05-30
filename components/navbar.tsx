@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { FaArrowLeft, FaBars, FaFolder, FaFolderOpen } from 'react-icons/fa';
 import { PostData } from '@/lib/markdown';
 import HeadingsSidebar from './HeadingsSidebar';
+import PostHeader from './postHeader';
+import ThemeContextProvider from '@/context/theme-context';
 
 type NavbarProps = {
   allPostsData: PostData[];
@@ -71,12 +73,14 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
   }, {} as Record<string, Record<string, PostData[]>>);
 
   return (
-    <nav className={`border-b-2 border-gray-600 fixed top-0 left-0 w-full z-10 transition-transform transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} bg-white shadow-md`}>
+    <ThemeContextProvider> {/* ThemeContextProvider ile sarın */}
+    <nav className={`mb-32 border-opacity-40  bg-opacity-40  border-b-2 border-gray-600 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] fixed top-0 left-0 w-full z-10 transition-transform transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} bg-white shadow-md`}>
+      
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3">
         <div className="flex justify-center w-full">
           <Link
             href="/"
-            className="group font-semibold px-7 py-2 rounded-md  cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-white active:scale-95 dark:bg-white/10"
+            className="group font-semibold px-7 py-2 rounded-md cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-white active:scale-95 dark:bg-white/10"
           >
             <FaArrowLeft className="text-black text-sm" />
             <span className="text-sm font-bold mr-4 custom-font">back to home</span>
@@ -90,7 +94,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
             id="menu-button"
             onClick={toggleMenu}
           >
-          <p className="text-sm font-bold mr-4 custom-font">other posts</p>
+            <p className="text-sm font-bold mr-4 custom-font">other posts</p>
             <FaBars className="text-black text-2xl" />
           </button>
         </div>
@@ -151,7 +155,7 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
                           {expandedSubcategories[subcategoryKey] && (
                             <ul className="pl-4 ml-2">
                               {groupedPosts[category][subcategory].map((post) => (
-                                <li className={`text-sm font-semibold hover:underline ${post.slug === currentPostSlug ? 'bg-gray-200 hover:bg-gray-300  mt-2 mb-2 hover:no-underline rounded-md ' : ''}`} key={post.slug}>
+                                <li className={`text-sm font-semibold hover:underline ${post.slug === currentPostSlug ? 'bg-gray-200 hover:bg-gray-300 mt-2 mb-2 hover:no-underline rounded-md ' : ''}`} key={post.slug}>
                                   <Link href={`/blog/${post.slug}`} className={`text-gray-600 hover:text-blue-700 text-xs ${post.slug === currentPostSlug ? 'text-gray-800 hover:text-gray-800 ' : ''}`}>
                                     {post.number}- {post.title}
                                   </Link>
@@ -180,6 +184,9 @@ const Navbar = ({ allPostsData, currentPostSlug, headings }: NavbarProps) => {
         <HeadingsSidebar headings={headings} className="p-4" />
       </div>
     </nav>
+  </ThemeContextProvider>
+
+    
   );
 };
 

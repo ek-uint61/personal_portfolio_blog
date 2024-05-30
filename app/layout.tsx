@@ -1,23 +1,19 @@
 import { Metadata } from "next";
 import Image from "next/image"; // Image bileşenini ekliyoruz
-import type { Viewport } from 'next';
-
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-
 import { Header, Footer, ThemeSwitch } from "@/components";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 import { EXTRA_LINKS, OWNER_NAME } from "@/constants";
-
 import "./globals.css";
 
 // inter font export
 const inter = Inter({ subsets: ["latin"] });
 
-export const viewport: Viewport = {
+export const viewport = {
   themeColor: '#CCD6E0',
 };
 
@@ -29,7 +25,7 @@ export const metadata: Metadata = {
   } is a web development with 2+ years of experience.`,
   authors: {
     name: OWNER_NAME,
-    url: EXTRA_LINKS.github,
+    url: EXTRA_LINKS.github.href, // URL olarak sadece string değeri kullanıyoruz
   },
   keywords: [
     "reactjs",
@@ -80,26 +76,16 @@ export default function RootLayout({
           priority
         />
         
-        {/* <div className="relative">
-           <div className="bg-[#8bb0ff4a] dark:bg-[#b18e8f] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] sm:bg-[#cfcfc58e]" />
-          <div className="bg-[#c08b7882] dark:bg-[#fdf2e9] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] sm:bg-[#bbb7b5a0]" /> 
-        </div>   */}
-
         <div className="relative">
           <div className="dark:bg-[#b18e8f] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"/>
             <div className=" dark:bg-[#fdf2e9] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"/>
         </div>
 
-        {/* theme context provider */}
         <ThemeContextProvider>
-          {/* active section context provider */}
           <ActiveSectionContextProvider>
-            {/* header */}
             <Header />
             {children}
-            {/* footer */}  
             <Footer />
-            {/* toaster */}
             <aside>
               <Toaster
                 position="top-right"
@@ -108,8 +94,6 @@ export default function RootLayout({
                 }}
               />
             </aside>
-
-            {/* theme switcher */}
             <aside>
               {/* <ThemeSwitch /> */}
             </aside>

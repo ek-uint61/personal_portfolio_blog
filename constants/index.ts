@@ -1,7 +1,15 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
+import { IconType } from 'react-icons';
+import { FaHome, FaLinkedin, FaBlog, FaInfoCircle, FaEnvelope, FaProjectDiagram, FaBook, FaFacebook, FaInstagram, FaGithub, FaYoutube, FaTwitter } from 'react-icons/fa';
 
+export interface FooterLink {
+  href?: string;
+  hash?: string;
+  name: string;
+  icon: IconType;
+}
 
 
 import { SectionName } from "@/context/active-section-context";
@@ -17,16 +25,6 @@ export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
 ];
 
 
-// External links
-export const EXTRA_LINKS = {
-  linkedin: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/",
-  github: "https://github.com/ek-uint61",
-  resume: "/resume.pdf",
-  source_code: "",
-  email: "emrklyci61@gmail.com",
-} as const;
-
-// Data for work experience
 export const EXPERIENCES_DATA = [
   
   {
@@ -193,7 +191,7 @@ export const ARTICLES_DATA = [
     keywords: ["STM32", "PIR Sensor", "SPI", "Wi-Fi Module"],
     slug: "md-3",
     number: 3,
-    image:  "../postDataImg10.png",
+    image:  "../postDataImg17.png",
     category: "Web Development",
     subcategory: "General",
     type: "project",
@@ -296,3 +294,20 @@ export const ARTICLES_DATA = [
 
 // Owner name
 export const OWNER_NAME = "Emre KALAYCİ";
+
+
+export const FOOTER_LINKS: FooterLink[] = [
+  { hash: "#home", name: "Home", icon: FaHome },
+  { hash: "#about", name: "About", icon: FaInfoCircle },
+  { hash: "#skills", name: "Skills", icon: FaProjectDiagram },
+  { hash: "#articles", name: "Articles", icon: FaBook },
+  { hash: "#contact", name: "Contact", icon: FaEnvelope },
+];
+
+export const EXTRA_LINKS: { [key: string]: { href: string; icon: IconType } } = {
+  linkedin: { href: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/", icon: FaLinkedin },
+  github: { href: "https://github.com/ek-uint61", icon: FaGithub },
+  // facebook: { href: "https://www.facebook.com", icon: FaFacebook },
+  instagram: { href: "https://www.instagram.com", icon: FaInstagram },
+  twitter: { href: "https://X.com", icon: FaTwitter },
+} as const;

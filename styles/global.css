@@ -1,36 +1,31 @@
+/* global.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Genel stil kuralları */
 body {
   font-family: 'Source Serif Pro', serif; 
-   color: #24292e;
+  color: #24292e;
   line-height: 1.6;
   letter-spacing: 0.01em;
-
 }
 
 .container {
-  max-width: 85ch;
+  /* max-width: 100ch; */
   margin: 0 auto;
   padding: 0 1rem;
-  
 }
 
 .prose {
-  max-width: 85ch;
+  max-width: 100ch;
   margin: auto;
   background-color: #ffffff;
   border-radius: 0.5rem;
-  
-
 }
 
 .main-content {
@@ -38,15 +33,25 @@ body {
   justify-content: center;
   width: 100%;
   box-shadow: 1px 1px 1px 1px #000;
-
 }
 
 .header-container {
-  flex-direction: column;
+  max-width: 120ch;
   align-items: center;
   padding: 1rem;
-  margin-top: 52px;
+  margin-top: 12px;
   margin-bottom: 52px;
+}
+
+.header-container img {
+  width: 960px;
+  height: 504px;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  padding: 0rem 1rem;
 }
 
 .tags-container span {
@@ -59,26 +64,22 @@ body {
   justify-content: center;
 }
 
-.content {
-  max-width: 800px;
-  width: 100%;
-  padding: 0rem 1rem; /* İçeriğe ek dolgu eklendi */
-}
+
 
 @media (max-width: 768px) {
   .content {
-    padding: 2rem 1.5rem; /* Mobil cihazlar için ek dolgu eklendi */
+    padding: 2rem 1.5rem;
   }
 }
 
 @media (max-width: 450px) {
   .content {
-    padding: 2rem 2rem; /* 450px altındaki ekranlar için ek dolgu eklendi */
+    padding: 2rem 2rem;
   }
 }
 
 aside {
-  margin-right: 2rem; /* Sidebar ile içerik arasında boşluk bırak */
+  margin-right: 2rem;
 }
 
 aside {
@@ -92,9 +93,8 @@ aside {
 .prose h4,
 .prose h5,
 .prose h6 {
-  scroll-margin-top: 6rem; /* Başlıkların üst kısımdan kaydırılmasını sağlar */
+  scroll-margin-top: 6rem;
   font-weight: 700;
-
 }
 
 .prose h1 {
@@ -132,43 +132,10 @@ aside {
   @apply text-blue-600 hover:underline;
 }
 
-/* .image-container img {
-  display: block;
-  margin: 2rem auto;
-  width: 1250px;
-  height: 425px; 
-  @apply rounded-lg my-4 mx-auto; 
-}
-
-
-@media (min-width: 640px) {
-  .image-container img {
-    width: calc(100% - 2rem); 
-  }
-}
-
-@media (min-width: 768px) {
-  .image-container img {
-    width: calc(100% - 4rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .image-container img {
-    width: calc(100% - 6rem);
-  }
-}
-
-@media (min-width: 1280px) {
-  .image-container img {
-    width: calc(100% - 8rem); 
-}
-} */
-
 .prose blockquote {
   @apply border-l-4 border-gray-300 pl-4 italic text-gray-700;
   margin: 1.5rem 0;
-  font-family: 'Source Serif Pro', serif; 
+  font-family: 'Source Serif Pro', serif;
 }
 
 .prose ul, .prose ol {
@@ -237,17 +204,6 @@ aside {
   @apply text-xs sm:text-xs font-medium text-gray-700;
 }
 
-
-@media (max-width: 450px) {
-  .content {
-  }
-}
-
-/* /styles/global.css */
-
-
 .custom-font {
   font-family: 'Pixelify Sans', sans-serif;
 }
-
-

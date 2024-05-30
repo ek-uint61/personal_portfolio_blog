@@ -13,7 +13,7 @@ contentHtml: string;
 slug: title-6;
 number: 6
 category: "Embedded Software"
-image: "../postDataImg7.png"
+image: "/postDataImg7.png"
 ---
 
 

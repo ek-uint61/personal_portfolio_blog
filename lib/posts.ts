@@ -28,6 +28,7 @@ export function getSortedPostsData(): PostData[] {
       subtitle: matterResult.data.subtitle,
       author: matterResult.data.author,
       date: matterResult.data.date,
+      image: matterResult.data.image,
       contentHtml: '', // İçerik HTML'ini boş bırakıyoruz
       tags: matterResult.data.tags || [],
     };

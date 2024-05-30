@@ -1,20 +1,38 @@
-import Link from "next/link";
+import { FOOTER_LINKS, OWNER_NAME, EXTRA_LINKS } from '@/constants';
+import NowPlaying from './footer/now-playing';
+import Link from 'next/link';
+import { IconType } from 'react-icons';
 
-import { EXTRA_LINKS, OWNER_NAME } from "@/constants";
 
-// Define the Footer component.
 const Footer = () => {
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      <small className="mb-2 block text-xs">
-        {/* Display the copyright notice with dynamic years and owner name. */}
-        &copy; {new Date().getFullYear()} <b>{OWNER_NAME.split(" ")[0]}</b> |
-   
-      </small>
-   
+    <footer className="relative mx-auto mb-10 flex max-w-5xl flex-col rounded-2xl bg-white/30 dark:bg-gray-800/30 p-8 shadow-sm saturate-100 backdrop-blur-[10px] text-gray-700 dark:text-gray-300">
+      <div className="mt-35 flex gap-6 justify-center items-center">
+          <NowPlaying />
+        {/* <div className="col-span-2 mt-12 grid grid-cols-2 sm:grid-cols-2 gap-6">
+          {FOOTER_LINKS.map((list, index) => (
+            <div key={index} className="mb-10 flex flex-col items-start gap-4 pr-4">
+              <Link href={list.hash || list.href || "#"} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 flex items-center gap-2">
+                <list.icon />
+                {list.name}
+              </Link>
+            </div>
+          ))}
+        </div> */}
+      </div>
+      <div className="mt-20 flex flex-col items-center justify-between text-sm sm:flex-row">
+  <div className='flex items-center text-xs font-md'>&copy; {new Date().getFullYear()} | <b className='ml-1 text-sm font-semibold'>{OWNER_NAME.split(" ")[0]}</b></div>
+  <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+    {Object.entries(EXTRA_LINKS).map(([key, link], index) => (
+      <Link key={index} href={link.href} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 flex items-center gap-2">
+        <link.icon />
+      </Link>
+    ))}
+  </div>
+</div>
+
     </footer>
   );
 };
 
-// Export the Footer component.
 export default Footer;

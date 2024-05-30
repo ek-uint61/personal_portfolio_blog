@@ -8,6 +8,8 @@ import Prism from 'prismjs';
 import { useRouter } from 'next/router';
 import { FaArrowLeft, FaArrowRight, FaBookmark } from 'react-icons/fa';
 import { SlArrowRight } from 'react-icons/sl';
+import Image from 'next/image';
+import { Footer } from '@/components';
 
 const extractHeadings = (html: string) => {
   const headingRegex = /<(h[1-6]) id="([^"]*)">([^<]*)<\/\1>/g;
@@ -39,27 +41,34 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
 
   return (
     <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug} headings={headings}>
-      <div className="relative min-h-screen flex flex-col">
+      <div className="relative min-h-screen flex flex-col mt-24 "> {/* Added mt-24 for margin-top */}
+     <div className='flex justify-center items-center'>
+       <h1 className="bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text text-center font-title text-4xl font-bold text-transparent dark:from-white dark:via-white/90 dark:to-white/70 md:text-4xl md:leading-[64px] ">{postData.title}</h1>
+     </div>
+     <div className="flex justify-center items-center text-sm font-semibold text-center mb-4 space-x-12 mt-20" >
+     <div className="author-info flex flex-col items-start">
+  <p className="text-gray-500 mb-1 text-xs">Written by</p>
+  <div className="flex items-center">
+    <Image src="/icons/icon-384x384.png" alt="Author" width={24} height={24} className="rounded-full" />
+    <p className="ml-1 text-gray-800">{postData.author}</p>
+  </div>
+</div>
+
+  <div className="publish-info flex flex-col items-center">
+    <p className="text-gray-500 mb-1 text-xs">Published on</p>
+    <span className="text-gray-800">{new Date(postData.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+  </div>
+</div>
+
         <div className="flex mt-2 flex-grow">
+          
           <div className="flex-1 flex flex-col items-center p-4">
-          {/* <div className="image-container w-8/12">
-                <img src={postData.image} alt="post data image" className="w-full h-auto object-cover" />
-              </div> */}
-            <article className="prose max-w-2xl w-full">
-            
-              <div className="header-container p-4 mb-1 mx-auto">
-                <h1 className="text-base font-bold mb-2 text-center">{postData.title}</h1>
-                <h4 className="text-sm text-gray-700 mb-4 text-center">{postData.subtitle}</h4>
-                <div className="flex justify-center items-center text-sm font-semibold text-center">
-                  <FaBookmark className="text-gray-600 mr-2" />
-                  {postData.category} <SlArrowRight className="m-1" /> {postData.subcategory}
-                </div>
-                <div className="author-info flex items-center justify-center">
-                  <p className="author-name">{postData.author}</p>
-                  <p className="text-gray-500">/</p>
-                  <p className="author-date text-gray-500">{postData.date}</p>
-                </div>
-              </div>
+          <div className="header-container p-4 mb-1 mx-auto text-center">
+              
+              <Image src={postData.image} alt="Post Image" width={960} height={504} className="rounded-lg" />
+            </div>
+            <article className="prose max-w-3xl w-full mt-24">
+              
               <div className="content prose max-w-full">
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
               </div>
@@ -87,6 +96,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
           </div>
         </div>
       </div>
+      <Footer />
     </BlogLayout>
   );
 };

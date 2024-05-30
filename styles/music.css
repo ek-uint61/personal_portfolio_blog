@@ -1,9 +1,7 @@
 .music-container {
-  position: fixed;
-  top: 45%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 1000;
+  grid-column: span 1;
+  align-self: start;
+  
 }
 
 .close-icon {

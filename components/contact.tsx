@@ -96,14 +96,14 @@ const Contact = () => {
       viewport={{ once: true }}
     >
       <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">Contact Me</h2>
-      <p className="text-gray-700 dark:text-gray-300 mb-8">
-  Please contact me directly at my <a href="mailto:emrklyci61@gmail.com" className="underline font-bold">e-mail</a> or through this form.
+      <p className="text-gray-700 dark:text-gray-300 mb-8 text-sm font-semibold">
+  Please contact me directly at my <a href="mailto:emrklyci61@gmail.com" className=" font-bold text-blue-500">e-mail</a> or through this form.
 </p>
 
 
       <div className="flex flex-col sm:flex-row gap-8 items-start  ">
         <form
-          className="w-full max-w-lg bg-white dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#ddd] dark:border-[#fddfdf] rounded-lg"
+          className="w-full max-w-lg bg-gradient-to-br from-gray-100 to-gray-300 dark:bg-gray-800 p-6 shadow-md flex flex-col dark:text-white border-2 border-[#ddd] dark:border-[#fddfdf] rounded-lg"
           autoComplete="off"
           autoCapitalize="off"
           onSubmit={handleSubmit}
@@ -116,7 +116,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="flex-1 h-14  px-1 border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5]  transition-all outline-none"
+              className="text-sm font-semibold flex-1 h-14  px-1 border-2  border-[#ddd] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5]  transition-all outline-none"
               required
               maxLength={200}
               autoComplete="off"
@@ -128,8 +128,8 @@ const Contact = () => {
               id="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="abc@xyz.com"
-              className="flex-1 h-14   border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5] transition-all outline-none"
+              placeholder=" abc@xyz.com"
+              className="text-sm font-semibold flex-1 h-14   border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5] transition-all outline-none"
               required
               maxLength={100}
               autoComplete="off"
@@ -138,7 +138,7 @@ const Contact = () => {
           </div>
 
           <textarea
-            className="h-32  mb-4 border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] p-4 dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5] transition-all outline-none"
+            className="text-sm font-semibold h-32  mb-4 border-2 border-[#ddd] rounded-lg dark:border-[#fddfdf] p-4 dark:bg-gray-700 focus:border-[#a5a5a5] focus:ring-1 focus:ring-[#a5a5a5] transition-all outline-none"
             name="message"
             id="message"
             value={form.message}
@@ -152,7 +152,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="flex items-center justify-center gap-2 h-12 w-full  bg-gray-400 text-[#fff] text-lg rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700  dark:bg-blue-700 dark:hover:bg-blue-800  dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65 	"
+            className="text-sm font-semibold flex items-center justify-center gap-2 h-12 w-full  bg-gray-500 text-[#fff]  rounded-lg outline-none transition-all focus:scale-105 hover:bg-white hover:text-gray-700  dark:bg-blue-700 dark:hover:bg-blue-800  dark:hover:text-white active:scale-100 disabled:scale-100 disabled:bg-opacity-65 	"
               style={{ boxShadow: 'inset 0 0 0 2px #bbb'}}
             disabled={loading}
           >

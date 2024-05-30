@@ -67,7 +67,7 @@ const PostHeader = () => {
         <span className="flex items-center justify-center mx-2 text-gray-300 dark:text-gray-400">|</span> {/* Dikey çizgi */}
         <button
           type="button"
-          className="ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center text-black hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
+          className="ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center text-black dark:text-gray-300 hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
           onClick={toggleTheme}
           aria-label="Toggle Dark/Light mode"
           title="Toggle Dark/Light mode"

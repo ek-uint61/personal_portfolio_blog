@@ -12,7 +12,7 @@ import {
   Hero,
 } from "@/components";
 
-
+  
 // This is the main component for the Home page.
 export default function Home() {
   return (
@@ -39,6 +39,7 @@ export default function Home() {
 
       {/* The Contact component allows users to get in touch. */}
       <Contact />
+
     </main>
   );
 }
