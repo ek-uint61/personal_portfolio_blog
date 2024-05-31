@@ -4,7 +4,7 @@
 import {
   About,
   Contact,
-  Experience,
+  // Experience,
   // Intro,
   Projects,
   SectionDivider,
