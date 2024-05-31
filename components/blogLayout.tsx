@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Navbar from './navbar';
 import { PostData } from '@/lib/markdown';
 import Image from 'next/image';
+import ThemeContextProvider from '@/context/theme-context';
 
 type BlogLayoutProps = {
   children: ReactNode;
@@ -12,6 +13,7 @@ type BlogLayoutProps = {
 
 const BlogLayout = ({ children, allPostsData, currentPostSlug, headings }: BlogLayoutProps) => {
   return (
+    <ThemeContextProvider>
     <div>
           {/* Arka plan üst görüntüsü */}
       <Image
@@ -41,6 +43,7 @@ const BlogLayout = ({ children, allPostsData, currentPostSlug, headings }: BlogL
       />
     </div>
     </div>
+    </ThemeContextProvider>
   );
 };
 

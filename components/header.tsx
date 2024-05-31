@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { FaHome } from 'react-icons/fa'; // İkonu içe aktardık
-import { BsMoon, BsSun, BsCommand } from "react-icons/bs";
+import { FaHome, FaBars, FaPen, FaPlane, FaStackOverflow, FaToolbox } from 'react-icons/fa'; // İkonları içe aktardık
+import { BsMoon, BsSun, BsCommand, BsBookmark } from "react-icons/bs";
+import { AiOutlineRight } from "react-icons/ai";
 import Modal from './Modal';
 import ModalContent from './ModalContent';
 
@@ -13,15 +14,33 @@ import { LINKS } from "@/constants";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useThemeContext } from "@/context/theme-context";
 
+// Define the possible section names
+type SectionName = 'Home' | 'Writing' | 'Journey' | 'Stack' | 'Workspace' | 'Bookmarks';
+
 // Header bileşenini tanımla
 const Header = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   const { theme, toggleTheme } = useThemeContext();
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleModalToggle = () => {
     setModalOpen(!isModalOpen);
+  };
+
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Define the icons for each section
+  const icons: Record<SectionName, JSX.Element> = {
+    Home: <FaHome className="mr-2" />,
+    Writing: <FaPen className="mr-2" />,
+    Journey: <FaPlane className="mr-2" />,
+    Stack: <FaStackOverflow className="mr-2" />,
+    Workspace: <FaToolbox className="mr-2" />,
+    Bookmarks: <BsBookmark className="mr-2" />,
   };
 
   return (
@@ -31,11 +50,11 @@ const Header = () => {
         <motion.div
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
-          className="fixed top-0 left-[45%] h-[4.5rem] w-full border-opacity-40 bg-white bg-opacity-20 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[39rem] sm:rounded-[10px] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+          className="fixed top-0 left-[45%] h-[3.5rem] sm:h-[3.5rem] w-full border-opacity-40 bg-white bg-opacity-20 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:w-[39rem] sm:rounded-[10px] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         />
 
-        <nav className="flex fixed top-[0.15rem] left-[45%] h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-          <ul className="flex flex-wrap w-[22rem] items-center justify-center gap-y-1 text-[0.9rem] font-semibold text-sm text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-5 ">
+        <nav className="flex fixed top-[0.15rem] left-[45%] h-10 sm:h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:py-0">
+          <ul className="hidden sm:flex flex-wrap w-[22rem] items-center justify-center gap-y-1 text-[0.7rem] sm:text-[0.9rem] font-semibold text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-5 ">
             {LINKS.map((link, index) => (
               <motion.li
                 className="h-3/4 flex items-center justify-center relative"
@@ -57,7 +76,7 @@ const Header = () => {
                       setTimeOfLastClick(Date.now());
                     }}
                   >
-                    {index === 0 && <FaHome className="mr-2" />}
+                    {icons[link.name as SectionName]}
                     {link.name}
                     {link.name === activeSection && (
                       <motion.span
@@ -85,14 +104,26 @@ const Header = () => {
                       setTimeOfLastClick(Date.now());
                     }}
                   >
-                    {index === 0 && <FaHome className="mr-2" />}
+                    {icons[link.name as SectionName]}
                     {link.name}
                   </a>
                 )}
               </motion.li>
             ))}
           </ul>
-          <span className="flex items-center justify-center mx-2 text-gray-300 dark:text-gray-400">|</span>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="sm:hidden ml-2 w-[2rem] mr-40 rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
+            onClick={handleMobileMenuToggle}
+            aria-label="Mobile Menu"
+            title="Mobile Menu"
+          >
+            <FaBars />
+          </button>
+
+          <span className="hidden sm:flex items-center justify-center mx-2 text-gray-300 dark:text-gray-400">|</span>
 
           <button
             type="button"
@@ -109,13 +140,95 @@ const Header = () => {
             type="button"
             className="font-semibold ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
             onClick={handleModalToggle}
+            aria-label="Bookmark Icon"
+            title="Bookmarks"
+            style={{ alignSelf: 'center' }}
+          >
+            <BsBookmark />
+          </button>
+
+          <button
+            type="button"
+            className="font-semibold ml-2 w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
+            onClick={handleModalToggle}
             aria-label="Command Icon"
-            title="Command Icon"
+            title="Command"
             style={{ alignSelf: 'center' }}
           >
             <BsCommand />
           </button>
         </nav>
+
+        {/* Mobile dropdown menu */}
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            drag="y"
+            dragConstraints={{ top: 0, bottom: 0 }}
+            onDragEnd={(event, info) => {
+              if (info.offset.y > 100) {
+                setMobileMenuOpen(false);
+              }
+            }}
+            className="fixed bottom-0 left-0 w-full h-3/4 bg-white dark:bg-gray-950 shadow-lg z-50 rounded-t-2xl p-4"
+          >
+            <div className="flex justify-center items-center mb-4">
+              <div className="w-12 h-1.5 bg-gray-300 rounded-full dark:bg-gray-700"></div>
+            </div>
+            <ul className="flex flex-col items-center justify-start space-y-4 text-[0.8rem] sm:text-[0.9rem]">
+              {LINKS.map((link, index) => (
+                <li
+                  key={link.hash}
+                  className={clsx(
+                    "w-full text-left py-1 px-4 rounded-lg flex items-center",
+                    {
+                      "bg-black text-white rounded-lg dark:bg-black dark:text-white": activeSection === link.name,
+                      "border-b dark:border-gray-600": index !== LINKS.length - 1,
+                    }
+                  )}
+                >
+                  <AiOutlineRight className="mr-2" /> {/* Add the right arrow icon */}
+                  {link.hash ? (
+                    <Link
+                      className={clsx(
+                        "block w-full py-1 text-gray-700 font-semibold dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg",
+                        {
+                          "!text-white !bg-black !dark:text-white !dark:bg-gray-700": activeSection === link.name,
+                        }
+                      )}
+                      href={link.hash}
+                      onClick={() => {
+                        setActiveSection(link.name);
+                        setTimeOfLastClick(Date.now());
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      className={clsx(
+                        "block w-full py-2 text-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg",
+                        {
+                          "!text-white !bg-black !dark:text-white !dark:bg-gray-700": activeSection === link.name,
+                        }
+                      )}
+                      href={link.href}
+                      onClick={() => {
+                        setActiveSection(link.name);
+                        setTimeOfLastClick(Date.now());
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
 
         <Modal show={isModalOpen} onClose={handleModalToggle}>
           <ModalContent onClose={handleModalToggle} />
