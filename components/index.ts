@@ -2,7 +2,7 @@
 
 import About from "./about"; // Re-export the 'About' component.
 import Contact from "./contact"; // Re-export the 'Contact' component.
-import Experience from "./experience"; // Re-export the 'Experience' component.
+// import Experience from "./experience"; // Re-export the 'Experience' component.
 import Footer from "./footer"; // Re-export the 'Footer' component.
 import Header from "./header"; // Re-export the 'Header' component.
 // import Intro from "./intro"; // Re-export the 'Intro' component.
@@ -16,7 +16,7 @@ import Hero from "./hero";
 export {
   About,
   Contact,
-  Experience,
+  // Experience,
   Footer,
   Header,
   // Intro,
