@@ -50,11 +50,11 @@ const Header = () => {
         <motion.div
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
-          className="fixed top-0 left-[45%] h-[3.5rem] sm:h-[3.5rem] w-full border-opacity-40 bg-white bg-opacity-20 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:w-[39rem] sm:rounded-[10px] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+          className="fixed top-0 left-[50%] h-[3rem] sm:h-[3.5rem] w-full border-opacity-40 bg-white bg-opacity-20 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:w-[40rem] sm:rounded-[12px] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         />
 
-        <nav className="flex fixed top-[0.15rem] left-[45%] h-10 sm:h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:py-0">
-          <ul className="hidden sm:flex flex-wrap w-[22rem] items-center justify-center gap-y-1 text-[0.7rem] sm:text-[0.9rem] font-semibold text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-5 ">
+        <nav className="flex fixed top-[0.15rem] left-[50%] justify-center items-center h-10 sm:h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:py-0">
+          <ul className="hidden sm:flex flex-wrap w-[22rem] items-center justify-center gap-y-1 text-[0.7rem] sm:text-sm font-semibold text-gray-600 sm:w-[initial] sm:flex-nowrap sm:gap-5 ">
             {LINKS.map((link, index) => (
               <motion.li
                 className="h-3/4 flex items-center justify-center relative"
@@ -65,7 +65,7 @@ const Header = () => {
                 {link.hash ? (
                   <Link
                     className={clsx(
-                      "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200",
+                      "flex w-full items-center justify-center px-3 py-[0.35rem] hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200",
                       {
                         "!text-gray-950 font-medium dark:!text-gray-100": activeSection === link.name,
                       }
@@ -86,14 +86,14 @@ const Header = () => {
                           stiffness: 300,
                           damping: 30,
                         }}
-                        className="bg-gray-200 rounded-[10px] absolute inset-0 -z-10 dark:bg-gray-600"
+                        className="bg-zinc-200 rounded-[10px] absolute inset-0 -z-10 dark:bg-gray-600"
                       />
                     )}
                   </Link>
                 ) : (
                   <a
                     className={clsx(
-                      "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200",
+                      "flex w-full items-center justify-center px-1 py-1 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-200",
                       {
                         "!text-gray-950 font-medium dark:!text-gray-100": activeSection === link.name,
                       }
@@ -115,7 +115,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="sm:hidden ml-2 w-[2rem] mr-40 rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
+            className="sm:hidden ml-2 w-[2rem] h-[2rem] mr-40 rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 inset-0 -z-10 dark:border-gray-600"
             onClick={handleMobileMenuToggle}
             aria-label="Mobile Menu"
             title="Mobile Menu"

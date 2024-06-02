@@ -1,5 +1,3 @@
-/* global.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
@@ -63,8 +61,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
-
 
 @media (max-width: 768px) {
   .content {
@@ -165,19 +161,23 @@ aside {
 }
 
 .prose code {
-  @apply bg-gray-800 text-white text-xs sm:text-sm px-1.5 py-0.5 rounded;
+  @apply  text-white text-xs sm:text-sm px-1.5 py-0.5 rounded;
+  position: relative;
+  padding-left: 2rem;
 }
 
 .prose pre {
   @apply bg-gray-800 text-white text-xs sm:text-sm rounded-lg overflow-x-auto relative;
+  padding-top: 2rem; /* space for circles */
 }
 
 .prose code.language-javascript {
-  @apply bg-gray-100 text-black text-xs sm:text-sm px-1.5 py-0.5 rounded ;
+  @apply bg-gray-100 text-black text-xs sm:text-sm px-1.5 py-0.5 rounded;
 }
 
 .prose pre.language-javascript {
   @apply bg-gray-100 text-black text-xs sm:text-sm rounded-md overflow-x-auto relative;
+  padding-top: 2rem; /* space for circles */
 }
 
 .prose table {
@@ -208,13 +208,74 @@ aside {
   font-family: 'Pixelify Sans', sans-serif;
 }
 
-
-/* global.css veya tailwind.css */
-
 .modal-open {
   overflow: hidden;
 }
 
 .modal-open .fixed {
   backdrop-filter: blur(5px);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background-image: linear-gradient(to right, #3a3a3a 1px, transparent 1px),
+      linear-gradient(to bottom, #3a3a3a 1px, transparent 1px);
+    opacity: 0.050;
+  }
+}
+
+.prose pre {
+  position: relative;
+  padding-top: 2rem; /* space for circles */
+}
+
+
+
+.prose pre::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ff5f56; /* red circle */
+  border-radius: 50%;
+  z-index: 1;
+
+}
+
+.prose pre::after {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 1.75rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ffbd2e; /* yellow circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.prose pre .circle-line {
+  position: absolute;
+  top: 1.75rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
 }

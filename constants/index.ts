@@ -2,7 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 import { IconType } from 'react-icons';
-import { FaHome, FaLinkedin, FaBlog, FaInfoCircle, FaEnvelope, FaProjectDiagram,FaCode,  FaBook, FaFacebook, FaInstagram, FaGithub, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { FaHome, FaLinkedin, FaBlog, FaInfoCircle, FaEnvelope, FaProjectDiagram,FaCode,  FaBook, FaFacebook, FaInstagram, FaGithub, FaYoutube, FaTwitter, FaMedium, FaSpotify } from 'react-icons/fa';
 
 export interface FooterLink {
   href?: string;
@@ -13,14 +13,15 @@ export interface FooterLink {
 
 
 import { SectionName } from "@/context/active-section-context";
+import spotify from "@/pages/api/spotify";
 
 export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
-  { hash: "#home", name: "Home" },
+  { href: "/", name: "Home" },
   { hash: "#about", name: "About" },
   { hash: "#skills", name: "Skills" },
   // { hash: "#experience", name: "Experience" },
-  { hash: "#articles", name: "Articles" },
-  { hash: "#contact", name: "Contact" },
+  { href: "/posts", name: "Articles" },
+  // { hash: "#contact", name: "Contact" },
 
 ];
 
@@ -312,6 +313,8 @@ export const FOOTER_LINKS: FooterLink[] = [
   instagram: { href: "https://www.instagram.com", icon: FaInstagram },
    twitter: { href: "https://X.com", icon: FaTwitter },
    source: {href: "https://github.com/ek-uint61/personal_portfolio_blog", icon: FaCode },
+   medium: {href: "", icon: FaMedium },
+   spotify: {href: "", icon: FaSpotify },
  } as const;
 
  export const OTHER_LINKS = {
@@ -320,11 +323,3 @@ export const FOOTER_LINKS: FooterLink[] = [
   resume: "/resume.pdf",
 } as const;
 
-// export const EXTRA_LINKS = {
-//   linkedin: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/",
-//   github: "https://github.com/ek-uint61",
-//   instagram: "https://www.instagram.com",
-//   resume: "/resume.pdf",
-//   source_code: "https://github.com/sanidhyy/portfolio",
-//   twitter: "x.com",
-// } as const;

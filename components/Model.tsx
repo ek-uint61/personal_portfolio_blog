@@ -4,6 +4,7 @@ import * as THREE from "three";
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useFrame } from "@react-three/fiber";
 import { useTheme } from "next-themes";
+import useMediaQuery from '../hooks/useMediaQuery'; // Import the custom hook
 
 interface ModelProps {
   [key: string]: any;
@@ -15,6 +16,9 @@ const Model: React.FC<ModelProps> = (props) => {
   const groupRef = useRef<THREE.Group>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const isSmallScreen = useMediaQuery('(max-width: 640px)');
+  const isMediumScreen = useMediaQuery('(max-width: 768px)');
+
   let time = 0;
 
   useFrame((_state, delta) => {
@@ -23,12 +27,18 @@ const Model: React.FC<ModelProps> = (props) => {
       time += delta;
       const verticalOffset = Math.sin(time) * 0.1;
       groupRef.current.position.y = verticalOffset;
-      groupRef.current.scale.set(1, 1, 1);
+
+      if (isSmallScreen) {
+        groupRef.current.scale.set(0.7, 0.7, 0.7);
+      } else if (isMediumScreen) {
+        groupRef.current.scale.set(0.85, 0.85, 0.85);
+      } else {
+        groupRef.current.scale.set(1, 1, 1);
+      }
     }
   });
 
   useEffect(() => {
-    console.log("Current theme:", theme); // Tema değerini kontrol etmek için
     setIsDarkMode(theme === "dark");
   }, [theme]);
 

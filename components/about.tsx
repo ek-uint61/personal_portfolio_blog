@@ -5,6 +5,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
+import Link from 'next/link';
 // import LocationCard from "./LocationCard";
 
 // Define the About component.
@@ -36,10 +37,18 @@ const About = () => {
         When I'm not coding, I enjoy playing competitive games, watching series and movies, and playing with my <a href="./putin1.png" target="_blank" className="font-bold italic bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">cat</a>. I also enjoy learning new things.
       </p>
 
-      { <div className="flex justify-center mt-6">
-   
-        {/* <LocationCard /> */}
-      </div> }
+      <div className="flex justify-center">
+        <Link href="/about" legacyBehavior>
+          <a
+          target="_blank"
+           className="mt-8 font-bold text-sm px-5 py-2 rounded-[9px] border-none cursor-pointer font-inherit transition-all duration-300  flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#efeeee] dark:hover:bg-gray-700  active:scale-35 "
+           style={{ boxShadow: 'inset 0 0 0 1px #dfdfdf'}}
+           >
+            know more about me
+          </a>
+    
+        </Link>
+      </div>
     </motion.section>
   );
 };
