@@ -17,8 +17,8 @@ import spotify from "@/pages/api/spotify";
 
 export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
   { href: "/", name: "Home" },
-  { hash: "#about", name: "About" },
-  { hash: "#skills", name: "Skills" },
+  { href: "/about", name: "About" },
+  // { hash: "#skills", name: "Skills" },
   // { hash: "#experience", name: "Experience" },
   { href: "/posts", name: "Articles" },
   // { hash: "#contact", name: "Contact" },

@@ -6,10 +6,9 @@ import BlogLayout from '@/components/blogLayout';
 import { useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import { useRouter } from 'next/router';
-import { FaArrowLeft, FaArrowRight, FaBookmark } from 'react-icons/fa';
-import { SlArrowRight } from 'react-icons/sl';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Image from 'next/image';
-import { Footer } from '@/components';
+import { NextSeo } from 'next-seo';
 
 const extractHeadings = (html: string) => {
   const headingRegex = /<(h[1-6]) id="([^"]*)">([^<]*)<\/\1>/g;
@@ -44,72 +43,91 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
     setIsImageLoaded(true);
   }, []);
 
+  const seoProps = {
+    title: `${postData.title} ─ Blog`,
+    description: postData.subtitle || '',
+    openGraph: {
+      title: postData.title,
+      description: postData.subtitle || '',
+      images: [
+        {
+          url: postData.image,
+          alt: postData.title,
+          width: 1280,
+          height: 720,
+        },
+      ],
+    },
+  };
+
   return (
-    <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug} headings={headings}>
-      <div className="relative min-h-screen flex flex-col mt-32">
-        <div className='flex justify-center items-center'>
-          <h1 className="bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text text-center font-title text-4xl font-bold text-transparent dark:from-white dark:via-white/90 dark:to-white/70 md:text-4xl md:leading-[64px]">{postData.title}</h1>
-        </div>
-        <div className="flex justify-center items-center text-sm font-semibold text-center mb-4 space-x-12 mt-12">
-          <div className="author-info flex flex-col items-start">
-            <p className="text-gray-500 mb-1 text-xs">Written by</p>
-            <div className="flex items-center">
-              <Image src="/icons/icon-384x384.png" alt="Author" width={24} height={24} className="rounded-full" />
-              <p className="ml-1 text-gray-800">{postData.author}</p>
-            </div>
-          </div>
+    <BlogLayout allPostsData={allPostsData} currentPostSlug={postData.slug} headings={headings} seo={seoProps}>
+      <div className="relative min-h-screen flex flex-col items-center mt-12 px-4 py-16 overflow-hidden">
+        <NextSeo {...seoProps} />
+        <div className="max-w-2xl mx-auto text-center mb-12">
+  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+    {postData.title}
+  </h1>
+  {postData.subtitle && (
+    <p className="mt-2 text-lg sm:text-md lg:text-lg text-gray-600 dark:text-gray-300">
+      {postData.subtitle}
+    </p>
+  )}
+  <div className="flex flex-col sm:flex-row justify-center items-center mt-4 text-sm sm:text-base lg:text-lg font-semibold text-gray-500 dark:text-gray-400 space-y-2 sm:space-y-0 sm:space-x-12">
+    <div className="flex items-center space-x-2">
+      <Image src="/icons/icon-384x384.png" alt="Author" width={24} height={24} className="rounded-full" />
+      <p>{postData.author}</p>
+    </div>
+    <div>
+      <p>{new Date(postData.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+    </div>
+  </div>
+</div>
 
-          <div className="publish-info flex flex-col items-center">
-            <p className="text-gray-500 mb-1 text-xs">Published on</p>
-            <span className="text-gray-800">{new Date(postData.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-          </div>
-        </div>
 
-        <div className="flex mt-2 flex-grow">
-          <div className="flex-1 flex flex-col items-center p-4">
-            <div className="header-container p-4 mb-1 mx-auto text-center">
-              <Image
-                src={postData.image}
-                alt="Post Image"
-                width={960}
-                height={400}
-                className={`rounded-lg transition-all duration-700 ${isImageLoaded ? 'blur-0' : 'blur-md'}`}
-                style={{
-                  transition: 'filter 700ms ease, transform 150ms ease',
-                  filter: isImageLoaded ? 'none' : 'blur(20px)',
-                }}
-                onLoadingComplete={() => setIsImageLoaded(true)}
-              />
-            </div>
-            <article className="prose max-w-3xl w-full mt-24">
-              <div className="content prose max-w-full">
-                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-              </div>
-            </article>
-            <div className="flex justify-center gap-2 w-full mt-8">
-              {prevPost && (
-                <button
-                  onClick={() => router.push(`/blog/${prevPost.slug}`)}
-                  className="custom-font group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
-                  style={{ boxShadow: 'inset 0 0 0 2px #000' }}
-                >
-                  <FaArrowLeft className="text-gray-800" /> Previous Post
-                </button>
-              )}
-              {nextPost && (
-                <button
-                  onClick={() => router.push(`/blog/${nextPost.slug}`)}
-                  className="custom-font group font-semibold px-7 py-2 rounded-[9px] border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-[#e8d6d6] hover:border-6 hover:border-gray-100 dark:hover:bg-white active:scale-95 dark:bg-white/10 visited:bg-white visited:text-gray-700"
-                  style={{ boxShadow: 'inset 0 0 0 2px #000' }}
-                >
-                  Next Post <FaArrowRight className="text-gray-800" />
-                </button>
-              )}
-            </div>
+        <div className="flex flex-col items-center w-full px-4">
+          <div className="w-full max-w-3xl">
+            <Image
+              src={postData.image}
+              alt="Post Image"
+              width={960}
+              height={400}
+              className={`rounded-lg transition-all duration-700 ${isImageLoaded ? 'blur-0' : 'blur-md'} w-full h-auto max-h-64 lg:max-h-96 mb-8 rounded-3xl object-cover select-none shadow-xl default-transition`}
+              style={{
+                transition: 'filter 700ms ease, transform 150ms ease',
+                filter: isImageLoaded ? 'none' : 'blur(20px)',
+              }}
+              onLoadingComplete={() => setIsImageLoaded(true)}
+            />
           </div>
+          <article className="prose max-w-3xl w-full mt-8 text-left">
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          </article>
+          <div className="flex justify-center gap-4 w-full mt-8">
+  {prevPost && (
+    <button
+      onClick={() => router.push(`/blog/${prevPost.slug}`)}
+      className="custom-font group font-semibold px-4 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 active:scale-95 dark:bg-gray-800 dark:text-white visited:bg-gray-100"
+      style={{ boxShadow: 'inset 0 0 0 2px #000' }}
+    >
+      <FaArrowLeft className="text-gray-800 dark:text-white" />
+      <span className="text-xs md:text-base lg:text-lg">Previous Post</span>
+    </button>
+  )}
+  {nextPost && (
+    <button
+      onClick={() => router.push(`/blog/${nextPost.slug}`)}
+      className="custom-font group font-semibold px-4 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 active:scale-95 dark:bg-gray-800 dark:text-white visited:bg-gray-100"
+      style={{ boxShadow: 'inset 0 0 0 2px #000' }}
+    >
+      <span className="text-xs md:text-base lg:text-lg">Next Post</span>
+      <FaArrowRight className="text-gray-800 dark:text-white" />
+    </button>
+  )}
+</div>
+
         </div>
       </div>
-      {/* <Footer /> */}
     </BlogLayout>
   );
 };

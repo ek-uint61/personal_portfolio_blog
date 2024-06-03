@@ -26,10 +26,10 @@ export default function Home() {
       <SectionDivider />
 
       {/* The About component provides information about the author or user. */}
-      { <About /> }
+      {/* { <About /> } */}
 
       {/* The Skills component shows the skills of the author or user. */}
-      { <Skills /> }
+      {/* { <Skills /> } */}
 
       {/* The Experience component displays work or education experience. */}
       {/* <Experience /> */}

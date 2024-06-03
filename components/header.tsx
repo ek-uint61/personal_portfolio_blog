@@ -50,7 +50,7 @@ const Header = () => {
         <motion.div
           initial={{ y: -100, x: "-50%", opacity: 0 }}
           animate={{ y: 0, x: "-50%", opacity: 1 }}
-          className="fixed top-0 left-[50%] h-[3rem] sm:h-[3.5rem] w-full border-opacity-40 bg-white bg-opacity-20 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:w-[40rem] sm:rounded-[12px] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+          className="fixed top-0 left-[50%] h-[3rem] sm:h-[3.5rem] w-full border-opacity-40 bg-white bg-opacity-20 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:w-[26rem] sm:rounded-[12px] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         />
 
         <nav className="flex fixed top-[0.15rem] left-[50%] justify-center items-center h-10 sm:h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:py-0">
