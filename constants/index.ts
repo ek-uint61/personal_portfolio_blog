@@ -13,7 +13,6 @@ export interface FooterLink {
 
 
 import { SectionName } from "@/context/active-section-context";
-import spotify from "@/pages/api/spotify";
 
 export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
   { href: "/", name: "Home" },
@@ -70,11 +69,9 @@ export const EXPERIENCES_DATA = [
 
 // Data for skills
 export const SKILLS1_DATA = [
- ,
   "ARM Assembly",
   "ARM® Cortex® -M3 & M4 MCU Architecture",
   "Embedded Driver Development",
-
   "STM32",
   "ESP32",
   "GPIO",

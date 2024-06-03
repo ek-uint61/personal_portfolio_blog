@@ -61,11 +61,11 @@ const LocationCard = () => {
   }, [r]);
 
   return (
-    <div className='flex items-center justify-center relative h-60 w-[600px] flex-col gap-6 overflow-hidden rounded-xl p-4'>
-      <div className='absolute inset-x-0 bottom-[-190px] mx-auto aspect-square w-[388px] [@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[320px] [@media(min-width:768px)_and_(max-width:858px)]:h-[350px]'>
-        <div className='flex items-center justify-center gap-2'>
-          <MapPinIcon className='w-5 h-5' />
-          <h2 className='text-sm font-medium text-black dark:text-white'>Istanbul</h2>
+    <div className="flex items-center justify-center relative h-60 w-[500px] flex-col gap-6 overflow-hidden rounded-xl p-4 bg-white shadow-lg dark:bg-gray-800">
+      <div className="absolute inset-x-0 bottom-[-190px] mx-auto aspect-square w-[388px] [@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[320px] [@media(min-width:768px)_and_(max-width:858px)]:h-[350px]">
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <MapPinIcon className="w-5 h-5" />
+          <h2 className="text-sm font-medium text-black dark:text-white">Istanbul</h2>
         </div>
         <div
           style={{

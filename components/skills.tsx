@@ -32,9 +32,8 @@ const Skills = () => {
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-8 text-center sm:mb-40 px-4 sm:px-8"
+      className="mb-28 max-w-[44rem] scroll-mt-8 text-center sm:mb-40 px-4 sm:px-8"
     >
-      <SectionHeading>tech stack</SectionHeading>
 
       <div className="mt-8">
         <h2 className="mb-2 font-semibold">Programming</h2>

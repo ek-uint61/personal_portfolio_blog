@@ -279,3 +279,26 @@ body::before {
   height: 1px;
   background-color: #ccc;
 }
+
+
+.animated-list li {
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.animated-list:hover li:not(:hover) {
+  text-color: #f1f1f1; 
+  opacity: 0.5;
+}
+
+.animated-list li:hover {
+  text-color: #f9f9f9; 
+  opacity: 1 !important;
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+
+
+

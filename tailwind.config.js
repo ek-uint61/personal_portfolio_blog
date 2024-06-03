@@ -27,10 +27,20 @@ module.exports = {
         'fade-right': {
           '0%': { opacity: '0', transform: 'translateX(-20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
+          play: {
+            '0%': { height: '10%' },
+            '25%': { height: '75%' },
+            '50%': { height: '50%' },
+            '75%': { height: '100%' },
+            '100%': { height: '10%' },
+          },
         },
         'fade-left': {
           '0%': { opacity: '0', transform: 'translateX(20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
+        },      
+        animation: {
+          play: 'play 1s ease-out infinite',
         },
         'gradient': {
           '0%, 100%': { 'background-position': '0% 50%' },

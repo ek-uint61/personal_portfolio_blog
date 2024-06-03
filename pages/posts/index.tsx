@@ -1,14 +1,15 @@
-"use client"; // This comment indicates that this code should run on the client side in Next.js.
+"use client"; 
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Article from "@/components/article";
 import { ARTICLES_DATA } from "@/constants";
 import { FaArrowLeft, FaArrowRight, FaSearch } from 'react-icons/fa';
-import PostHeader from "@/components/postHeader"; // PostHeader bileşenini içe aktarın
+import PostHeader from "@/components/postHeader"; 
 import { Header } from "@/components";
 import ThemeContextProvider from "@/context/theme-context";
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import Link from 'next/link'; 
 
 const AllPosts = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,9 +51,14 @@ const AllPosts = () => {
 
   const visiblePageNumbers = getVisiblePageNumbers();
 
+  const [isIconToggled, setIsIconToggled] = useState(false);
+  const handleIconToggle = () => {
+    setIsIconToggled(!isIconToggled);
+  };
+
   useEffect(() => {
     setIsImageLoaded(true);
-    setTimeout(() => setIsContentVisible(true), 100); // Delay to ensure smooth transition
+    setTimeout(() => setIsContentVisible(true), 100); 
   }, []);
 
   return (
@@ -72,7 +78,20 @@ const AllPosts = () => {
 
         <main className="flex flex-col items-center px-4">
           <Header />
-          <h1 className="text-4xl font-bold mt-32 mb-8">All Posts</h1>
+          <div className="flex items-center mt-32 mb-4">
+  <Link href="/postlist" target="_blank" onClick={handleIconToggle} onMouseEnter={handleIconToggle} onMouseLeave={handleIconToggle}>
+    <svg className={`w-5 h-5 cursor-pointer transition-transform duration-500 ${isIconToggled ? "transform scale-110" : ""}`} fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      {isIconToggled ? (
+        <path d="M3 3h8v2H3v12h8V5h2v12h8V5h-8V3h10v16H13v2h-2v-2H1V3h2zm16 7h-4v2h4v-2zm-4-3h4v2h-4V7zm2 6h-2v2h2v-2z"/>
+      ) : (
+        <path d="M8 2h12v20H4V2h4zm4 8h-2v2H8V4H6v16h12V4h-4v8h-2v-2z"/>
+      )}
+    </svg>
+  </Link>
+  <h1 className="text-4xl font-bold ml-4">All Posts</h1>
+</div>
+
+
           <div className="relative w-full max-w-md mb-8 flex items-center justify-center">
             <input 
               type="text" 

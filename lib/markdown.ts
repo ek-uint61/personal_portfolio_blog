@@ -72,3 +72,6 @@ export function getSortedPostsData() {
 
   return allPostsData.sort((a, b) => a.number - b.number);
 }
+
+
+
