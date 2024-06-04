@@ -125,16 +125,14 @@ const Header = () => {
                 {theme === "dark" ? <BsMoon /> : <BsSun />}{" "}
               </button>
 
-              <button
-                type="button"
-                className="font-semibold w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 dark:text-gray-400"
-                onClick={handleModalToggle}
-
-                aria-label="Bookmark Icon"
-                title="Bookmarks"
-              >
-                <BsBookmark />
-              </button>
+              <Link
+  href="/bookmarks"
+  className="font-semibold w-[2rem] h-[2rem] rounded-[10px] flex items-center justify-center hover:bg-gray-300 hover:dark:bg-gray-600 dark:text-gray-400"
+  aria-label="Bookmark Icon"
+  title="Bookmarks"
+>
+  <BsBookmark />
+</Link>
 
               <button
                 type="button"

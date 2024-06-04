@@ -2,16 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Source Serif Pro', serif; 
+  font-family: 'Roboto', serif; 
   color: #24292e;
   line-height: 1.6;
   letter-spacing: 0.01em;
 }
+
 
 .container {
   /* max-width: 100ch; */
@@ -302,3 +305,41 @@ body::before {
 
 
 
+
+
+.grid-container {
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  max-width: 1150px; /* Grid container's maximum width */
+  margin: 0 auto; /* Center the containers */
+}
+
+.grid-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item .image-container {
+  position: relative;
+  flex-shrink: 0; /* Prevents the image container from shrinking */
+}
+
+.grid-item .content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.thumbnail-shadow {
+  box-shadow:
+    0 0 0 0.5px #e2e8f0,
+    0 0 0 1px rgba(226, 232, 240, 0.5),
+    0 0 0 3px #f8fafc,
+    0 0 0 3.5px #f1f5f9,
+    0 10px 15px -3px rgb(59 130 246/5%),
+    0 4px 6px -4px rgb(59 130 246/5%);
+}
