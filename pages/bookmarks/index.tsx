@@ -8,7 +8,7 @@ import { categories } from '@/lib/categories';
 import { FaArrowLeft, FaArrowRight, FaSearch } from 'react-icons/fa';
 
 const BookmarksPage: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(categories[0]?.name || null);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [isContentVisible, setIsContentVisible] = useState(false);
@@ -19,8 +19,11 @@ const BookmarksPage: React.FC = () => {
   };
 
   useEffect(() => {
+    if (!activeCategory && categories.length > 0) {
+      setActiveCategory(categories[0].name);
+    }
     setTimeout(() => setIsContentVisible(true), 100);
-  }, []);
+  }, [activeCategory]);
 
   const filteredBookmarks = activeCategory
     ? categories
@@ -54,8 +57,6 @@ const BookmarksPage: React.FC = () => {
     }
   };
 
-  
-
   const visiblePageNumbers = getVisiblePageNumbers();
 
   return (
@@ -81,8 +82,8 @@ const BookmarksPage: React.FC = () => {
         onChange={e => setSearchTerm(e.target.value)}
       />
             </div>
-            <div className="p-5 sm:p-8 grid-container">
-            <div className="columns-1 gap-5 sm:columns-2 sm:gap-2 md:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-8">
+            <div className={`p-5 sm:p-8 grid-container transition-all duration-700 ${isContentVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}>
+            <div className="columns-1 gap-5 sm:columns-2 sm:gap-2 md:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-8 ">
               {currentBookmarks.map((bookmark, index) => (
                 <BookmarkCard key={bookmark.id} bookmark={bookmark} />
               ))}
