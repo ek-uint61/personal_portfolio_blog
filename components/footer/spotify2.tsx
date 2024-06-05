@@ -127,9 +127,9 @@ const Spoti: React.FC = () => {
               className="object-cover rounded-lg shadow-md"
               height={200}
               src={song?.albumImageUrl || defaultImageUrl}
-              width={200} // Bu satırı güncelledik
-              layout="responsive"
-            />
+              width={200} 
+              priority
+              fetchPriority="high"          />
           </div>
 
           <div className="flex flex-col col-span-6 md:col-span-8">

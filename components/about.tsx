@@ -124,7 +124,7 @@ export default function About() {
              history, and philosophy books, follow related YouTube channels, and try to create technical articles and content.
             </p>
             <p>
-              When I&apos;m not at my desk, I&aposm probably lifting weights, watching a TV show or movie, or playing with my cat.
+              When I&apos;m not at my desk, I probably lifting weights, watching a TV show or movie, or playing with my cat.
             </p>
           </div>
         </Section>
