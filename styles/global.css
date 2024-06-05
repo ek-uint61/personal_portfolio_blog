@@ -41,7 +41,10 @@ body {
   align-items: center;
   padding: 1rem;
   margin-top: 12px;
-  margin-bottom: 52px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-container img {

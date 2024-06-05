@@ -103,7 +103,7 @@ export default function RootLayout({
         {/* Arka plan alt görüntüsü */}
         <Image
           width={1512}
-          height={447}
+          height={800}
           className='absolute -bottom-10 left-1/2 -z-10 -translate-x-1/2'
           src='/gradient-background-bottom.png'
           alt=''

@@ -114,7 +114,7 @@ const ModalContent: React.FC<ModalContentProps> = ({ onClose }) => {
       </button>
       <input
         type="text"
-        placeholder="Type a command or search"
+        placeholder="type a search"
         className="w-full p-2 mb-4 border rounded text-xs bg-gray-100 dark:bg-gray-700 dark:text-gray-200"
         value={searchTerm}
         onChange={e => setSearchTerm(e.target.value)}

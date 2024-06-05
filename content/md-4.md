@@ -3,12 +3,6 @@ title: "Deneme Baslik -5"
 subtitle: "Deneme Alt Baslik -5"
 author: "Emre Kalayci"
 date: "Aug 17, 2023"
-tags:
-  - AWS
-  - Cloud computing
-  - Deneme
-  - Tech
-  - Deneme
 contentHtml: string;
 slug: title-5;
 number: 5

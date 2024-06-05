@@ -18,6 +18,8 @@ import colorado from "@/public/gallery/colorado.jpg";
 import Skills from "./skills";
 import Footer from "./footer";
 import { OWNER_NAME, OTHER_LINKS } from "@/constants";
+import Spoti from "./footer/spotify2";
+import Spo from "./footer/spo";
 
 export const metadata: Metadata = {
   title: "About | Emre",
@@ -156,7 +158,6 @@ export default function About() {
             ))}
           </ul>
         </Section>
-
         <Section heading="Experience" headingAlignment="center" className="w-full md:max-w-3xl">
           <div className="flex w-full flex-col gap-8 text-sm">
             <p className="text-center md:text-left">
@@ -167,10 +168,8 @@ export default function About() {
             <Workplaces items={workplaces} />
           </div>
         </Section>
-
-        {/* <Skills /> */}
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

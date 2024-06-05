@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@nextui-org/react": "^2.4.1",
     "@radix-ui/colors": "^3.0.0",
     "@react-three/drei": "^9.105.6",
     "@tailwindcss/typography": "^0.5.13",

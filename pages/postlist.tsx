@@ -1,39 +1,43 @@
+// Import necessary modules and components
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ARTICLES_DATA } from '@/constants';
 import { CgWorkAlt } from "react-icons/cg";
 import { SlArrowRight } from 'react-icons/sl';
-// import MusicPlayer from '@/components/MusicPlayer';
-// import "../styles/music.css";
 import { FaIcons } from 'react-icons/fa';
 
+// Define the Article type
 type Article = {
   date: string;
   title: string;
   description: string;
   keywords: string[];
   slug: string;
-  number: number;
+  id: number;
   image: string;
   category: string;
   subcategory: string;
 };
 
-const NewPage = () => {
+const PostList = () => {
+  // Define state variables
   const [searchTerm, setSearchTerm] = useState('');
   const [sortedArticles, setSortedArticles] = useState<Article[]>([]);
   const [isIconToggled, setIsIconToggled] = useState(false);
 
+  // Sort articles by date on component mount
   useEffect(() => {
     const sortedData = ARTICLES_DATA.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) as Article[];
     setSortedArticles(sortedData);
   }, []);
 
+  // Filter articles based on search term
   const filteredArticles = sortedArticles.filter(article => 
     article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     article.date.includes(searchTerm)
   );
 
+  // Handle icon toggle
   const handleIconToggle = () => {
     setIsIconToggled(!isIconToggled);
   };
@@ -75,45 +79,44 @@ const NewPage = () => {
             </tr>
           </thead>
           <tbody>
-  {filteredArticles.map((article, index) => (
-    <tr key={index} className="border-b hover:bg-gray-100">
-      <td className="py-1 px-2 text-xs flex items-center">
-        <CgWorkAlt className="w-4 h-4 mr-2" />
-        {article.date}
-      </td>
-      <td className="py-1 px-2 text-xs">
-        <Link  href={`/blog/${article.slug}`} legacyBehavior>
-          <a className="text-gray-700  cursor-pointer"  target='_blank'>         
-            {article.title}
-          </a>
-        </Link>
-      </td>
-      <td className='py-1 px-2 text-xs'>
-        <p className="flex  text-gray-500 ">
-          {article.category}  
-        </p>
-      </td>
-      <td className='py-1 px-2 text-xs'>
-        <p className="flex  text-gray-500 ">
-        <SlArrowRight/></p>
-      </td>
-      <td className='py-1 px-2 text-xs'>
-        <p className="flex  text-gray-500 ">
-          {article.subcategory}
-        </p>
-      </td>
-  
-    </tr>
-  ))}
-</tbody>
+            {filteredArticles.map((article, index) => (
+              <tr key={index} className="border-b hover:bg-gray-100">
+                <td className="py-1 px-2 text-xs flex items-center">
+                  <CgWorkAlt className="w-4 h-4 mr-2" />
+                  {article.date}
+                </td>
+                <td className="py-1 px-2 text-xs">
+                  <Link href={`/posts/${article.slug}`} legacyBehavior>
+                    <a className="text-gray-700  cursor-pointer" target='_blank'>         
+                      {article.title}
+                    </a>
+                  </Link>
+                </td>
+                <td className='py-1 px-2 text-xs'>
+                  <p className="flex  text-gray-500 ">
+                    {article.category}  
+                  </p>
+                </td>
+                <td className='py-1 px-2 text-xs'>
+                  <p className="flex  text-gray-500 ">
+                    <SlArrowRight/>
+                  </p>
+                </td>
+                <td className='py-1 px-2 text-xs'>
+                  <p className="flex  text-gray-500 ">
+                    {article.subcategory}
+                  </p>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
       {/* <div className="mb-20">
         <MusicPlayer />
       </div> */}
     </div>
-    
   );
 };
 
-export default NewPage;
+export default PostList;

@@ -12,8 +12,8 @@ tags:
 contentHtml: string;
 slug: title-4;
 number: 4
-category: "AI"
-image:  "../postDataImg8.png"
+category: "Machine Learning"
+image:  "/postDataImg8.png"
 ---
 -> Scope, Visibility ve Lifetime bir değişkenin özellikleridir, *storage classes* belirleyicileri kullanarak bunlar değiştirilebilir.
 

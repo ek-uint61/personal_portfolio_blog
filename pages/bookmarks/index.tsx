@@ -5,7 +5,7 @@ import BookmarkCard from '@/components/bookmarks/BookmarkCard';
 import Sidebar from '@/components/bookmarks/sidebar';
 import { BookmarkCategory } from '@/lib/bookmarks';
 import { categories } from '@/lib/categories';
-import { FaArrowLeft, FaArrowRight, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 
 const BookmarksPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(categories[0]?.name || null);
@@ -46,15 +46,7 @@ const BookmarksPage: React.FC = () => {
   };
 
   const getVisiblePageNumbers = () => {
-    if (totalPages <= 5) {
-      return Array.from({ length: totalPages }, (_, index) => index + 1);
-    } else if (currentPage <= 3) {
-      return Array.from({ length: 5 }, (_, index) => index + 1);
-    } else if (currentPage > totalPages - 3) {
-      return Array.from({ length: 5 }, (_, index) => totalPages - 4 + index);
-    } else {
-      return Array.from({ length: 5 }, (_, index) => currentPage - 2 + index);
-    }
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
   };
 
   const visiblePageNumbers = getVisiblePageNumbers();
@@ -76,7 +68,7 @@ const BookmarksPage: React.FC = () => {
             <div className="relative w-full max-w-md mb-8 flex items-center justify-center mx-auto">
             <input
         type="text"
-        placeholder="Type a command or search"
+        placeholder="Search bookmarks by title or description"
         className="w-full p-2 mb-4 border rounded border-gray-200 text-xs bg-gray-100 "
         value={searchTerm}
         onChange={e => setSearchTerm(e.target.value)}
@@ -91,29 +83,15 @@ const BookmarksPage: React.FC = () => {
             </div>
             {filteredBookmarks.length > 0 && (
               <div className="flex justify-center mt-8 items-center mb-10">
-                <button
-                  onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : 1)}
-                  className="mx-1 px-3 py-1 text-gray-700"
-                  disabled={currentPage === 1}
-                >
-                  <FaArrowLeft />
-                </button>
                 {visiblePageNumbers.map((pageNumber) => (
                   <button
                     key={pageNumber}
                     onClick={() => handlePageChange(pageNumber)}
-                    className={`mx-1 px-3 py-1 rounded-full ${currentPage === pageNumber ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`}
-                  >
+                    className={` mx-1 px-3 py-1 rounded-[10px] text-xs ${currentPage === pageNumber ? "bg-gray-500 text-white" : "bg-gray-100 text-gray-700"}`}
+                    >
                     {pageNumber}
                   </button>
                 ))}
-                <button
-                  onClick={() => handlePageChange(currentPage < totalPages ? currentPage + 1 : totalPages)}
-                  className="mx-1 px-2 py-1 text-gray-700"
-                  disabled={currentPage >= totalPages}
-                >
-                  <FaArrowRight />
-                </button>
               </div>
             )}
           </div>

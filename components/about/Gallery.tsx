@@ -9,7 +9,7 @@ import texas from "@/public/gallery/texas.jpg";
 import meLily from "@/public/gallery/me-lily.jpg";
 import colorado from "@/public/gallery/colorado.jpg";
 import cowboy from "@/public/gallery/cowboy-bike.webp";
-
+import pamuk from "@/public/putin1.png";
 import Halo from "./Halo";
 
 type PhotoProps = {
@@ -159,9 +159,9 @@ export default function Gallery() {
           index={3}
         />
         <Photo
-          src={colorado}
+          src={pamuk}
           meta="2022-09-10"
-          alt={"Snowboarding in Colorado"}
+          alt={"pamuk"}
           width={220}
           height={260}
           rotate={7.6}

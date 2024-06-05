@@ -1,4 +1,4 @@
-"use client"; // This comment indicates that this code should run on the client side in Next.js.
+"use client"; 
 
 import { useRef, RefObject } from "react";
 import { useScroll } from "framer-motion";
@@ -13,7 +13,7 @@ type ArticleProps = {
   slug: string;
   image: string;
   category: string;
-  type: string; // New type prop for Blog or Project
+  type: string; 
 };
 
 const Article = ({
@@ -24,7 +24,7 @@ const Article = ({
   keywords,
   image,
   category,
-  type, // New type prop for Blog or Project
+  type, 
 }: ArticleProps) => {
   const articleRef: RefObject<HTMLLIElement> = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
@@ -42,16 +42,16 @@ const Article = ({
           <FaPen className="text-gray-700 dark:text-gray-400" />
           <span className="text-xs font-medium text-gray-700 dark:text-gray-400">{type}</span>
         </div>
-        <Link href={`/blog/${slug}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+        <Link href={`/posts/${slug}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
           <FaLocationArrow className="text-white bg-black bg-opacity-75 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-300" />
         </Link>
       </div>
-      <Link href={`/blog/${slug}`} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg">
+      <Link href={`/posts/${slug}`} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg">
         <img src={image} alt={title} className="w-full h-48 object-cover" />
       </Link>
       <div className="px-4 text-left space-y-2">
         <p className="text-xs text-zinc-500 dark:text-gray-300">{date}</p>
-        <Link href={`/blog/${slug}`} target="_blank" rel="noopener noreferrer" className="">
+        <Link href={`/posts/${slug}`} target="_blank" rel="noopener noreferrer" className="">
           <h3 className="text-md font-bold text-gray-800 dark:text-gray-100">
             {title}
           </h3>

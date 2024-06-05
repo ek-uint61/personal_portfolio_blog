@@ -23,7 +23,7 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/typography.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/typography.js", "components/footer/spotify2.tsx", "components/footer/HeartIcon.tsx"],
   "exclude": ["node_modules"]
 }
 
