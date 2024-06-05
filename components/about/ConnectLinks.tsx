@@ -1,4 +1,4 @@
-import { FaYoutube, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaYoutube, FaGithub, FaInstagram, FaLinkedin, FaSpotify, FaMedium } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 interface ConnectLink {
@@ -24,8 +24,8 @@ const ConnectLinks: ConnectLink[] = [
   //   ),
   // },
   {
-    label: "Partnerships",
-    href: "mailto:partners@b-r.io",
+    label: "Gmail",
+    href: "mailto:emrklyci61@gmail.com",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -39,28 +39,28 @@ const ConnectLinks: ConnectLink[] = [
     ),
   },
   {
-    label: "YouTube",
-    href: "https://www.youtube.com/@brianruizy",
-    icon: <FaYoutube />,
+    label: "Medium",
+    href: "",
+    icon: <FaMedium />,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/brianruizy/",
+    href: "",
     icon: <FaInstagram />,
   },
   {
     label: "Twitter",
-    href: "https://twitter.com/brianruizy",
+    href: "",
     icon: <FaXTwitter />,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/brianruizy/",
+    href: "https://www.linkedin.com/in/emre-kalayc%C4%B1-b22a651bb/",
     icon: <FaLinkedin />,
   },
   {
     label: "GitHub",
-    href: "https://github.com/brianruizy",
+    href: "https://github.com/ek-uint61",
     icon: <FaGithub />,
   },
 ];

@@ -11,6 +11,9 @@ import colorado from "@/public/gallery/colorado.jpg";
 import cowboy from "@/public/gallery/cowboy-bike.webp";
 import pamuk from "@/public/putin1.png";
 import Halo from "./Halo";
+import first from "@/public/gallery/1.jpg";
+import second from "@/public/gallery/2.jpg";
+import third from "@/public/gallery/3.jpg";
 
 type PhotoProps = {
   src: StaticImageData | string;
@@ -131,36 +134,28 @@ export default function Gallery() {
     <div className="flex justify-center items-center">
       <section className="flex gap-4 h-[268px] justify-center items-center flex-wrap">
         <Photo
-          src={meLily}
-          meta="2021-07-12"
-          alt="Brian and Lily"
+          src={first}
+          meta="26/02/2022"
+          alt=""
           width={324}
           height={239}
           rotate={-6}
           index={1}
         />
         <Photo
-          src={cowboy}
-          meta="2017-07-04"
-          alt="my e-bike"
+          src={second}
+          meta="17/10/2015"
+          alt=""
           width={230}
           height={250}
           rotate={6.3}
           index={2}
           flipDirection="left"
         />
-        <Photo
-          src={texas}
-          meta="2021-05-20"
-          alt="Texas"
-          width={280}
-          height={235}
-          rotate={-5.4}
-          index={3}
-        />
+  
         <Photo
           src={pamuk}
-          meta="2022-09-10"
+          meta="28/05/2024"
           alt={"pamuk"}
           width={220}
           height={260}
@@ -168,6 +163,16 @@ export default function Gallery() {
           left={530}
           index={4}
           flipDirection="left"
+        />
+
+<Photo
+          src={third}
+          meta="01/07/2000 & Boztepe/Trabzon"
+          alt=""
+          width={280}
+          height={235}
+          rotate={-5.4}
+          index={3}
         />
       </section>
     </div>

@@ -9,17 +9,16 @@ import Workplaces from "./about/Workplaces";
 import Gallery from "./about/Gallery";
 
 import hinesLogo from "@/public/work/hines-logo.jpeg";
-import perishipLogo from "@/public/work/periship-logo.jpeg";
-import camsLogo from "@/public/work/cams-logo.png";
-import uhdLogo from "@/public/work/uhd.png";
+import sistem from "@/public/work/c_ve_sistem.png";
+import vbt from "@/public/work/vbt.png"
+import ahi from "@/public/work/ahi.png"
+import freelance from "@/public/work/freelance.png";
 
 import meLily from "@/public/gallery/me-lily.jpg";
 import colorado from "@/public/gallery/colorado.jpg";
-import Skills from "./skills";
 import Footer from "./footer";
 import { OWNER_NAME, OTHER_LINKS } from "@/constants";
-import Spoti from "./footer/spotify2";
-import Spo from "./footer/spo";
+
 
 export const metadata: Metadata = {
   title: "About | Emre",
@@ -105,25 +104,17 @@ export default function About() {
         <Section heading="About" headingAlignment="left" className="w-full md:max-w-3xl">
           <div className="flex flex-col gap-6 text-center md:text-left text-sm">
             <p>
-              Hi, I&apos;m Brian, born in Honduras and raised in Houston, Texas.
-              I have been coding for {new Date().getFullYear() - 2019} years. As
+              Hi, I&apos;m Emre, I live in Istanbul, Turkiye.
+              I have been coding for {new Date().getFullYear() - 2018} years. As
               a software engineer, I specialize in full-stack web development
-              and product design.
+              and I am currently learning embedded software and machine learning
             </p>
             <p>
-              In addition to coding, I create content on my{" "}
-              <Link
-                className="underline"
-                href="https://www.youtube.com/@brianruizy"
-              >
-                YouTube
-              </Link>{" "}
-              channel, covering all things technology, coding vlogs, and
-              personal development.
+            In addition to coding, I like to read fantasy fiction, 
+             history, and philosophy books, follow related YouTube channels, and try to create technical articles and content.
             </p>
             <p>
-              When I&apos;m not at my desk, I am probably lifting weights,
-              playing soccer, riding my e-bike, or at a local coffee shop :]
+              When I&apos;m not at my desk, I'm probably lifting weights, watching a TV show or movie, or playing with my cat.
             </p>
           </div>
         </Section>
@@ -161,9 +152,7 @@ export default function About() {
         <Section heading="Experience" headingAlignment="center" className="w-full md:max-w-3xl">
           <div className="flex w-full flex-col gap-8 text-sm">
             <p className="text-center md:text-left">
-              I specialize in Python, data analytics, React, web development,
-              UI/UX, and product design. But I am always learning new things.
-              Here are some of the places I have worked.
+            I specialize in React & Next.js, web development and UI/UX but I am currently learning Embedded Software, Computer Vision   
             </p>
             <Workplaces items={workplaces} />
           </div>
@@ -175,40 +164,40 @@ export default function About() {
 }
 
 const workplaces = [
-  {
-    title: "Embedded Software Enginner Intern",
-    company: "Makersan",
-    date: "Sep 2024 - Dec 2024",
-    imageSrc: hinesLogo,
-    link: "https://hines.com",
-  },
+  // {
+  //   title: "Embedded Software Enginner Intern",
+  //   company: "Makersan",
+  //   date: "Sep 2024 - Dec 2024",
+  //   imageSrc: hinesLogo,
+  //   link: "https://hines.com",
+  // },
   {
     title: "Bootcamp",
     company: "C and System Programmers Association",
     date: "July 2024 - Dec 2024",
-    imageSrc: hinesLogo,
-    link: "https://hines.com",
+    imageSrc: sistem,
+    link: "https://csystem.org/",
   },
   {
     title: "Software Developer Intern",
     company: "VBT Software",
     date: "June 2024 - Sep 2024",
-    imageSrc: perishipLogo,
-    link: "https://peripharma.com/",
+    imageSrc: vbt,
+    link: "https://www.vbt.com.tr/",
   },
   {
-    title: "Full Stack Developer",
+    title: "Wordpress Developer",
     company: "Freelance",
-    date: "2020-2022",
-    imageSrc: uhdLogo,
-    link: "https://www.uhd.edu/",
+    date: "2021-2022",
+    imageSrc: freelance  ,
+    link: "https://wordpress.com/tr/",
   },
   {
     title: "Computer Science - 3.05",
     company: "Ahi Evran University",
     date: "2018 - 2024",
-    imageSrc: camsLogo,
-    link: "https://camstex.com",
+    imageSrc: ahi,
+    link: "https://www.ahievran.edu.tr/",
   },
 ];
 

@@ -17,13 +17,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, date, description, slu
           <Image
             src={image}
             alt={title}
-            layout="fill"
+            fill
             className="object-cover rounded-lg"
           />
         </div>
         <div className="flex flex-col gap-1 p-1">
           <h3 className="line-clamp-4 text-md leading-snug font-bold">{title}</h3>
-          <p className="text-sm text-gray-500">{date}</p>
+          <p className="text-xs text-gray-500">{date}</p>
           <p className="line-clamp-6 text-[13px] leading-[18px]">{description}</p>
         </div>
       </a>
