@@ -3,6 +3,7 @@
 import { useRef, RefObject } from "react";
 import { useScroll } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { FaPen, FaLocationArrow } from 'react-icons/fa';
 
 type ArticleProps = {
@@ -47,7 +48,7 @@ const Article = ({
         </Link>
       </div>
       <Link href={`/posts/${slug}`} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg">
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <Image src={image} alt={title} width={600} height={300} className="w-full h-48 object-cover" />
       </Link>
       <div className="px-4 text-left space-y-2">
         <p className="text-xs text-zinc-500 dark:text-gray-300">{date}</p>

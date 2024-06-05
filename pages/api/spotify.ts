@@ -32,7 +32,7 @@ const getNowPlaying = async (access_token: string) => {
   });
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { access_token } = await getAccessToken();
   const response = await getNowPlaying(access_token);
 
@@ -62,3 +62,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     songUrl,
   });
 };
+
+export default handler;

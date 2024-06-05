@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Metadata } from "next";
 import Link from "./about/Link";
@@ -13,20 +11,16 @@ import second from "@/public/gallery/2.jpg";
 import third from "@/public/gallery/3.jpg";
 
 import sistem from "@/public/work/c_ve_sistem.png";
-import vbt from "@/public/work/vbt.png"
-import ahi from "@/public/work/ahi.png"
+import vbt from "@/public/work/vbt.png";
+import ahi from "@/public/work/ahi.png";
 import freelance from "@/public/work/freelance.png";
-
 
 import Footer from "./footer";
 import { OWNER_NAME, OTHER_LINKS } from "@/constants";
 
-
 export const metadata: Metadata = {
   title: "About | Emre",
-  description: `${
-    OWNER_NAME.split(" ")[0]
-  } is a web development with 2+ years of experience.`,
+  description: `${OWNER_NAME.split(" ")[0]} is a web development with 2+ years of experience.`,
   authors: {
     name: OWNER_NAME,
     url: OTHER_LINKS.github,
@@ -81,7 +75,7 @@ export default function About() {
             alt={""}
             width={324}
             height={139}
-            className=" relative inset-0 h-48 w-48 sm:h-60 sm:w-60 -rotate-6 rounded-xl bg-gray-400 object-cover shadow-md"
+            className="relative inset-0 h-48 w-48 sm:h-60 sm:w-60 -rotate-6 rounded-xl bg-gray-400 object-cover shadow-md"
             priority
           />
         </div>
@@ -94,7 +88,7 @@ export default function About() {
             alt={""}
             width={220}
             height={260}
-            className=" inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-56 md:h-56"
+            className="inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-56 md:h-56"
             priority
           />
         </div>
@@ -108,7 +102,7 @@ export default function About() {
             alt={""}
             width={220}
             height={260}
-            className=" inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-46 md:h-56"
+            className="inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-46 md:h-56"
             priority
           />
         </div>
@@ -130,7 +124,7 @@ export default function About() {
              history, and philosophy books, follow related YouTube channels, and try to create technical articles and content.
             </p>
             <p>
-              When I&apos;m not at my desk, I'm probably lifting weights, watching a TV show or movie, or playing with my cat.
+              When I&apos;m not at my desk, I&aposm probably lifting weights, watching a TV show or movie, or playing with my cat.
             </p>
           </div>
         </Section>
@@ -180,13 +174,6 @@ export default function About() {
 }
 
 const workplaces = [
-  // {
-  //   title: "Embedded Software Enginner Intern",
-  //   company: "Makersan",
-  //   date: "Sep 2024 - Dec 2024",
-  //   imageSrc: hinesLogo,
-  //   link: "https://hines.com",
-  // },
   {
     title: "Bootcamp",
     company: "C and System Programmers Association",
@@ -205,7 +192,7 @@ const workplaces = [
     title: "Wordpress Developer",
     company: "Freelance",
     date: "2021-2022",
-    imageSrc: freelance  ,
+    imageSrc: freelance,
     link: "https://wordpress.com/tr/",
   },
   {

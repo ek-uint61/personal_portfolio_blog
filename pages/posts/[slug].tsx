@@ -65,28 +65,27 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
       <div className="relative min-h-screen flex flex-col items-center mt-12 px-4 py-16 overflow-hidden">
         <NextSeo {...seoProps} />
         <div className="max-w-2xl mx-auto text-center mb-12">
-  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-    {postData.title}
-  </h1>
-  {postData.subtitle && (
-    <p className="mt-2 text-lg sm:text-md lg:text-lg text-gray-600 dark:text-gray-300">
-      {postData.subtitle}
-    </p>
-  )}
-  <div className="flex flex-col sm:flex-row justify-center items-center mt-4 text-sm sm:text-base lg:text-lg font-semibold text-gray-500 dark:text-gray-400 space-y-2 sm:space-y-0 sm:space-x-12">
-    <div className="flex items-center space-x-2">
-      <Image src="/icons/icon-384x384.png" alt="Author" width={24} height={24} className="rounded-full" />
-      <p>{postData.author}</p>
-    </div>
-    <div>
-      <p>{new Date(postData.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
-    </div>
-  </div>
-</div>
-
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+            {postData.title}
+          </h1>
+          {postData.subtitle && (
+            <p className="mt-2 text-lg sm:text-md lg:text-lg text-gray-600 dark:text-gray-300">
+              {postData.subtitle}
+            </p>
+          )}
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-4 text-sm sm:text-base lg:text-lg font-semibold text-gray-500 dark:text-gray-400 space-y-2 sm:space-y-0 sm:space-x-12">
+            <div className="flex items-center space-x-2">
+              <Image src="/icons/icon-384x384.png" alt="Author" width={24} height={24} className="rounded-full" />
+              <p>{postData.author}</p>
+            </div>
+            <div>
+              <p>{new Date(postData.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+            </div>
+          </div>
+        </div>
 
         <div className="flex flex-col items-center w-full px-4">
-          <div className="w-full max-w-3xl header-container ">
+          <div className="w-full max-w-3xl header-container">
             <Image
               src={postData.image}
               alt="Post Image"
@@ -104,28 +103,27 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           </article>
           <div className="flex justify-center gap-4 w-full mt-8">
-  {prevPost && (
-    <button
-      onClick={() => router.push(`/posts/${prevPost.slug}`)}
-      className="custom-font group font-semibold px-4 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 active:scale-95 dark:bg-gray-800 dark:text-white visited:bg-gray-100"
-      style={{ boxShadow: 'inset 0 0 0 2px #000' }}
-    >
-      <FaArrowLeft className="text-gray-800 dark:text-white" />
-      <span className="text-xs md:text-base lg:text-lg">Previous Post</span>
-    </button>
-  )}
-  {nextPost && (
-    <button
-      onClick={() => router.push(`/posts/${nextPost.slug}`)}
-      className="custom-font group font-semibold px-4 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 active:scale-95 dark:bg-gray-800 dark:text-white visited:bg-gray-100"
-      style={{ boxShadow: 'inset 0 0 0 2px #000' }}
-    >
-      <span className="text-xs md:text-base lg:text-lg">Next Post</span>
-      <FaArrowRight className="text-gray-800 dark:text-white" />
-    </button>
-  )}
-</div>
-
+            {prevPost && (
+              <button
+                onClick={() => router.push(`/posts/${prevPost.slug}`)}
+                className="custom-font group font-semibold px-4 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 active:scale-95 dark:bg-gray-800 dark:text-white visited:bg-gray-100"
+                style={{ boxShadow: 'inset 0 0 0 2px #000' }}
+              >
+                <FaArrowLeft className="text-gray-800 dark:text-white" />
+                <span className="text-xs md:text-base lg:text-lg">Previous Post</span>
+              </button>
+            )}
+            {nextPost && (
+              <button
+                onClick={() => router.push(`/posts/${nextPost.slug}`)}
+                className="custom-font group font-semibold px-4 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 bg-white flex items-center gap-2 outline-none focus:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 active:scale-95 dark:bg-gray-800 dark:text-white visited:bg-gray-100"
+                style={{ boxShadow: 'inset 0 0 0 2px #000' }}
+              >
+                <span className="text-xs md:text-base lg:text-lg">Next Post</span>
+                <FaArrowRight className="text-gray-800 dark:text-white" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </BlogLayout>

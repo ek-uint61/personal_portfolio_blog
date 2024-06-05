@@ -27,7 +27,7 @@ const AllPosts: React.FC = () => {
       setActiveCategory(categories[0].name);
     }
     setTimeout(() => setIsContentVisible(true), 100);
-  }, [activeCategory]);
+  }, [activeCategory, categories]);
 
   const filteredArticles = activeCategory
     ? ARTICLES_DATA.filter(article =>

@@ -2,6 +2,7 @@
 import Draggable from 'react-draggable';
 import { FaPause, FaBackward, FaForward, FaTimes } from 'react-icons/fa';
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import "@/styles/music.css";
 
 interface SpotifySong {
@@ -92,7 +93,13 @@ const NowPlaying = () => {
 </svg>          </div>
           <div className="track_image">
             <div className="vinylcover" />
-            <img src={song.albumImageUrl} id="thumbnail" alt="No music is currently playing" />
+            <Image
+              src={song.albumImageUrl}
+              id="thumbnail"
+              alt="No music is currently playing"
+              width={500}
+              height={500}
+            />
           </div>
           <div className="songtitles">
             <div className="song-title">
