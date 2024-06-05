@@ -1,5 +1,8 @@
 {
-  "extends": [
-    "next"
+  "extends": ["next/babel","next/core-web-vitals","next"],
+  "eslint.workingDirectories": [
+    { "pattern": "apps/*/" },
+    { "pattern": "packages/*/" }
   ]
 }
+
