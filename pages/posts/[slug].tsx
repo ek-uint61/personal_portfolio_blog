@@ -97,7 +97,7 @@ const BlogPost = ({ postData, allPostsData }: { postData: PostData; allPostsData
                 transition: 'filter 700ms ease, transform 150ms ease',
                 filter: isImageLoaded ? 'none' : 'blur(20px)',
               }}
-              onLoadingComplete={() => setIsImageLoaded(true)}
+              onLoad={() => setIsImageLoaded(true)}
             />
           </div>
           <article className="prose max-w-3xl w-full mt-8 text-left">

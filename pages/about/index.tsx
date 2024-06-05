@@ -69,7 +69,7 @@ const AboutMe = () => {
               transition: "filter 700ms ease, transform 150ms ease",
               filter: isImageLoaded ? "none" : "blur(20px)",
             }}
-            onLoadingComplete={() => setIsImageLoaded(true)}
+            onLoad={() => setIsImageLoaded(true)}
           />
           <div className="mt-20">
             <About />
@@ -88,7 +88,7 @@ const AboutMe = () => {
               transition: "filter 700ms ease, transform 150ms ease",
               filter: isImageLoaded ? "none" : "blur(20px)",
             }}
-            onLoadingComplete={() => setIsImageLoaded(true)}
+            onLoad={() => setIsImageLoaded(true)}
           />
         </div>
       </ThemeContextProvider>
