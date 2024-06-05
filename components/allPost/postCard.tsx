@@ -19,6 +19,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, date, description, slu
             alt={title}
             fill
             className="object-cover rounded-lg"
+            priority // fetchPriority yerine priority kullanabilirsiniz
           />
         </div>
         <div className="flex flex-col gap-1 p-1">

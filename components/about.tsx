@@ -8,14 +8,16 @@ import ConnectLinks from "./about/ConnectLinks";
 import Workplaces from "./about/Workplaces";
 import Gallery from "./about/Gallery";
 
-import hinesLogo from "@/public/work/hines-logo.jpeg";
+import first from "@/public/gallery/1.jpg";
+import second from "@/public/gallery/2.jpg";
+import third from "@/public/gallery/3.jpg";
+
 import sistem from "@/public/work/c_ve_sistem.png";
 import vbt from "@/public/work/vbt.png"
 import ahi from "@/public/work/ahi.png"
 import freelance from "@/public/work/freelance.png";
 
-import meLily from "@/public/gallery/me-lily.jpg";
-import colorado from "@/public/gallery/colorado.jpg";
+
 import Footer from "./footer";
 import { OWNER_NAME, OTHER_LINKS } from "@/constants";
 
@@ -75,11 +77,11 @@ export default function About() {
           style={{ "--index": 1 } as React.CSSProperties}
         >
           <Image
-            src={meLily}
-            alt={"me and lily"}
+            src={first}
+            alt={""}
             width={324}
             height={139}
-            className="pointer-events-none relative inset-0 h-48 w-48 sm:h-60 sm:w-60 -rotate-6 rounded-xl bg-gray-400 object-cover shadow-md"
+            className=" relative inset-0 h-48 w-48 sm:h-60 sm:w-60 -rotate-6 rounded-xl bg-gray-400 object-cover shadow-md"
             priority
           />
         </div>
@@ -88,11 +90,25 @@ export default function About() {
           style={{ "--index": 2 } as React.CSSProperties}
         >
           <Image
-            src={colorado}
-            alt={"me and lily"}
+            src={second}
+            alt={""}
             width={220}
             height={260}
-            className="pointer-events-none  inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-56 md:h-56"
+            className=" inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-56 md:h-56"
+            priority
+          />
+        </div>
+
+        <div
+          className="animate-in"
+          style={{ "--index": 2 } as React.CSSProperties}
+        >
+          <Image
+            src={third}
+            alt={""}
+            width={220}
+            height={260}
+            className=" inset-0 -top-36 left-1/2 transform -translate-x-1/2 sm:left-[55%] sm:w-48 sm:top-0 w-40 h-40 rotate-6 rounded-xl bg-gray-400 object-cover shadow-md md:left-[60%] md:w-46 md:h-56"
             priority
           />
         </div>

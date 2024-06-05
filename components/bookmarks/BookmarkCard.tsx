@@ -14,10 +14,11 @@ const BookmarkCard: React.FC<BookmarkCardProps> = ({ bookmark }) => {
           alt={bookmark.title}
           fill
           className="object-cover rounded-lg"
+          priority // fetchPriority yerine priority kullanıyoruz
         />
       </div>
 
-      <div className=" flex flex-col gap-1 p-1">
+      <div className="flex flex-col gap-1 p-1">
         <h3 className="line-clamp-4 text-md leading-snug font-bold">{bookmark.title}</h3>
         <div className="flex items-center gap-2">
           <svg fill="#000000" height="12" width="12" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enable-background="new 0 0 512 512">

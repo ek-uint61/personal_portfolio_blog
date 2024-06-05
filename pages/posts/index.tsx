@@ -75,18 +75,8 @@ const AllPosts: React.FC = () => {
           {activeCategory && (
             <div className="flex-1 p-4 w-full max-w-7xl">
               <div className="flex items-center justify-center mb-4 gap-2">
-              {/* <Link href="/postlist" target="_blank" onClick={handleIconToggle} onMouseEnter={handleIconToggle} onMouseLeave={handleIconToggle}>
-    <svg className={`w-5 h-5 cursor-pointer transition-transform duration-500 ${isIconToggled ? "transform scale-110" : ""}`} fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      {isIconToggled ? (
-        <path d="M3 3h8v2H3v12h8V5h2v12h8V5h-8V3h10v16H13v2h-2v-2H1V3h2zm16 7h-4v2h4v-2zm-4-3h4v2h-4V7zm2 6h-2v2h2v-2z"/>
-      ) : (
-        <path d="M8 2h12v20H4V2h4zm4 8h-2v2H8V4H6v16h12V4h-4v8h-2v-2z"/>
-      )}
-    </svg>
-  </Link> */}
-              <h2 className="text-2xl font-bold text-center">{activeCategory}</h2>
-      
-  </div>
+                <h2 className="text-2xl font-bold text-center">{activeCategory}</h2>
+              </div>
               <div className="relative w-full max-w-md mb-8 flex items-center justify-center mx-auto">
                 <input
                   type="text"
@@ -111,7 +101,7 @@ const AllPosts: React.FC = () => {
                 </div>
               </div>
               {filteredArticles.length > 0 && (
-                  <div className="flex justify-center mt-8 items-center mb-10">
+                <div className="flex justify-center mt-8 items-center mb-10">
                   {visiblePageNumbers.map((pageNumber) => (
                     <button
                       key={pageNumber}

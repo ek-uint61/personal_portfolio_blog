@@ -63,23 +63,22 @@ const BookmarksPage: React.FC = () => {
         </div>
         {activeCategory && (
           <div className="flex-1 p-4 w-full max-w-7xl">
-      
             <h2 className="text-2xl font-bold mb-4 text-center">{activeCategory}</h2>
             <div className="relative w-full max-w-md mb-8 flex items-center justify-center mx-auto">
-            <input
-        type="text"
-        placeholder="Search bookmarks by title or description"
-        className="w-full p-2 mb-4 border rounded border-gray-200 text-xs bg-gray-100 "
-        value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
-      />
+              <input
+                type="text"
+                placeholder="Search bookmarks by title or description"
+                className="w-full p-2 mb-4 border rounded border-gray-200 text-xs bg-gray-100 "
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+              />
             </div>
             <div className={`p-5 sm:p-8 grid-container transition-all duration-700 ${isContentVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}>
-            <div className="columns-1 gap-5 sm:columns-2 sm:gap-2 md:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-8 ">
-              {currentBookmarks.map((bookmark, index) => (
-                <BookmarkCard key={bookmark.id} bookmark={bookmark} />
-              ))}
-            </div>
+              <div className="columns-1 gap-5 sm:columns-2 sm:gap-2 md:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-8 ">
+                {currentBookmarks.map((bookmark, index) => (
+                  <BookmarkCard key={bookmark.id} bookmark={bookmark} />
+                ))}
+              </div>
             </div>
             {filteredBookmarks.length > 0 && (
               <div className="flex justify-center mt-8 items-center mb-10">
@@ -88,7 +87,7 @@ const BookmarksPage: React.FC = () => {
                     key={pageNumber}
                     onClick={() => handlePageChange(pageNumber)}
                     className={` mx-1 px-3 py-1 rounded-[10px] text-xs ${currentPage === pageNumber ? "bg-gray-500 text-white" : "bg-gray-100 text-gray-700"}`}
-                    >
+                  >
                     {pageNumber}
                   </button>
                 ))}

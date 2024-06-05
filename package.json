@@ -84,6 +84,7 @@
     "remark": "^15.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
+    "sharp": "^0.33.4",
     "three": "^0.164.1",
     "typeface-merriweather": "^1.1.13",
     "typeface-open-sans": "^1.1.13",
