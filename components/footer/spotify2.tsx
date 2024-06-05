@@ -21,7 +21,7 @@ interface SpotifySong {
   songUrl: string;
 }
 
-const defaultImageUrl = "/footerGif.gif"; // Update this to the path of your default image
+const defaultImageUrl = "/footerImg.png"; // Update this to the path of your default image
 
 const Spoti: React.FC = () => {
   const [liked, setLiked] = useState<boolean>(false);
@@ -123,13 +123,14 @@ const Spoti: React.FC = () => {
         <div className="grid grid-cols-6 md:grid-cols-12 gap-3 md:gap-4 items-center justify-center">
           <div className="col-span-6 md:col-span-4">
             <Image
-              alt="Album cover"
+              alt="No music is currently playing"
               className="object-cover rounded-lg shadow-md"
               height={200}
               src={song?.albumImageUrl || defaultImageUrl}
               width={200} 
               priority
-              fetchPriority="high"          />
+              fetchPriority="high"
+            />
           </div>
 
           <div className="flex flex-col col-span-6 md:col-span-8">

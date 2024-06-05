@@ -75,10 +75,10 @@ export default function RootLayout({
           role='presentation'
           priority
         />
-        
+        {/* dark:bg-[#b18e8f] */}
         <div className="relative">
-          <div className=" dark:bg-[#b18e8f] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"/>
-            <div className="dark:bg-[#fdf2e9] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"/>
+          <div className=" dark:bg-[#b18e8f]  absolute top-[10rem] -z-10 right-[0rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"/>
+            <div className="bg-[#cfccc975] dark:bg-[#cbc6c3] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"/>
         </div>
 
         <ThemeContextProvider>
