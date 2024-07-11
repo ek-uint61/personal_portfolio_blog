@@ -13,7 +13,7 @@ contentHtml: string;
 slug: title-3;
 number: 3
 category: "Web Development"
-image:  "../postDataImg10.png"
+image: "/postDataImg15.png"
 ---
 ##### Adress of Variables
 

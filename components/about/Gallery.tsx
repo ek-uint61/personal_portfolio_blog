@@ -5,15 +5,12 @@ import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 
-import texas from "@/public/gallery/texas.jpg";
-import meLily from "@/public/gallery/me-lily.jpg";
-import colorado from "@/public/gallery/colorado.jpg";
-import cowboy from "@/public/gallery/cowboy-bike.webp";
 import pamuk from "@/public/putin1.png";
 import Halo from "./Halo";
 import first from "@/public/gallery/1.jpg";
 import second from "@/public/gallery/2.jpg";
 import third from "@/public/gallery/3.jpg";
+import fourth from "@/public/gallery/4.png";
 
 type PhotoProps = {
   src: StaticImageData | string;
@@ -50,7 +47,7 @@ function Photo({
 
   return (
     <motion.div
-      className={`absolute mx-auto cursor-grab hover:before:block hover:before:w-[calc(100%+55px)] hover:before:h-[300px] hover:before:absolute hover:before:-top-8 hover:before:-left-7`}
+      className="absolute mx-auto cursor-grab"
       style={{ rotate: `${rotate}deg`, width, height, perspective: 1000 }}
       initial={{
         width,
@@ -134,17 +131,8 @@ export default function Gallery() {
     <div className="flex justify-center items-center">
       <section className="flex gap-4 h-[268px] justify-center items-center flex-wrap">
         <Photo
-          src={first}
-          meta="26/02/2022"
-          alt=""
-          width={324}
-          height={239}
-          rotate={-6}
-          index={1}
-        />
-        <Photo
           src={second}
-          meta="17/10/2015"
+          meta="15/16"
           alt=""
           width={230}
           height={250}
@@ -152,22 +140,19 @@ export default function Gallery() {
           index={2}
           flipDirection="left"
         />
-  
         <Photo
           src={pamuk}
-          meta="28/05/2024"
-          alt={"pamuk"}
+          meta="a predator focused on its prey"
+          alt="pamuk"
           width={220}
           height={260}
           rotate={7.6}
-          left={530}
           index={4}
           flipDirection="left"
         />
-
-<Photo
+        <Photo
           src={third}
-          meta="01/07/2000 & Boztepe/Trabzon"
+          meta="a summer in 2000 _ Boztepe/Trabzon"
           alt=""
           width={280}
           height={235}

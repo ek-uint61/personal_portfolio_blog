@@ -5,7 +5,7 @@ type ModalContentProps = {
   onClose: () => void;
 };
 
-const items = [
+export const items = [
   {
     category: 'General',
     icon: (

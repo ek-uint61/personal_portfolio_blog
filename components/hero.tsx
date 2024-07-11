@@ -60,7 +60,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className='bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text font-title text-2xl font-bold leading-9 text-transparent sm:text-4xl sm:leading-[3.5rem]'>
-            Hi, I&apos;<b>Emre</b>. I have 2+ years of experience in <b>web development</b> and I am currently learning {' '}
+            Hi, I&apos;m <b>Emre</b>. I have 2+ years of experience in <b>web development</b> and I am currently learning {' '}
             {/* <div className='inline-grid h-9 overflow-hidden sm:h-14'>
               <div ref={scope}>
                 {TEXTS.map(({ text, className }, index) => (

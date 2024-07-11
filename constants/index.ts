@@ -26,40 +26,40 @@ export const LINKS: { href?: string; hash?: string; name: SectionName }[] = [
 
 
 export const EXPERIENCES_DATA = [
-  
-  {
-    title: "Freelance Web Developer",
-    location: "Kirsehir, Turkiye",
-    description:
-      "Using WordPress and WooCommerce, I've developed e-commerce apps for local businesses. These apps are easy to use and help businesses manage their online stores effectively.",
-      icon: React.createElement(CgWorkAlt),
-      date: "April   2020 - June 2022",
-  },
   {
     title: "Ahi Evran University Computer Science GPA: 3.05 ",
     location: "Kirsehir, Turkiye",
     description:
     "During my university education, I focused on web applications and AI. I took several courses that provided a deep understanding of these subjects. I gained hands-on experience in developing and working with web applications and explored various AI tech", 
     icon: React.createElement(LuGraduationCap),
-    date: "May - 2024",
+    date: "09/2018 - 06/2024",
 
   },
   {
-    title: "C ve Sistem Programlama Dernegi",
-    location: "Istanbul, Turkiye",
+    title: "Freelance Web Developer",
+    location: "Remote",
+    description:
+      "Using WordPress and WooCommerce, I've developed e-commerce apps for local businesses. These apps are easy to use and help businesses manage their online stores effectively.",
+      icon: React.createElement(CgWorkAlt),
+      date: "06/2020 - 09/2021",
+  },
+
+  {
+    title: "Teknoopak",
+    location: "Remote",
     description:      
-      "The course covers microcontroller fundamentals, focusing on general and ARM microcontroller principles, software development without an operating system, basic software architectures, multitasking, and common communication protocols. Projects will be developed using C programming language and low-level system and hardware libraries. It aims to provide both introductory and advanced knowledge on microcontroller applications, with additional basic electronics and measurement tool usage.",
+      "I worked with HTML CSS JavaScript on the web side and React Native + Full stack with MongoDB on the mobile side. ",
     icon: React.createElement(CgWorkAlt),
     date: "July 2024 - present",
 
   },
   {
-    title: "Intern",
-    location: "Istanbul, Turkiye",
+    title: "VBT Software",
+    location: "Software Developer Intern - Remote",
     description:
       "",
     icon: React.createElement(CgWorkAlt),
-    date: "",
+    date: "06/2024 - 09/2024",
 
   },
 ] as const;
@@ -346,4 +346,6 @@ export const FOOTER_LINKS: FooterLink[] = [
   github: "https://github.com/ek-uint61",
   resume: "/resume.pdf",
 } as const;
+
+
 

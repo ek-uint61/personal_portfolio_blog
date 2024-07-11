@@ -53,7 +53,7 @@ const AboutMe = () => {
   return (
     <ActiveSectionContextProvider>
       <ThemeContextProvider>
-        <Header />
+        {/* <Header /> */}
         <div className="relative min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:text-gray-100">
           <Image
             width={1512}

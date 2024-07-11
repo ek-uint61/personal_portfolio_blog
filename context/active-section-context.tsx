@@ -8,7 +8,7 @@ type ActiveSectionContextProviderProps = {
 };
 
 // Define the type for the active section name
-export type SectionName = "Home" | "About" | "Skills" | "Contact" | "Articles" ;
+export type SectionName = "Home" | "About" | "Skills" | "Experience" | "Contact" | "Articles" ;
 
 
 // Define the type for the ActiveSectionContext

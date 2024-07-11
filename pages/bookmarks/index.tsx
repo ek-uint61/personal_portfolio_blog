@@ -3,19 +3,25 @@
 import { useState, useEffect } from "react";
 import BookmarkCard from '@/components/bookmarks/BookmarkCard';
 import Sidebar from '@/components/bookmarks/sidebar';
+import Navbar from '@/components/bookmarks/navbar';
 import { BookmarkCategory } from '@/lib/bookmarks';
 import { categories } from '@/lib/categories';
-import { FaSearch } from 'react-icons/fa';
 
 const BookmarksPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(categories[0]?.name || null);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [isContentVisible, setIsContentVisible] = useState(false);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category === activeCategory ? null : category);
     setCurrentPage(1); // Reset the page to 1 when the category changes
+    setIsSidebarVisible(false); // Hide sidebar on category click (for mobile)
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
   };
 
   useEffect(() => {
@@ -53,12 +59,15 @@ const BookmarksPage: React.FC = () => {
 
   return (
     <div className="relative min-h-screen text-gray-900">
+      <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar
         categories={categories}
         activeCategory={activeCategory}
         onCategoryClick={handleCategoryClick}
+        isVisible={isSidebarVisible}
+        toggleSidebar={toggleSidebar}
       />
-      <main className="flex flex-col items-center pl-72 px-4">
+      <main className="flex flex-col items-center pl-0 lg:pl-72 px-4">
         <div className="flex items-center mt-8 mb-4">
         </div>
         {activeCategory && (
@@ -75,9 +84,9 @@ const BookmarksPage: React.FC = () => {
             </div>
             <div className={`p-5 sm:p-8 grid-container transition-all duration-700 ${isContentVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}>
               <div className="columns-1 gap-5 sm:columns-2 sm:gap-2 md:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-8 ">
-                {currentBookmarks.map((bookmark, index) => (
-                  <BookmarkCard key={bookmark.id} bookmark={bookmark} />
-                ))}
+              {currentBookmarks.map((bookmark) => (
+                <BookmarkCard key={bookmark.id} bookmark={bookmark} />
+              ))}
               </div>
             </div>
             {filteredBookmarks.length > 0 && (
@@ -86,7 +95,7 @@ const BookmarksPage: React.FC = () => {
                   <button
                     key={pageNumber}
                     onClick={() => handlePageChange(pageNumber)}
-                    className={` mx-1 px-3 py-1 rounded-[10px] text-xs ${currentPage === pageNumber ? "bg-gray-500 text-white" : "bg-gray-100 text-gray-700"}`}
+                    className={`mx-1 px-3 py-1 rounded-[10px] text-xs ${currentPage === pageNumber ? "bg-gray-500 text-white" : "bg-gray-100 text-gray-700"}`}
                   >
                     {pageNumber}
                   </button>

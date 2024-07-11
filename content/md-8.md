@@ -13,7 +13,7 @@ contentHtml: string;
 slug: md-8;
 number: 8
 category: "Embedded Software"
-image: "../postDataImg12.png"
+image: "/postDataImg15.png"
 ---
 
 * Fonksiyonlar belirli bir görevi yerine getirmek için kullanılan ifadelerdir.

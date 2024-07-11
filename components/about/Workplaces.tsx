@@ -1,4 +1,5 @@
 "use client";
+
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
 
@@ -13,7 +14,6 @@ type Workplace = {
 };
 
 function Workplace({ title, company, imageSrc, date, link }: Workplace) {
-
   const content = (
     <>
       <div className="flex items-center gap-4 bg-none">
@@ -45,7 +45,7 @@ function Workplace({ title, company, imageSrc, date, link }: Workplace) {
           {content}
         </Link>
       ) : (
-        <div className="flex justify-between ">{content}</div>
+        <div className="flex justify-between">{content}</div>
       )}
     </li>
   );
@@ -53,8 +53,10 @@ function Workplace({ title, company, imageSrc, date, link }: Workplace) {
 
 export default function Workplaces({ items }: { items: Workplace[] }) {
   return (
-    <ul className="flex flex-col gap-8 animated-list ">
-      {items.map(Workplace)}
+    <ul className="flex flex-col gap-8 animated-list">
+      {items.map((workplace) => (
+        <Workplace key={workplace.company} {...workplace} />
+      ))}
     </ul>
   );
 }

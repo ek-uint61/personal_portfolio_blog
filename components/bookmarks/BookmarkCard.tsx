@@ -7,7 +7,7 @@ interface BookmarkCardProps {
 
 const BookmarkCard: React.FC<BookmarkCardProps> = ({ bookmark }) => {
   return (
-    <div className="mb-3 mr-2 grid-item thumbnail-shadow flex aspect-auto min-w-0 cursor-pointer flex-col gap-3 rounded-xl p-4  transition-colors duration-300 hover:bg-gray-100">
+    <div className="mb-3 mr-2 grid-item thumbnail-shadow flex aspect-auto min-w-0 cursor-pointer flex-col gap-3 rounded-xl p-4  transition-colors duration-300 hover:bg-gray-100 ">
       <div className="image-container relative h-44 w-80">
         <Image
           src={bookmark.imageUrl}

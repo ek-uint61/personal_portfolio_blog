@@ -4,13 +4,14 @@
 import {
   About,
   Contact,
-  // Experience,
   // Intro,
   Projects,
   SectionDivider,
   Skills,
   Hero,
 } from "@/components";
+
+import Experience from "@/components/experience";
 
   
 // This is the main component for the Home page.
@@ -29,10 +30,10 @@ export default function Home() {
       {/* { <About /> } */}
 
       {/* The Skills component shows the skills of the author or user. */}
-      {/* { <Skills /> } */}
+      <Skills />
 
       {/* The Experience component displays work or education experience. */}
-      {/* <Experience /> */}
+      <Experience />
 
       {/* The Projects component displays information about projects. */}
       <Projects />

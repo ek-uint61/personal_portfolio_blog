@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import ArticleCard from "@/components/allPost/postCard";
-import Sidebar, { getCategoriesFromArticles } from "@/components/allPost/sidebar";
+import Sidebar, { getCategoriesFromArticles } from "@/components/allPost/sidebar"; // Correct import
 import { ARTICLES_DATA } from "@/constants";
 import { FaSearch } from "react-icons/fa";
 import ThemeContextProvider from "@/context/theme-context";
-import Link from "next/link";
+import Navbar from '@/components/bookmarks/navbar'; // Corrected import path
 
 const AllPosts: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,20 +56,23 @@ const AllPosts: React.FC = () => {
 
   const visiblePageNumbers = getVisiblePageNumbers();
 
-  const [isIconToggled, setIsIconToggled] = useState(false);
-  const handleIconToggle = () => {
-    setIsIconToggled(!isIconToggled);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
   };
 
   return (
     <ThemeContextProvider>
       <div className="relative min-h-screen dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90">
+        <Navbar toggleSidebar={toggleSidebar} /> {/* Ensure Navbar is correctly imported and used */}
         <Sidebar
           categories={categories}
           activeCategory={activeCategory}
           onCategoryClick={handleCategoryClick}
+          isVisible={isSidebarVisible}
+          toggleSidebar={toggleSidebar}
         />
-        <main className="flex flex-col items-center pl-72 px-4">
+        <main className="flex flex-col items-center pl-0 lg:pl-72 px-4">
           <div className="flex items-center mt-8 mb-4">
           </div>
           {activeCategory && (

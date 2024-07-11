@@ -7,7 +7,7 @@ contentHtml: string;
 slug: title-5;
 number: 5
 category: "Programming"
-image:  "../postDataImg5.png"
+image: "/postDataImg15.png"
 ---
 
 

@@ -8,26 +8,29 @@ type SectionProps = {
   headingAlignment?: "right" | "left" | "center";
   children: ReactNode;
   invert?: boolean;
-  className?: string; // Add className prop for custom styles
+  className?: string;
 };
 
 export default function Section({
   heading,
-  headingAlignment = "left", // Default alignment to left
+  headingAlignment = "left",
   children,
   invert = false,
-  className = "", // Default to an empty string
+  className = "",
 }: SectionProps) {
   return (
     <section
-      className={clsx("flex flex-col gap-6 md:flex-row md:gap-9 items-center md:items-start", className)}
+      className={clsx(
+        "flex flex-col gap-3 md:flex-row md:gap-6 items-center md:items-start",
+        className
+      )}
       id={heading.toLowerCase().replace(/\s/g, "-")}
     >
       <h2
         className={clsx(
           "shrink-0 md:w-32",
           headingAlignment === "right" && "md:text-right",
-          headingAlignment === "center" && "w-full",
+          headingAlignment === "center" && "w-full text-center",
           invert ? "font-medium text-primary" : "text-secondary"
         )}
       >

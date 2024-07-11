@@ -13,7 +13,7 @@ contentHtml: string;
 slug: title-9;
 number: 9
 category: "Embedded Software"
-image: "../postDataImg11.png"
+image: "/postDataImg15.png"
 ---
 
 * Fonksiyonlar belirli bir görevi yerine getirmek için kullanılan ifadelerdir.
